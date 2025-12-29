@@ -1,6 +1,6 @@
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SQL Server Execution Plan Analysis Utility"
+        Title="Execution Plan Analysis Utility"
         Height="800" Width="1400"
         Icon="../Assets/icons8-communication-64.png"
         WindowStartupLocation="CenterScreen"
@@ -55,7 +55,7 @@
                        Width="48" Height="48"
                        Stretch="Uniform"
                        RenderOptions.BitmapScalingMode="HighQuality"/>
-                <TextBlock Text="SQL Server Execution Plan Analysis Utility"
+                <TextBlock Text="Execution Plan Analysis Utility"
                            FontSize="18" FontWeight="Bold"
                            VerticalAlignment="Center"
                            Margin="10,0,0,0"/>

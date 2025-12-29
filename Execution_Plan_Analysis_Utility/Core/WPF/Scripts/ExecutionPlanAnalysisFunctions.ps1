@@ -1011,7 +1011,7 @@ if %ERRORLEVEL% EQU 0 (
 
         try {
             # Open GitHub repository in default browser
-            Start-Process "https://github.com/smpetersgithub/SQL-Server-Execution-Plan-Analysis-Utility"
+            Start-Process "https://github.com/smpetersgithub/Advanced_SQL_Server_Toolkit"
             Write-Host "[INFO] Opened GitHub repository in browser"
         } catch {
             Write-Host "[ERROR] Failed to open GitHub URL: $($_.Exception.Message)"

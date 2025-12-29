@@ -80,6 +80,7 @@ C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility
 - **ExecutionPlanAnalysisFunctions.ps1** - Project root, config, output, logs, and Python directories
 - **MainWindow.xaml** - All 10 icon image paths
 
+See `HARDCODED_PATHS_CONFIGURATION.md` for detailed instructions.
 
 ## 📖 Usage Guide
 
