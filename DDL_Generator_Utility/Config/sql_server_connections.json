@@ -1,0 +1,22 @@
+{
+  "servers": [
+    {
+      "parent_name": "QA",
+      "servername": "WIN29LYC64",
+      "port": 1433,
+      "username": "username",
+      "password": "password",
+      "databases_include":["foo","bar"],
+      "active": true
+    },
+    {
+      "parent_name": "Scott_Test_2",
+      "servername": "WIN29LYC64\\MSSQLSERVER01",
+      "port": 1433,
+      "username": "username",
+      "password": "password",
+      "databases_include":[],
+      "active": false
+    }
+  ]
+}

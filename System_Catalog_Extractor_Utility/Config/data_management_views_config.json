@@ -1,0 +1,4823 @@
+{
+	"data_management_objects": [
+		{
+			"data_management_view": "sys.dm_exec_background_job_queue",
+			"isactive": true,
+			"description": "Returns a row for each query processor job that is scheduled for asynchronous (background) execution.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_background_job_queue_stats",
+			"isactive": true,
+			"description": "Returns a row that provides aggregate statistics for each query processor job submitted for asynchronous (background) execution.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_cached_plan_dependent_objects",
+			"isactive": false,
+			"description": "Returns a row for each Transact-SQL execution plan, common language runtime (CLR) execution plan, and cursor associated with a plan.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_exec_cached_plans",
+			"isactive": true,
+			"description": "Returns a row for each query plan that is cached by SQL Server for faster query execution. You can use this dynamic management view to find cached query plans, cached query text, the amount of memory taken by cached plans, and the reuse count of the cached plans.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_compute_node_errors",
+			"isactive": true,
+			"description": "Returns errors that occur on PolyBase compute nodes.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_compute_node_status",
+			"isactive": true,
+			"description": "Holds additional information about the performance and status of all PolyBase nodes. Lists one row per node.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_compute_nodes",
+			"isactive": true,
+			"description": "Holds information about nodes used with PolyBase data management. It lists one row per node.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_connections",
+			"isactive": true,
+			"description": "Returns information about the connections established to this instance of SQL Server and the details of each connection. Returns server wide connection information for SQL Server. Returns current database connection information for SQL Database.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_cursors",
+			"isactive": false,
+			"description": "Returns information about the cursors that are open in various databases.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_exec_describe_first_result_set",
+			"isactive": false,
+			"description": "This dynamic management function takes a Transact-SQL statement as a parameter and describes the metadata of the first result set for the statement.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_exec_describe_first_result_set_for_object",
+			"isactive": false,
+			"description": "This dynamic management function takes an\u00c2\u00a0@object_id\u00c2\u00a0as a parameter and describes the first result metadata for the module with that ID. The\u00c2\u00a0@object_id\u00c2\u00a0specified can be the ID of a Transact-SQL stored procedure or a Transact-SQL trigger. If it is the ID of any other object (such as a view, table, function, or CLR procedure), an error will be specified in the error columns of the result.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_exec_distributed_request_steps",
+			"isactive": false,
+			"description": "Holds information about all steps that compose a given PolyBase request or query. It lists one row per query step.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_distributed_requests",
+			"isactive": false,
+			"description": "Holds information about all requests currently or recently active in PolyBase queries. It lists one row per request/query.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_distributed_sql_requests",
+			"isactive": true,
+			"description": "Holds information about all SQL query distributions as part of a SQL step in the query. This view shows the data for the last 1000 requests; active requests always have the data present in this view.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_dms_services",
+			"isactive": false,
+			"description": "Holds information about all of the DMS services running on the PolyBase compute nodes. It lists one row per service instance.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_dms_workers",
+			"isactive": false,
+			"description": "Holds information about all workers completing DMS steps.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_external_operations",
+			"isactive": false,
+			"description": "Captures information about external PolyBase operations.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_external_work",
+			"isactive": false,
+			"description": "Returns information about the workload per worker, on each compute node.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_function_stats",
+			"isactive": true,
+			"description": "Returns aggregate performance statistics for cached functions. The view returns one row for each cached function plan, and the lifetime of the row is as long as the function remains cached. When a function is removed from the cache, the corresponding row is eliminated from this view. At that time, a Performance Statistics SQL trace event is raised similar to\u00c2\u00a0sys.dm_exec_query_stats. Returns information about scalar functions, including in-memory functions and CLR scalar functions. Does not return information about table valued functions, and about scalar functions that are inlined with\u00c2\u00a0Scalar UDF Inlining.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_input_buffer",
+			"isactive": false,
+			"description": "Returns information about statements submitted to an instance of SQL Server.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_exec_plan_attributes",
+			"isactive": false,
+			"description": "Returns one row per plan attribute for the plan specified by the plan handle. You can use this table-valued function to get details about a particular plan, such as the cache key values or the number of current simultaneous executions of the plan.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_procedure_stats",
+			"isactive": true,
+			"description": "Returns aggregate performance statistics for cached stored procedures. The view returns one row for each cached stored procedure plan, and the lifetime of the row is as long as the stored procedure remains cached. When a stored procedure is removed from the cache, the corresponding row is eliminated from this view. At that time, a Performance Statistics SQL trace event is raised similar to\u00c2\u00a0sys.dm_exec_query_stats.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_memory_grants",
+			"isactive": false,
+			"description": "Returns information about all queries that have requested and are waiting for a memory grant or have been given a memory grant. Queries that do not require a memory grant will not appear in this view. For example, sort and hash join operations have memory grants for query execution, while queries without an\u00c2\u00a0ORDER BY\u00c2\u00a0clause will not have a memory grant.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_optimizer_info",
+			"isactive": false,
+			"description": "Returns detailed statistics about the operation of the SQL Server query optimizer. You can use this view when tuning a workload to identify query optimization problems or improvements. For example, you can use the total number of optimizations, the elapsed time value, and the final cost value to compare the query optimizations of the current workload and any changes observed during the tuning process. Some counters provide data that is relevant only for SQL Server internal diagnostic use. These counters are marked as \"Internal only.\"",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_optimizer_memory_gateways",
+			"isactive": false,
+			"description": "Returns the current status of resource semaphores used to throttle concurrent query optimization.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_parallel_workers",
+			"isactive": false,
+			"description": "Returns worker availability information per node.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_plan",
+			"isactive": false,
+			"description": "Returns the Showplan in XML format for the batch specified by the plan handle. The plan specified by the plan handle can either be cached or currently executing.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_plan_stats",
+			"isactive": false,
+			"description": "Returns the equivalent of the last known actual execution plan for a previously cached query plan.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_profiles",
+			"isactive": true,
+			"description": "Monitors real time query progress while the query is in execution. For example, use this DMV to determine which part of the query is running slow. Join this DMV with other system DMVs using the columns identified in the description field. Or, join this DMV with other performance counters (such as Performance Monitor, xperf) by using the timestamp columns.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_resource_semaphores",
+			"isactive": false,
+			"description": "Returns the information about the current query-resource semaphore status in SQL Server. sys.dm_exec_query_resource_semaphores provides general query-execution memory status and allows you to determine whether the system can access enough memory. This view complements memory information obtained from sys.dm_os_memory_clerks to provide a complete picture of server memory status. sys.dm_exec_query_resource_semaphores returns one row for the regular resource semaphore and another row for the small-query resource semaphore. There are two requirements for a small-query semaphore:The memory grant requested should be less than 5 MBThe query cost should be less than 3 cost units",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_statistics_xml",
+			"isactive": false,
+			"description": "Returns query execution plan for in-flight requests. Use this DMV to retrieve showplan XML with transient statistics.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_stats",
+			"isactive": true,
+			"description": "Returns aggregate performance statistics for cached query plans in SQL Server. The view contains one row per query statement within the cached plan, and the lifetime of the rows are tied to the plan itself. When a plan is removed from the cache, the corresponding rows are eliminated from this view.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_requests",
+			"isactive": true,
+			"description": "Returns information about each request that is executing in SQL Server. For more information about requests, see the\u00c2\u00a0Thread and Task Architecture Guide.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_session_wait_stats",
+			"isactive": false,
+			"description": "Returns information about all the waits encountered by threads that executed for each session. You can use this view to diagnose performance issues with the SQL Server session and also with specific queries and batches. This view returns session the same information that is aggregated for\u00c2\u00a0sys.dm_os_wait_stats (Transact-SQL)\u00c2\u00a0but provides the\u00c2\u00a0session_id\u00c2\u00a0number as well.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_sessions",
+			"isactive": true,
+			"description": "Returns one row per authenticated session on SQL Server. sys.dm_exec_sessions is a server-scope view that shows information about all active user connections and internal tasks. This information includes client version, client program name, client login time, login user, current session setting, and more. Use sys.dm_exec_sessions to first view the current system load and to identify a session of interest, and then learn more information about that session by using other dynamic management views or dynamic management functions.The sys.dm_exec_connections, sys.dm_exec_sessions, and sys.dm_exec_requests dynamic management views map to the deprecated sys.sysprocesses system compatibility view.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_sql_text",
+			"isactive": false,
+			"description": "Returns the text of the SQL batch that is identified by the specified\u00c2\u00a0sql_handle. This table-valued function replaces the system function\u00c2\u00a0fn_get_sql.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_exec_text_query_plan",
+			"isactive": false,
+			"description": "Returns the Showplan in text format for a Transact-SQL batch or for a specific statement within the batch. The query plan specified by the plan handle can either be cached or currently executing. This table-valued function is similar to sys.dm_exec_query_plan (Transact-SQL), but has the following differences:The output of the query plan is returned in text format.The output of the query plan is not limited in size.Individual statements within the batch can be specified.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_exec_trigger_stats",
+			"isactive": true,
+			"description": "Returns aggregate performance statistics for cached triggers. The view contains one row per trigger, and the lifetime of the row is as long as the trigger remains cached. When a trigger is removed from the cache, the corresponding row is eliminated from this view. At that time, a Performance Statistics SQL trace event is raised similar to sys.dm_exec_query_stats.",
+			"category": [
+				"Execution",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_valid_use_hints",
+			"isactive": false,
+			"description": "Returns USE HINT supported hint names. It lists one hint name per row.Use this DMV to see the list of all supported hints under the USE HINT notation.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_xml_handles",
+			"isactive": false,
+			"description": "Returns information about active handles that have been opened by\u00c2\u00a0sp_xml_preparedocument.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_external_script_execution_stats",
+			"isactive": false,
+			"description": "Returns one row for each type of external script request. The external script requests are grouped by the supported external script language. One row is generated for each registered external script functions. Arbitrary external script functions are not recorded unless sent by a parent process, such as rxExec.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_external_script_requests",
+			"isactive": false,
+			"description": "Returns a row for each active worker account that is running an external script.",
+			"category": [
+				"Execution"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_resource_stats",
+			"isactive": true,
+			"description": "Returns CPU, I/O, and memory consumption for an Azure SQL Database database or an Azure SQL Managed Instance. One row exists for every 15 seconds, even if there is no activity. Historical data is maintained for approximately one hour.",
+			"category": [
+				"Database",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_database_copies",
+			"isactive": false,
+			"description": "Returns information about the database copy.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_file_space_usage",
+			"isactive": true,
+			"description": "Returns space usage information for each data file in the database.",
+			"category": [
+				"Database",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_fts_index_physical_stats",
+			"isactive": false,
+			"description": "Returns a row for each full-text or semantic index in each table that has an associated full-text or semantic index.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_log_space_usage",
+			"isactive": true,
+			"description": "Returns space usage information for the transaction log.",
+			"category": [
+				"Database",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_objects_impacted_on_version_change",
+			"isactive": false,
+			"description": "This database-scoped system view is designed to provide an early warning system to determine objects that will be impacted by a major release upgrade in Azure SQL Database. You can use the view either before or after the upgrade to get a full enumeration of impacted objects. You will need to query this view in each database to get a full accounting across the entire server.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_partition_stats",
+			"isactive": true,
+			"description": "Returns page and row-count information for every partition in the current database.",
+			"category": [
+				"Database",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_session_space_usage",
+			"isactive": false,
+			"description": "Returns the number of pages allocated and deallocated by each session for the database.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_task_space_usage",
+			"isactive": false,
+			"description": "Returns page allocation and deallocation activity by task for the database.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_wait_stats",
+			"isactive": false,
+			"description": "Returns information about all the waits encountered by threads that executed during operation. You can use this aggregated view to diagnose performance issues with Azure SQL Database and also with specific queries and batches.Specific types of wait times during query execution can indicate bottlenecks or stall points within the query. Similarly, high wait times, or wait counts server wide can indicate bottlenecks or hot spots in interaction query interactions within the server instance. For example, lock waits indicate data contention by queries; page IO latch waits indicate slow IO response times; page latch update waits indicate incorrect file layout.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_operation_status",
+			"isactive": false,
+			"description": "Returns information about operations performed on databases in a Azure SQL Database server.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.elastic_pool_resource_stats",
+			"isactive": false,
+			"description": "Returns resource usage statistics for all the elastic pools in a SQL Database server. For each elastic pool, there is one row for each 15 second reporting window (four rows per minute). This includes CPU, IO, Log, storage consumption and concurrent request/session utilization by all databases in the pool. This data is retained for 14 days.",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.resource_stats",
+			"isactive": false,
+			"description": "Returns CPU usage and storage data for an Azure SQL Database. The data is collected and aggregated within five-minute intervals. For each user database, there is one row for every five-minute reporting window in which there is a change in resource consumption. The data returned includes CPU usage, storage size change, and database SKU modification. Idle databases with no changes may not have rows for every five-minute interval. Historical data is retained for approximately 14 days. The sys.resource_stats view has different definitions depending on the version of the Azure SQL Database Server that the database is associated with. Consider these differences and any modifications your application requires when upgrading to a new server version.",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_resource_stats",
+			"isactive": false,
+			"description": "Returns CPU usage, IO, and storage data for Azure SQL Managed Instance. The data is collected, aggregated and updated within 5 to 10 minutes intervals. There is one row for every 15 seconds reporting. The data returned includes CPU usage, storage size, IO utilization, and SKU. Historical data is retained for approximately 14 days. The sys.server_resource_stats view has different definitions depending on the version of the Azure SQL Managed Instance that the database is associated with. Consider these differences and any modifications your application requires when upgrading to a new server version.",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.bandwidth_usage",
+			"isactive": false,
+			"description": "Returns information about the network bandwidth used by each database in a\u00c2\u00a0Azure SQL Database V11 database server, . Each row returned for a given database summarizes a single direction and class of usage over a one-hour period.",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.database_connection_stats",
+			"isactive": false,
+			"description": "Contains statistics for SQL Database database\u00c2\u00a0connectivity\u00c2\u00a0events, providing an overview of database connection successes and failures. For more information about connectivity events, see Event Types in\u00c2\u00a0sys.event_log (Azure SQL Database).",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.database_firewall_rules",
+			"isactive": false,
+			"description": "Returns information about the database-level firewall settings associated with your Microsoft Azure SQL Database. Database-level firewall settings are particularly useful when using contained database users. For more information, see\u00c2\u00a0Contained Database Users - Making Your Database Portable.",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.database_service_objectives",
+			"isactive": false,
+			"description": "Returns the edition (service tier), service objective (pricing tier) and elastic pool name, if any, for an Azure SQL database or an Azure Synapse Analytics. If logged on to the master database in an Azure SQL Database server, returns information on all databases. For Azure Synapse Analytics, you must be connected to the master database.",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.database_usage",
+			"isactive": false,
+			"description": "Lists the number, type, and duration of databases on the SQL Database server.",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.event_log",
+			"isactive": false,
+			"description": "Returns successful Azure SQL Database database connections, connection failures, and deadlocks. You can use this information to track or troubleshoot your database activity with SQL Database.",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.firewall_rules",
+			"isactive": false,
+			"description": "Returns information about the server-level firewall settings associated with your Microsoft Azure SQL Database.",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.resource_usage",
+			"isactive": false,
+			"description": "Provides hourly summary of resource usage data for user databases in the current server. Historical data is retained for 90 days. For each user database, there is one row for every hour in continuous fashion. Even if the database was idle during that hour, there is one row, and the usage_in_seconds value for that database will be 0. Storage usage and SKU information is rolled up for the hour appropriately.",
+			"category": [
+				"Azure SQL Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_active_transactions",
+			"isactive": true,
+			"description": "Returns information about transactions for the instance of SQL Server.",
+			"category": [
+				"Transaction",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_active_snapshot_database_transactions",
+			"isactive": false,
+			"description": "In a SQL Server instance, this dynamic management view returns a virtual table for all active transactions that generate or potentially access row versions. Transactions are included for one or more of the following conditions: When either or both ALLOW_SNAPSHOT_ISOLATION and READ_COMMITTED_SNAPSHOT database options are set to ON. There is one row for each transaction that is running under snapshot isolation level, or read-committed isolation level that is using row versioning. There is one row for each transaction that causes a row version to be created in the current database. For example, the transaction generates a row version by updating or deleting a row in the current database. When a trigger is fired, there is one row for the transaction under which the trigger is executing. When an online indexing procedure is running, there is one row for the transaction that is creating the index. When Multiple Active Results Sets (MARS) session is enabled, there is one row for each transaction that is accessing row versions. This dynamic management view does not include system transactions.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_current_snapshot",
+			"isactive": false,
+			"description": "Returns a virtual table that displays all active transactions at the time when the current snapshot transaction starts. If the current transaction is not a snapshot transaction, this function returns no rows.\u00c2\u00a0sys.dm_tran_current_snapshot\u00c2\u00a0is similar to\u00c2\u00a0sys.dm_tran_transactions_snapshot, except that\u00c2\u00a0sys.dm_tran_current_snapshot\u00c2\u00a0returns only the active transactions for the current snapshot transaction.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_current_transaction",
+			"isactive": false,
+			"description": "Returns a single row that displays the state information of the transaction in the current session.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_database_transactions",
+			"isactive": true,
+			"description": "Returns information about transactions at the database level.",
+			"category": [
+				"Transaction",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_locks",
+			"isactive": true,
+			"description": "Returns information about currently active lock manager resources in SQL Server. Each row represents a currently active request to the lock manager for a lock that has been granted or is waiting to be granted. The columns in the result set are divided into two main groups: resource and request. The resource group describes the resource on which the lock request is being made, and the request group describes the lock request.",
+			"category": [
+				"Transaction",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_session_transactions",
+			"isactive": false,
+			"description": "Returns correlation information for associated transactions and sessions.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_top_version_generators",
+			"isactive": false,
+			"description": "Returns a virtual table for the objects that are producing the most versions in the version store. sys.dm_tran_top_version_generators returns the top 256 aggregated record lengths that are grouped by the database_id and rowset_id. sys.dm_tran_top_version_generators retrieves data by querying the dm_tran_version_store virtual table. sys.dm_tran_top_version_generators is an inefficient view to run because this view queries the version store, and the version store can be very large. We recommend that you use this function to find the largest consumers of the version store.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_transactions_snapshot",
+			"isactive": false,
+			"description": "Returns a virtual table for the sequence_number of transactions that are active when each snapshot transaction starts. The information that is returned by this view can you help you do the following: Find the number of currently active snapshot transactions. Identify data modifications that are ignored by a particular snapshot transaction. For a transaction that is active when a snapshot transaction starts, all data modifications by that transaction, even after that transaction commits, are ignored by the snapshot transaction.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_version_store",
+			"isactive": false,
+			"description": "Returns a virtual table that displays all version records in the version store. sys.dm_tran_version_store is inefficient to run because it queries the entire version store, and the version store can be very large. Each versioned record is stored as binary data together with some tracking or status information. Similar to records in database tables, version-store records are stored in 8192-byte pages. If a record exceeds 8192 bytes, the record will be split across two different records. Because the versioned record is stored as binary, there are no problems with different collations from different databases. Use sys.dm_tran_version_store to find the previous versions of the rows in binary representation as they exist in the version store.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_version_store_space_usage",
+			"isactive": false,
+			"description": "Returns a table that displays total space in tempdb used by version store records for each database. sys.dm_tran_version_store_space_usage is efficient and not expensive to run, as it does not navigate through individual version store records, and returns aggregated version store space consumed in tempdb per database. Each versioned record is stored as binary data, together with some tracking or status information. Similar to records in database tables, version-store records are stored in 8192-byte pages. If a record exceeds 8192 bytes, the record will be split across two different records. Because the versioned record is stored as binary, there are no problems with different collations from different databases. Use sys.dm_tran_version_store_space_usage to monitor and plan tempdb size based on the version store space usage of databases in a SQL Server instance.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.all_columns",
+			"isactive": false,
+			"description": "Shows the union of all columns belonging to user-defined objects and system objects.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.all_objects",
+			"isactive": false,
+			"description": "Shows the UNION of all schema-scoped user-defined objects and system objects.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.all_parameters",
+			"isactive": false,
+			"description": "Shows the union of all parameters that belong to user-defined or system objects.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.all_sql_modules",
+			"isactive": false,
+			"description": "Returns the union of\u00c2\u00a0sys.sql_modules\u00c2\u00a0and\u00c2\u00a0sys.system_sql_modules.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.all_views",
+			"isactive": false,
+			"description": "Shows the UNION of all user-defined and system views.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.allocation_units",
+			"isactive": false,
+			"description": "Contains a row for each allocation unit in the database.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.assembly_modules",
+			"isactive": false,
+			"description": "Returns one row for each function, procedure or trigger that is defined by a common language runtime (CLR) assembly. This catalog view maps CLR stored procedures, CLR triggers, or CLR functions to their underlying implementation. Objects of type TA, AF, PC, FS, and FT have an associated assembly module. To find the association between the object and the assembly, you can join this catalog view to other catalog views. For example, when you create a CLR stored procedure, it is represented by one row in\u00c2\u00a0sys.objects, one row in\u00c2\u00a0sys.procedures\u00c2\u00a0(which inherits from\u00c2\u00a0sys.objects), and one row in\u00c2\u00a0sys.assembly_modules. The stored procedure itself is represented by the metadata in\u00c2\u00a0sys.objects\u00c2\u00a0and\u00c2\u00a0sys.procedures. References to the procedure's underlying CLR implementation are found in\u00c2\u00a0sys.assembly_modules.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.check_constraints",
+			"isactive": false,
+			"description": "Contains a row for each object that is a CHECK constraint, with\u00c2\u00a0sys.objects.type\u00c2\u00a0= 'C'.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.column_store_dictionaries",
+			"isactive": false,
+			"description": "Contains a row for each dictionary used in xVelocity memory optimized columnstore indexes. Dictionaries are used to encode some, but not all data types, therefore not all columns in a columnstore index have dictionaries. A dictionary can exist as a primary dictionary (for all segments) and possibly for other secondary dictionaries used for a subset of the column's segments.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.column_store_row_groups",
+			"isactive": false,
+			"description": "Provides clustered columnstore index information on a per-segment basis to help the administrator make system management decisions.\u00c2\u00a0sys.column_store_row_groups\u00c2\u00a0has a column for the total number of rows physically stored (including those marked as deleted) and a column for the number of rows marked as deleted. Use\u00c2\u00a0sys.column_store_row_groups\u00c2\u00a0to determine which row groups have a high percentage of deleted rows and should be rebuilt.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.column_store_segments",
+			"isactive": false,
+			"description": "Returns one row for each column segment in a columnstore index. There is one column segment per column per rowgroup. For example, a table with 10 rowgroups and 34 columns returns 340 rows.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.columns",
+			"isactive": false,
+			"description": "Returns a row for each column of an object that has columns, such as views or tables. The following is a list of object types that have columns: Table-valued assembly functions (FT). Inline table-valued SQL functions (IF). Internal tables (IT). System tables (S). Table-valued SQL functions (TF). User tables (U). Views (V).",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.computed_columns",
+			"isactive": false,
+			"description": "Contains a row for each column found in\u00c2\u00a0sys.columns\u00c2\u00a0that is a computed-column.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.default_constraints",
+			"isactive": false,
+			"description": "Contains a row for each object that is a default definition (created as part of a CREATE TABLE or ALTER TABLE statement instead of a CREATE DEFAULT statement), with\u00c2\u00a0sys.objects.type\u00c2\u00a0= D.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.events",
+			"isactive": false,
+			"description": "Contains a row for each event for which a trigger or event notification fires. These events represent the event types that are specified when the trigger or event notification is created by using\u00c2\u00a0CREATE TRIGGER\u00c2\u00a0or\u00c2\u00a0CREATE EVENT NOTIFICATION.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.event_notifications",
+			"isactive": false,
+			"description": "Returns a row for each object that is an event notification, with\u00c2\u00a0sys.objects.type\u00c2\u00a0= EN.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.event_notification_event_types",
+			"isactive": false,
+			"description": "Returns a row for each event or event group on which an event notification can fire.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.extended_procedures",
+			"isactive": false,
+			"description": "Contains a row for each object that is an extended stored procedure, with\u00c2\u00a0sys.objects.type\u00c2\u00a0= X. Because extended stored procedures are installed into the\u00c2\u00a0master\u00c2\u00a0database, they are only visible from that database context. Selecting from the\u00c2\u00a0sys.extended_procedures\u00c2\u00a0view in any other database context will return an empty result set.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_language_files",
+			"isactive": false,
+			"description": "This catalog view provides a list of the external language extension files in the database. R and Python are reserved names and no external language can be created with those specific names. When an external language is created from a file_spec, the extension itself and its properties are listed in this view. This view will contain one entry per language, per OS.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_languages",
+			"isactive": false,
+			"description": "This catalog view provides a list of the external languages in the database.\u00c2\u00a0R\u00c2\u00a0and\u00c2\u00a0Python\u00c2\u00a0are reserved names and no external language can be created with those specific names.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_libraries",
+			"isactive": false,
+			"description": "Supports the management of package libraries related to external runtimes such as R, Python, and Java.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_library_files",
+			"isactive": false,
+			"description": "Lists a row for each file that makes up an external library.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.foreign_keys",
+			"isactive": false,
+			"description": "Contains a row per object that is a FOREIGN KEY constraint, with\u00c2\u00a0sys.object.type\u00c2\u00a0= F.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.foreign_key_columns",
+			"isactive": false,
+			"description": "Contains a row for each column, or set of columns, that comprise a foreign key.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.function_order_columns",
+			"isactive": false,
+			"description": "Returns one row per column that is a part of an\u00c2\u00a0ORDER\u00c2\u00a0expression of a common language runtime (CLR) table-valued function.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.hash_indexes",
+			"isactive": false,
+			"description": "Shows the current hash indexes and the hash index properties. Hash indexes are supported only on In-Memory OLTP (In-Memory Optimization). The sys.hash_indexes view contains the same columns as the sys.indexes view and an additional column named bucket_count. For more information about the other columns in the sys.hash_indexes view, see sys.indexes (Transact-SQL).",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.identity_columns",
+			"isactive": false,
+			"description": "Contains a row for each column that is an identity column. The sys.identity_columns view inherits rows from the sys.columns view. The sys.identity_columns view returns the columns in the sys.columns view, plus the seed_value, increment_value, last_value, and is_not_for_replication columns. For more information, see Catalog Views (Transact-SQL).",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.indexes",
+			"isactive": false,
+			"description": "Contains a row per index or heap of a tabular object, such as a table, view, or table-valued function.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.index_columns",
+			"isactive": false,
+			"description": "Contains one row per column that is part of a\u00c2\u00a0sys.indexes\u00c2\u00a0index or unordered table (heap).",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.index_resumable_operations",
+			"isactive": false,
+			"description": "sys.index_resumable_operations\u00c2\u00a0is a system view that monitors and checks the current execution status for resumable Index rebuild or creation.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.internal_partitions",
+			"isactive": false,
+			"description": "Returns one row for each rowset that tracks internal data for columnstore indexes on disk-based tables. These rowsets are internal to columnstore indexes and track deleted rows, rowgroup mappings, and delta store rowgroups. They track data for each for each table partition; every table has at least one partition. SQL Server re-creates the rowsets each time it rebuilds the columnstore index.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.internal_tables",
+			"isactive": false,
+			"description": "Returns one row for each object that is an internal table. Internal tables are automatically generated by SQL Server to support various features. For example, when you create a primary XML index, SQL Server automatically creates an internal table to persist the shredded XML document data. Internal tables appear in the sys schema of every database and have unique, system-generated names that indicate their function, for example, xml_index_nodes_2021582240_32001 or queue_messages_1977058079. Internal tables do not contain user-accessible data, and their schema are fixed and unalterable. You cannot reference internal table names in Transact-SQL statements. For example, you cannot execute a statement such as SELECT * FROM <sys.internal_table_name>. However, you can query catalog views to see the metadata of internal tables.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.key_constraints",
+			"isactive": false,
+			"description": "Contains a row for each object that is a primary key or unique constraint. Includes\u00c2\u00a0sys.objects.type\u00c2\u00a0PK and UQ.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.masked_columns",
+			"isactive": false,
+			"description": "Use the\u00c2\u00a0sys.masked_columns\u00c2\u00a0view to query for table-columns that have a dynamic data masking function applied to them. This view inherits from the\u00c2\u00a0sys.columns\u00c2\u00a0view. It returns all columns in the\u00c2\u00a0sys.columns\u00c2\u00a0view, plus the\u00c2\u00a0is_masked\u00c2\u00a0and\u00c2\u00a0masking_function\u00c2\u00a0columns, indicating if the column is masked, and if so, what masking function is defined. This view only shows the columns on which there is a masking function applied.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.memory_optimized_tables_internal_attributes",
+			"isactive": false,
+			"description": "Contains a row for each internal memory-optimized table used for storing user memory-optimized tables. Each user table corresponds to one or more internal tables. A single table is used for the core data storage. Additional internal tables are used to support features such as temporal, columnstore index and off-row (LOB) storage for memory-optimized tables.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.module_assembly_usages",
+			"isactive": false,
+			"description": "Returns a row for each module-to-assembly reference.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.numbered_procedures",
+			"isactive": false,
+			"description": "Contains a row for each SQL Server stored procedure that was created as a numbered procedure. This does not show a row for the base (number = 1) stored procedure. Entries for the base stored procedures can be found in views such as sys.objects and sys.procedures.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.numbered_procedure_parameters",
+			"isactive": false,
+			"description": "Contains one row for each parameter of a numbered procedure. When you create a numbered stored procedure, the base procedure is number 1. All subsequent procedures have numbers 2, 3, and so forth.\u00c2\u00a0sys.numbered_procedure_parameters\u00c2\u00a0contains the parameter definitions for all subsequent procedures, numbered 2 and greater. This view does not show parameters for the base stored procedure (number = 1). The base stored procedure is similar to a nonnumbered stored procedure. Therefore, its parameters are represented in\u00c2\u00a0sys.parameters (Transact-SQL).",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.objects",
+			"isactive": false,
+			"description": "Contains a row for each user-defined, schema-scoped object that is created within a database, including natively compiled scalar user-defined function.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.parameters",
+			"isactive": false,
+			"description": "Contains a row for each parameter of an object that accepts parameters. If the object is a scalar function, there is also a single row describing the return value. That row will have a\u00c2\u00a0parameter_id\u00c2\u00a0value of 0.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.partitions",
+			"isactive": false,
+			"description": "Contains a row for each partition of all the tables and most types of indexes in the database. Special index types such as Full-Text, Spatial, and XML are not included in this view. All tables and indexes in SQL Server contain at least one partition, whether or not they are explicitly partitioned.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.periods",
+			"isactive": false,
+			"description": "Returns a row for each table for which periods have been defined.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.plan_guides",
+			"isactive": false,
+			"description": "Contains a row for each plan guide in the database.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.procedures",
+			"isactive": false,
+			"description": "Contains a row for each object that is a procedure of some kind, with\u00c2\u00a0sys.objects.type\u00c2\u00a0= P, X, RF, and PC.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sequences",
+			"isactive": false,
+			"description": "Contains a row for each sequence object in a database.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_assembly_modules",
+			"isactive": false,
+			"description": "Contains one row for each assembly module for the server-level triggers of type TA. This view maps assembly triggers to the underlying CLR implementation. You can join this relation to\u00c2\u00a0sys.server_triggers. The assembly must be loaded into the\u00c2\u00a0master\u00c2\u00a0database. The tuple (object_id) is the key for the relation.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_events",
+			"isactive": false,
+			"description": "Contains one row for each event for which a server-level event-notification or server-level DDL trigger fires. The columns\u00c2\u00a0object_id\u00c2\u00a0and\u00c2\u00a0type\u00c2\u00a0uniquely identify the server event.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_event_notifications",
+			"isactive": false,
+			"description": "Returns a row for each server-level event notification object.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_sql_modules",
+			"isactive": false,
+			"description": "Contains the set of SQL modules for server-level triggers of type TR. You can join this relation to sys.server_triggers. The tuple (object_id) is the key of the relation.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_triggers",
+			"isactive": false,
+			"description": "Contains the set of all server-level DDL triggers with object_type of TR or TA. In the case of CLR triggers, the assembly must be loaded into the\u00c2\u00a0master\u00c2\u00a0database. All server-level DDL trigger names exist in a single, global scope.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_trigger_events",
+			"isactive": false,
+			"description": "Contains one row for each event for which a server-level (synchronous) trigger fires.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sql_dependencies",
+			"isactive": false,
+			"description": "Contains a row for each dependency on a referenced entity as referenced in the Transact-SQL expression or statements that define some other referencing object.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sql_expression_dependencies",
+			"isactive": false,
+			"description": "Contains one row for each by-name dependency on a user-defined entity in the current database. This includes dependencies between natively compiled, scalar user-defined functions and other SQL Server modules. A dependency between two entities is created when one entity, called the referenced entity, appears by name in a persisted SQL expression of another entity, called the referencing entity. For example, when a table is referenced in the definition of a view, the view, as the referencing entity, depends on the table, the referenced entity. If the table is dropped, the view is unusable. For more information, see Scalar User-Defined Functions for In-Memory OLTP. You can use this catalog view to report dependency information for the following entities: Schema-bound entities. Non-schema-bound entities. Cross-database and cross-server entities. Entity names are reported; however, entity IDs are not resolved. Column-level dependencies on schema-bound entities. Column-level dependencies for non-schema-bound objects can be returned by using sys.dm_sql_referenced_entities. Server-level DDL triggers when in the context of the master database.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sql_modules",
+			"isactive": false,
+			"description": "Returns a row for each object that is an SQL language-defined module in SQL Server, including natively compiled scalar user-defined function. Objects of type P, RF, V, TR, FN, IF, TF, and R have an associated SQL module. Stand-alone defaults, objects of type D, also have an SQL module definition in this view. For a description of these types, see the\u00c2\u00a0type\u00c2\u00a0column in the\u00c2\u00a0sys.objects\u00c2\u00a0catalog view.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.stats",
+			"isactive": false,
+			"description": "Contains a row for each statistics object that exists for the tables, indexes, and indexed views in the database in SQL Server. Every index will have a corresponding statistics row with the same name and ID (index_id = stats_id), but not every statistics row has a corresponding index. The catalog view sys.stats_columns provides statistics information for each column in the database. For more information about statistics, see Statistics.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.stats_columns",
+			"isactive": false,
+			"description": "Contains a row for each column that is part of\u00c2\u00a0sys.stats\u00c2\u00a0statistics.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.synonyms",
+			"isactive": false,
+			"description": "Contains a row for each synonym object that is\u00c2\u00a0sys.objects.type\u00c2\u00a0= SN.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.system_columns",
+			"isactive": false,
+			"description": "Contains a row for each column of system objects that have columns.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.system_objects",
+			"isactive": false,
+			"description": "Contains one row for all schema-scoped system objects that are included with Microsoft SQL Server. All system objects are contained in the schemas named sys or INFORMATION_SCHEMA.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.system_parameters",
+			"isactive": false,
+			"description": "Contains one row for each system object that has parameters.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.system_sql_modules",
+			"isactive": false,
+			"description": "Returns one row per system object that contains an SQL language-defined module. System objects of type FN, IF, P, PC, TF, V have an associated SQL module. To identify the containing object, you can join this view to\u00c2\u00a0sys.system_objects.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.system_views",
+			"isactive": false,
+			"description": "Contains one row for each system view that is shipped with SQL Server. All system views are contained in the schemas named\u00c2\u00a0sys\u00c2\u00a0or\u00c2\u00a0INFORMATION_SCHEMA.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.table_types",
+			"isactive": false,
+			"description": "Displays properties of user-defined table types in SQL Server. A table type is a type from which table variables or table-valued parameters could be declared. Each table type has a\u00c2\u00a0type_table_object_id\u00c2\u00a0that is a foreign key into the\u00c2\u00a0sys.objects\u00c2\u00a0catalog view. You can use this ID column to query various catalog views, in a way that is similar to an\u00c2\u00a0object_id\u00c2\u00a0column of a regular table, to discover the structure of the table type such as its columns and constraints.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.tables",
+			"isactive": false,
+			"description": "Returns a row for each user table in SQL Server.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.trigger_event_types",
+			"isactive": false,
+			"description": "Returns a row for each event or event group on which a trigger can fire.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.trigger_events",
+			"isactive": false,
+			"description": "Contains a row per event for which a trigger fires.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.triggers",
+			"isactive": false,
+			"description": "Contains a row for each object that is a trigger, with a type of TR or TA. DML trigger names are schema-scoped and, therefore, are visible in sys.objects. DDL trigger names are scoped by the parent entity and are only visible in this view. The parent_class and name columns uniquely identify the trigger in the database.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.views",
+			"isactive": false,
+			"description": "Contains a row for each view object, with\u00c2\u00a0sys.objects.type\u00c2\u00a0= V.",
+			"category": [
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_column_store_object_pool",
+			"isactive": false,
+			"description": "Returns counts of different types of object memory pool usage for columnstore index objects.",
+			"category": [
+				"Index"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_column_store_row_group_operational_stats",
+			"isactive": false,
+			"description": "Returns current row-level I/O, locking, and access method activity for compressed rowgroups in a columnstore index. Use sys.dm_db_column_store_row_group_operational_stats to track the length of time a user query must wait to read or write to a compressed rowgroup or partition of a columnstore index, and identify rowgroups that are encountering significant I/O activity or hot spots. In-memory columnstore indexes do not appear in this DMV.",
+			"category": [
+				"Index"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_column_store_row_group_physical_stats",
+			"isactive": false,
+			"description": "Provides current rowgroup-level information about all of the columnstore indexes in the current database. This extends the catalog view sys.column_store_row_groups (Transact-SQL).",
+			"category": [
+				"Index"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_index_operational_stats",
+			"isactive": false,
+			"description": "Returns current lower-level I/O, locking, latching, and access method activity for each partition of a table or index in the database. Memory-optimized indexes do not appear in this DMV.",
+			"category": [
+				"Index",
+				"Performance Tuning"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_db_index_physical_stats",
+			"isactive": false,
+			"description": "Returns size and fragmentation information for the data and indexes of the specified table or view in SQL Server. For an index, one row is returned for each level of the B-tree in each partition. For a heap, one row is returned for the IN_ROW_DATA allocation unit of each partition. For large object (LOB) data, one row is returned for the LOB_DATA allocation unit of each partition. If row-overflow data exists in the table, one row is returned for the ROW_OVERFLOW_DATA allocation unit in each partition. Does not return information about xVelocity memory optimized columnstore indexes.",
+			"category": [
+				"Index"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_db_index_usage_stats",
+			"isactive": true,
+			"description": "Returns counts of different types of index operations and the time each type of operation was last performed. In Azure SQL Database, dynamic management views cannot expose information that would impact database containment or expose information about other databases the user has access to. To avoid exposing this information, every row that contains data that doesn't belong to the connected tenant is filtered out.",
+			"category": [
+				"Index",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_missing_index_columns",
+			"isactive": false,
+			"description": "Returns information about database table columns that are missing an index, excluding spatial indexes. sys.dm_db_missing_index_columns is a dynamic management function.",
+			"category": [
+				"Index"
+			],
+			"object_type": "dmf"
+		},
+		{
+			"data_management_view": "sys.dm_db_missing_index_details",
+			"isactive": true,
+			"description": "Returns detailed information about missing indexes, excluding spatial indexes. In Azure SQL Database, dynamic management views cannot expose information that would impact database containment or expose information about other databases the user has access to. To avoid exposing this information, every row that contains data that doesn't belong to the connected tenant is filtered out.",
+			"category": [
+				"Index",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_missing_index_groups",
+			"isactive": true,
+			"description": "This DMV returns information about indexes that are missing in a specific index group, except for spatial indexes. In Azure SQL Database, dynamic management views cannot expose information that would impact database containment or expose information about other databases the user has access to. To avoid exposing this information, every row that contains data that doesn't belong to the connected tenant is filtered out.",
+			"category": [
+				"Index",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_missing_index_group_stats",
+			"isactive": true,
+			"description": "Returns summary information about groups of missing indexes, excluding spatial indexes. In Azure SQL Database, dynamic management views cannot expose information that would impact database containment or expose information about other databases the user has access to. To avoid exposing this information, every row that contains data that doesn't belong to the connected tenant is filtered out.",
+			"category": [
+				"Index",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_missing_index_group_stats_query",
+			"isactive": false,
+			"description": "Returns information about queries that needed a missing index from groups of missing indexes, excluding spatial indexes. More than one query may be returned per missing index group. One missing index group may have several queries that needed the same index. In Azure SQL Database, dynamic management views cannot expose information that would impact database containment or expose information about other databases the user has access to. To avoid exposing this information, every row that contains data that doesn't belong to the connected tenant is filtered out.",
+			"category": [
+				"Index"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_mirroring_auto_page_repair",
+			"isactive": false,
+			"description": "Returns a row for every automatic page-repair attempt on any mirrored database on the server instance.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_mirroring_connections",
+			"isactive": false,
+			"description": "Returns a row for each connection established for database mirroring.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_mirroring_past_actions",
+			"isactive": false,
+			"description": "Returns a row for each action in the database mirroring history.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_persisted_sku_features",
+			"isactive": false,
+			"description": "Returns information about features that are specific to certain editions of SQL Server and that have been used in the database.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_rda_migration_status",
+			"isactive": false,
+			"description": "Contains one row for each batch of migrated data from each Stretch-enabled table on the local instance of SQL Server.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_rda_schema_update_status",
+			"isactive": false,
+			"description": "Contains one row for each schema update task for the remote data archive of each Stretch-enabled table in the current database.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_script_level",
+			"isactive": false,
+			"description": "Returns the script level of the database.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_storage_pool_nodes",
+			"isactive": false,
+			"description": "Returns information about storage pool nodes in SQL Server Big Data Clusters.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_storage_pools",
+			"isactive": false,
+			"description": "Returns information about storage pools in SQL Server Big Data Clusters.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_tuning_recommendations",
+			"isactive": false,
+			"description": "Returns detailed information about tuning recommendations.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_uncontained_entities",
+			"isactive": false,
+			"description": "Shows any uncontained objects used in the database. An uncontained object is an object that crosses the database boundary in a contained database.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_checkpoint_files",
+			"isactive": true,
+			"description": "Displays information about the checkpoint files for In-Memory OLTP.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_checkpoint_internals",
+			"isactive": true,
+			"description": "Returns information about the internal checkpoint state for In-Memory OLTP.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_checkpoint_stats",
+			"isactive": true,
+			"description": "Returns statistics about the In-Memory OLTP checkpoint operations in the current database.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_gc_cycle_stats",
+			"isactive": true,
+			"description": "Returns information about the garbage collection cycles for In-Memory OLTP.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_hash_index_stats",
+			"isactive": true,
+			"description": "Returns statistics about the hash indexes on memory-optimized tables.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_index_stats",
+			"isactive": true,
+			"description": "Contains statistics about In-Memory OLTP indexes.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_memory_consumers",
+			"isactive": true,
+			"description": "Reports the database-level memory consumers for the In-Memory OLTP database engine.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_nonclustered_index_stats",
+			"isactive": true,
+			"description": "Contains statistics about nonclustered indexes on memory-optimized tables.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_object_stats",
+			"isactive": true,
+			"description": "Reports the number of rows affected by operations on each In-Memory OLTP object since the last database restart.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_table_memory_stats",
+			"isactive": true,
+			"description": "Returns memory usage statistics for each In-Memory OLTP table (user and system) in the current database.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_db_xtp_transactions",
+			"isactive": true,
+			"description": "Reports the active transactions in the In-Memory OLTP database engine.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dist_requests",
+			"isactive": false,
+			"description": "Holds information about all requests currently or recently active in SQL Data Warehouse distributions.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_distributed_exchange_stats",
+			"isactive": false,
+			"description": "Returns information about data movement operations (shuffle, broadcast, etc.) in distributed queries.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_databases",
+			"isactive": false,
+			"description": "Returns information about databases in Azure Synapse Analytics.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_locks",
+			"isactive": false,
+			"description": "Returns information about locks in Azure Synapse Analytics.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_pit_databases",
+			"isactive": false,
+			"description": "Returns information about point-in-time databases in Azure Synapse Analytics.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_quality_clustering",
+			"isactive": false,
+			"description": "Returns quality metrics for clustering operations in Azure Synapse Analytics.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_quality_delta",
+			"isactive": false,
+			"description": "Returns quality metrics for delta operations in Azure Synapse Analytics.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_quality_index",
+			"isactive": false,
+			"description": "Returns quality metrics for index operations in Azure Synapse Analytics.",
+			"category": [
+				"Index",
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_quality_row_group",
+			"isactive": false,
+			"description": "Returns information about dw quality row group.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_resource_manager_abort_cache",
+			"isactive": true,
+			"description": "Returns information about dw resource manager abort cache.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_resource_manager_active_tran",
+			"isactive": false,
+			"description": "Returns information about dw resource manager active tran.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_tran_manager_abort_cache",
+			"isactive": true,
+			"description": "Returns information about dw tran manager abort cache.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_tran_manager_active_cache",
+			"isactive": true,
+			"description": "Returns information about dw tran manager active cache.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_dw_tran_manager_commit_cache",
+			"isactive": true,
+			"description": "Returns information about dw tran manager commit cache.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_compute_pools",
+			"isactive": false,
+			"description": "Returns execution information about compute pools.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_query_transformation_stats",
+			"isactive": false,
+			"description": "Returns execution information about query transformation stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_exec_requests_history",
+			"isactive": false,
+			"description": "Returns execution information about requests history.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_external_authentication",
+			"isactive": false,
+			"description": "Returns information about external authentication.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_external_data_processed",
+			"isactive": false,
+			"description": "Returns information about external data processed.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_external_policy_cache",
+			"isactive": true,
+			"description": "Returns information about external policy cache.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_external_script_resource_usage_stats",
+			"isactive": false,
+			"description": "Returns information about external script resource usage stats.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_filestream_file_io_handles",
+			"isactive": true,
+			"description": "Displays the file handles that the namespace owner (NSO) currently has open.",
+			"category": [
+				"I/O",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_filestream_file_io_requests",
+			"isactive": true,
+			"description": "Displays a list of file I/O requests at the given instant.",
+			"category": [
+				"I/O",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_filestream_non_transacted_handles",
+			"isactive": false,
+			"description": "Displays the currently open non-transactional file handles associated with FileTable data.",
+			"category": [
+				"Filestream"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_fts_active_catalogs",
+			"isactive": false,
+			"description": "Returns information on the full-text catalogs that have some population activity in progress on the server.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_fts_fdhosts",
+			"isactive": false,
+			"description": "Returns information on the current activity of the filter daemon host or hosts on the server instance.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_fts_index_population",
+			"isactive": false,
+			"description": "Returns information about the full-text index populations currently in progress.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_fts_memory_buffers",
+			"isactive": true,
+			"description": "Returns information about memory buffers belonging to a specific memory pool that are used as part of a full-text crawl or a full-text crawl range.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_fts_memory_pools",
+			"isactive": true,
+			"description": "Returns information about the shared memory pools available to the Full-Text Gatherer component for a full-text crawl or a full-text crawl range.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_fts_outstanding_batches",
+			"isactive": false,
+			"description": "Returns information about each full-text indexing batch.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_fts_population_ranges",
+			"isactive": false,
+			"description": "Returns information about the specific ranges related to a full-text index population currently in progress.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_fts_semantic_similarity_population",
+			"isactive": false,
+			"description": "Returns one row of status information about the population of the similarity index for each similarity index in each table that has an associated semantic index.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_ag_threads",
+			"isactive": false,
+			"description": "Returns information about Always On Availability Groups ag threads.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_auto_page_repair",
+			"isactive": false,
+			"description": "Returns a row for every automatic page-repair attempt on any availability database on an availability replica.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_automatic_seeding",
+			"isactive": false,
+			"description": "Returns information about Always On Availability Groups automatic seeding.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_availability_group_states",
+			"isactive": false,
+			"description": "Returns a row for each Always On availability group that possesses an availability replica on the local instance of SQL Server.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_availability_replica_cluster_nodes",
+			"isactive": false,
+			"description": "Returns a row for every availability replica (regardless of join state) of the Always On availability groups in the WSFC cluster.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_availability_replica_cluster_states",
+			"isactive": false,
+			"description": "Returns a row for each Always On availability replica (regardless of join state) of all Always On availability groups in the WSFC cluster.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_availability_replica_states",
+			"isactive": false,
+			"description": "Returns a row for each local replica and a row for each remote replica in the same Always On availability group.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_cached_database_replica_states",
+			"isactive": true,
+			"description": "Returns information about Always On Availability Groups cached database replica states.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_cached_replica_states",
+			"isactive": true,
+			"description": "Returns information about Always On Availability Groups cached replica states.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_cluster",
+			"isactive": false,
+			"description": "Returns a row that exposes the cluster name and information about the quorum.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_cluster_members",
+			"isactive": false,
+			"description": "Returns a row for each of the members that constitute the quorum and the state of each of them.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_cluster_networks",
+			"isactive": false,
+			"description": "Returns a row for every WSFC cluster member that is participating in an availability group subnet configuration.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_database_replica_cluster_states",
+			"isactive": false,
+			"description": "Returns a row containing information intended to provide you with insight into the health of the availability databases in the Always On availability groups in each Always On availability group on the WSFC cluster.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_database_replica_states",
+			"isactive": false,
+			"description": "Returns a row for each database that is participating in an Always On availability group for which the local instance of SQL Server is hosting an availability replica.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_db_threads",
+			"isactive": false,
+			"description": "Returns information about Always On Availability Groups db threads.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_instance_node_map",
+			"isactive": false,
+			"description": "For every availability replica that hosts an availability replica that is joined to its Always On availability group, returns the name of the WSFC node that hosts the server instance.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_name_id_map",
+			"isactive": false,
+			"description": "Shows the mapping of Always On availability groups that the current instance of SQL Server has joined to three unique IDs.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hadr_physical_seeding_stats",
+			"isactive": false,
+			"description": "Returns information about physical seeding operations that are currently running.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hpc_device_stats",
+			"isactive": false,
+			"description": "Returns information about hpc device stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_hpc_thread_proxy_stats",
+			"isactive": false,
+			"description": "Returns information about hpc thread proxy stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_io_backup_tapes",
+			"isactive": true,
+			"description": "Returns a list of tape devices and the status of mount requests for backups.",
+			"category": [
+				"I/O",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_io_cluster_shared_drives",
+			"isactive": true,
+			"description": "Returns the name of each of the shared drives if the current server instance is a clustered server.",
+			"category": [
+				"I/O",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_io_cluster_valid_path_names",
+			"isactive": true,
+			"description": "Returns information about all valid shared disks, including clustered shared volumes, for a failover cluster instance of SQL Server.",
+			"category": [
+				"I/O",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_io_pending_io_requests",
+			"isactive": true,
+			"description": "Returns a row for each pending I/O request in SQL Server.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_logpool_hashentries",
+			"isactive": false,
+			"description": "Returns information about logpool hashentries.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_logpool_stats",
+			"isactive": false,
+			"description": "Returns information about logpool stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_buffer_descriptors",
+			"isactive": true,
+			"description": "Returns information about all the data pages that are currently in the SQL Server buffer pool.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_buffer_pool_extension_configuration",
+			"isactive": true,
+			"description": "Returns configuration information about the buffer pool extension in SQL Server.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_child_instances",
+			"isactive": false,
+			"description": "Returns operating system information about child instances.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_cluster_nodes",
+			"isactive": false,
+			"description": "Returns a row for each node in the failover cluster instance configuration.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_cluster_properties",
+			"isactive": false,
+			"description": "Returns one row with the current settings for the SQL Server cluster resource properties.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_dispatcher_pools",
+			"isactive": false,
+			"description": "Returns information about session dispatcher pools.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_dispatchers",
+			"isactive": false,
+			"description": "Returns information about all the dispatchers currently in the system.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_enumerate_fixed_drives",
+			"isactive": false,
+			"description": "Returns information about volumes mounted to drive letters like C:.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_host_info",
+			"isactive": false,
+			"description": "Returns one row that displays operating system version information.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_hosts",
+			"isactive": false,
+			"description": "Returns operating system information about hosts.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_job_object",
+			"isactive": false,
+			"description": "Returns operating system information about job object.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_latch_stats",
+			"isactive": true,
+			"description": "Returns information about all latch waits.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_loaded_modules",
+			"isactive": true,
+			"description": "Returns a row for each module loaded into the server address space.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_allocations",
+			"isactive": true,
+			"description": "Returns all memory allocations that are currently outstanding and have not been freed.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_broker_clerks",
+			"isactive": true,
+			"description": "Returns information about all allocations that are specific to memory broker clerks.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_brokers",
+			"isactive": true,
+			"description": "Returns information about allocations that are internal to SQL Server using the SQL Server memory manager.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_cache_clock_hands",
+			"isactive": true,
+			"description": "Returns information about each hand for a specific cache clock.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_cache_counters",
+			"isactive": true,
+			"description": "Returns a snapshot of the health of a cache in SQL Server.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_cache_entries",
+			"isactive": true,
+			"description": "Returns information about all entries in caches in SQL Server.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_cache_hash_tables",
+			"isactive": true,
+			"description": "Returns a row for each active cache in the instance of SQL Server.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_clerks",
+			"isactive": true,
+			"description": "Returns the set of all memory clerks that are currently active in the instance of SQL Server.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_node_access_stats",
+			"isactive": true,
+			"description": "Returns information about memory node access statistics.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_nodes",
+			"isactive": true,
+			"description": "Returns information about memory usage per NUMA node.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_objects",
+			"isactive": true,
+			"description": "Returns memory objects that are currently allocated by SQL Server.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_memory_pools",
+			"isactive": true,
+			"description": "Returns a row for each object store in the instance of SQL Server.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_nodes",
+			"isactive": false,
+			"description": "Returns information about NUMA nodes in SQL Server.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_out_of_memory_events",
+			"isactive": true,
+			"description": "Returns operating system information about out of memory events.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_performance_counters",
+			"isactive": true,
+			"description": "Returns a row per performance counter maintained by the server.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_process_memory",
+			"isactive": true,
+			"description": "Returns information about memory usage by the SQL Server process.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_ring_buffers",
+			"isactive": true,
+			"description": "Returns information about the internal ring buffer diagnostics.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_schedulers",
+			"isactive": true,
+			"description": "Returns one row per scheduler in SQL Server where each scheduler is mapped to an individual processor.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_server_diagnostics_log_configurations",
+			"isactive": false,
+			"description": "Returns one row with the current configuration for the SQL Server diagnostics log.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_spinlock_stats",
+			"isactive": false,
+			"description": "Returns information about all spinlock waits.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_stacks",
+			"isactive": false,
+			"description": "Returns information about the call stacks of all threads in the SQL Server process.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_sublatches",
+			"isactive": false,
+			"description": "Returns information about sublatches.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_sys_info",
+			"isactive": true,
+			"description": "Returns a miscellaneous set of useful information about the computer and about the resources available to and consumed by SQL Server.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_sys_memory",
+			"isactive": true,
+			"description": "Returns memory information from the operating system.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_tasks",
+			"isactive": true,
+			"description": "Returns one row for each task that is active in the instance of SQL Server.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_threads",
+			"isactive": true,
+			"description": "Returns a list of all SQL Server Operating System threads that are running under the SQL Server process.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_virtual_address_dump",
+			"isactive": false,
+			"description": "Returns information about a range of pages in the virtual address space of the calling process.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_wait_stats",
+			"isactive": true,
+			"description": "Returns information about all the waits encountered by threads that executed.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_waiting_tasks",
+			"isactive": true,
+			"description": "Returns information about the wait queue of tasks that are waiting on some resource.",
+			"category": [
+				"Wait Statistics",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_windows_info",
+			"isactive": false,
+			"description": "Returns one row that displays Windows operating system version information.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_worker_local_storage",
+			"isactive": false,
+			"description": "Returns operating system information about worker local storage.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_os_workers",
+			"isactive": false,
+			"description": "Returns a row for every worker in the system.",
+			"category": [
+				"Operating System"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_pal_cpu_stats",
+			"isactive": false,
+			"description": "Returns information about pal cpu stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_pal_disk_stats",
+			"isactive": false,
+			"description": "Returns information about pal disk stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_pal_net_stats",
+			"isactive": false,
+			"description": "Returns information about pal net stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_pal_processes",
+			"isactive": false,
+			"description": "Returns information about pal processes.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_pal_spinlock_stats",
+			"isactive": false,
+			"description": "Returns information about pal spinlock stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_pal_vm_stats",
+			"isactive": false,
+			"description": "Returns information about pal vm stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_pal_wait_stats",
+			"isactive": true,
+			"description": "Returns information about pal wait stats.",
+			"category": [
+				"Wait Statistics",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_qn_subscriptions",
+			"isactive": false,
+			"description": "Returns information about qn subscriptions.",
+			"category": [
+				"Replication"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_repl_articles",
+			"isactive": false,
+			"description": "Returns information about database objects published as articles in a replication topology.",
+			"category": [
+				"Replication"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_repl_schemas",
+			"isactive": false,
+			"description": "Returns information about table columns published by replication.",
+			"category": [
+				"Replication"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_repl_tranhash",
+			"isactive": false,
+			"description": "Returns information about transactions being replicated in a transactional publication.",
+			"category": [
+				"Replication"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_repl_traninfo",
+			"isactive": false,
+			"description": "Returns information on each replicated or change data capture transaction.",
+			"category": [
+				"Replication"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_request_phases",
+			"isactive": false,
+			"description": "Returns information about request phases.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_request_phases_exec_task_stats",
+			"isactive": false,
+			"description": "Returns information about request phases exec task stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_request_phases_task_group_stats",
+			"isactive": false,
+			"description": "Returns information about request phases task group stats.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_resource_governor_configuration",
+			"isactive": true,
+			"description": "Returns a row that contains the current in-memory configuration state of Resource Governor.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_resource_governor_external_resource_pool_affinity",
+			"isactive": true,
+			"description": "Returns CPU affinity information about the current external resource pool configuration.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_resource_governor_external_resource_pools",
+			"isactive": true,
+			"description": "Returns information about the current external resource pool state, the current configuration of resource pools, and resource pool statistics.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_resource_governor_resource_pool_affinity",
+			"isactive": true,
+			"description": "Returns resource pool affinity information.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_resource_governor_resource_pool_volumes",
+			"isactive": true,
+			"description": "Returns information about the current resource pool I/O statistics for each disk volume.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_resource_governor_resource_pools",
+			"isactive": true,
+			"description": "Returns information about the current resource pool state, the current configuration of resource pools, and resource pool statistics.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_resource_governor_workload_groups",
+			"isactive": true,
+			"description": "Returns workload group statistics and the current in-memory configuration of the workload group.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_accelerator_status",
+			"isactive": false,
+			"description": "Returns information about server accelerator status.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_audit_status",
+			"isactive": false,
+			"description": "Returns a row for each server audit indicating the current state of the audit.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_external_policy_actions",
+			"isactive": false,
+			"description": "Returns information about server external policy actions.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_external_policy_principal_assigned_actions",
+			"isactive": false,
+			"description": "Returns information about server external policy principal assigned actions.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_external_policy_principals",
+			"isactive": false,
+			"description": "Returns information about server external policy principals.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_external_policy_role_actions",
+			"isactive": false,
+			"description": "Returns information about server external policy role actions.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_external_policy_role_members",
+			"isactive": false,
+			"description": "Returns information about server external policy role members.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_external_policy_roles",
+			"isactive": false,
+			"description": "Returns information about server external policy roles.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_memory_dumps",
+			"isactive": true,
+			"description": "Returns one row for each memory dump file generated by the Database Engine.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_registry",
+			"isactive": false,
+			"description": "Returns configuration and installation information that is stored in the Windows registry for the current instance of SQL Server.",
+			"category": [
+				"Server Configuration"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_services",
+			"isactive": false,
+			"description": "Returns information about the SQL Server, Full-Text, SQL Server Launchpad service (SQL Server 2017 and later), and SQL Server Agent services in the current instance of SQL Server.",
+			"category": [
+				"Server Configuration"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_server_suspend_status",
+			"isactive": false,
+			"description": "Returns information about server suspend status.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tcp_listener_states",
+			"isactive": false,
+			"description": "Returns information about tcp listener states.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_toad_tuning_zones",
+			"isactive": false,
+			"description": "Returns information about toad tuning zones.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_toad_work_item_handlers",
+			"isactive": false,
+			"description": "Returns information about toad work item handlers.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_toad_work_items",
+			"isactive": false,
+			"description": "Returns information about toad work items.",
+			"category": [
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_aborted_transactions",
+			"isactive": false,
+			"description": "Returns transaction information about aborted transactions.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_commit_table",
+			"isactive": false,
+			"description": "Returns transaction information about commit table.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_distributed_transaction_stats",
+			"isactive": false,
+			"description": "Returns transaction information about distributed transaction stats.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_global_recovery_transactions",
+			"isactive": false,
+			"description": "Returns transaction information about global recovery transactions.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_global_transactions",
+			"isactive": false,
+			"description": "Returns transaction information about global transactions.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_global_transactions_enlistments",
+			"isactive": false,
+			"description": "Returns transaction information about global transactions enlistments.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_global_transactions_log",
+			"isactive": false,
+			"description": "Returns transaction information about global transactions log.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_orphaned_distributed_transactions",
+			"isactive": false,
+			"description": "Returns transaction information about orphaned distributed transactions.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_persistent_version_store",
+			"isactive": false,
+			"description": "Returns transaction information about persistent version store.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_tran_persistent_version_store_stats",
+			"isactive": false,
+			"description": "Returns transaction information about persistent version store stats.",
+			"category": [
+				"Transaction"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xe_map_values",
+			"isactive": false,
+			"description": "Provides a mapping of internal numeric keys to human-readable text.",
+			"category": [
+				"Extended Events"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xe_object_columns",
+			"isactive": false,
+			"description": "Returns the schema information for all the objects.",
+			"category": [
+				"Extended Events"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xe_objects",
+			"isactive": false,
+			"description": "Returns a row for each object that is exposed by an event package.",
+			"category": [
+				"Extended Events"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xe_packages",
+			"isactive": false,
+			"description": "Lists all the packages registered with the extended events engine.",
+			"category": [
+				"Extended Events"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xe_session_event_actions",
+			"isactive": false,
+			"description": "Returns information about event session actions.",
+			"category": [
+				"Extended Events"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xe_session_events",
+			"isactive": false,
+			"description": "Returns information about session events.",
+			"category": [
+				"Extended Events"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xe_session_object_columns",
+			"isactive": false,
+			"description": "Shows the configuration values for objects that are bound to a session.",
+			"category": [
+				"Extended Events"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xe_session_targets",
+			"isactive": false,
+			"description": "Returns information about session targets.",
+			"category": [
+				"Extended Events"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xe_sessions",
+			"isactive": false,
+			"description": "Returns information about an active Extended Events session.",
+			"category": [
+				"Extended Events"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xtp_gc_queue_stats",
+			"isactive": false,
+			"description": "Returns information about xtp gc queue stats.",
+			"category": [
+				"Service Broker"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xtp_gc_stats",
+			"isactive": true,
+			"description": "Returns information about xtp gc stats.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xtp_system_memory_consumers",
+			"isactive": true,
+			"description": "Returns information about xtp system memory consumers.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xtp_threads",
+			"isactive": true,
+			"description": "Returns information about xtp threads.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xtp_transaction_recent_rows",
+			"isactive": true,
+			"description": "Returns information about xtp transaction recent rows.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.dm_xtp_transaction_stats",
+			"isactive": true,
+			"description": "Returns information about xtp transaction stats.",
+			"category": [
+				"In-Memory OLTP",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.edge_constraint_clauses",
+			"isactive": false,
+			"description": "System catalog view for edge constraint clauses.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.edge_constraints",
+			"isactive": false,
+			"description": "Contains a row for each constraint in edge.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.endpoint_webmethods",
+			"isactive": false,
+			"description": "System catalog view for endpoint webmethods.",
+			"category": [
+				"Server Configuration"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.endpoints",
+			"isactive": false,
+			"description": "Contains one row per endpoint that is created in the system.",
+			"category": [
+				"Server Configuration"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.extended_properties",
+			"isactive": false,
+			"description": "Returns a row for each extended property in the current database.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_data_sources",
+			"isactive": false,
+			"description": "Contains a row for each external data source in the current database for SQL Server, SQL Database, and Azure Synapse Analytics.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_file_formats",
+			"isactive": false,
+			"description": "Contains a row for each external file format in the current database for SQL Server, SQL Database, and Azure Synapse Analytics.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_job_streams",
+			"isactive": false,
+			"description": "System catalog view for external job streams.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_libraries_installed",
+			"isactive": false,
+			"description": "System catalog view for external libraries installed.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_library_setup_errors",
+			"isactive": false,
+			"description": "System catalog view for external library setup errors.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_stream_columns",
+			"isactive": false,
+			"description": "Contains a row for each column in external stream.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_streaming_jobs",
+			"isactive": false,
+			"description": "System catalog view for external streaming jobs.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_streams",
+			"isactive": false,
+			"description": "System catalog view for external streams.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_table_columns",
+			"isactive": false,
+			"description": "Contains a row for each column in external table.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_table_partitioning_columns",
+			"isactive": false,
+			"description": "Contains a row for each column in external table partitioning.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.external_tables",
+			"isactive": false,
+			"description": "Contains a row for each external table in the current database.",
+			"category": [
+				"PolyBase"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.filegroups",
+			"isactive": false,
+			"description": "Contains a row for each data space that is a filegroup.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.filetable_system_defined_objects",
+			"isactive": false,
+			"description": "Contains a list of system-defined objects that are related to FileTables.",
+			"category": [
+				"Filestream"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.filetables",
+			"isactive": false,
+			"description": "Returns a row for each FileTable in SQL Server.",
+			"category": [
+				"Filestream"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_catalogs",
+			"isactive": false,
+			"description": "Contains a row for each full-text catalog.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_document_types",
+			"isactive": false,
+			"description": "Returns a row for each document type that is available for full-text indexing operations.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_index_catalog_usages",
+			"isactive": false,
+			"description": "Returns a row for each full-text catalog to full-text index reference.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_index_columns",
+			"isactive": false,
+			"description": "Contains a row for each column that is part of a full-text index.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_index_fragments",
+			"isactive": false,
+			"description": "A full-text index uses internal tables called full-text index fragments to store the inverted index data. This view can be used to query the metadata about these fragments.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_indexes",
+			"isactive": false,
+			"description": "Contains a row per full-text index of a tabular object.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_languages",
+			"isactive": false,
+			"description": "Contains one row per language whose word breakers are registered with SQL Server.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_semantic_language_statistics_database",
+			"isactive": false,
+			"description": "Returns a row about the semantic language statistics database installed on the instance of SQL Server.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_semantic_languages",
+			"isactive": false,
+			"description": "Returns a row for each language whose statistics database is registered with the instance of SQL Server.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_stoplists",
+			"isactive": false,
+			"description": "Contains a row per full-text stoplist in the database.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_stopwords",
+			"isactive": false,
+			"description": "Contains a row per stopword for all stoplists in the database.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.fulltext_system_stopwords",
+			"isactive": false,
+			"description": "Provides access to the system stoplist.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.http_endpoints",
+			"isactive": false,
+			"description": "Contains a row for each endpoint that is created in the server that uses the HTTP protocol.",
+			"category": [
+				"Server Configuration"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.key_encryptions",
+			"isactive": false,
+			"description": "Returns a row for each symmetric key encryption specified by using the ENCRYPTION BY clause of the CREATE SYMMETRIC KEY statement.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.ledger_column_history",
+			"isactive": false,
+			"description": "System catalog view for ledger column history.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.ledger_table_history",
+			"isactive": false,
+			"description": "System catalog view for ledger table history.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.linked_logins",
+			"isactive": false,
+			"description": "Returns a row per linked-server-login mapping, for use by RPC and distributed queries from local server to the corresponding linked server.",
+			"category": [
+				"Server Configuration",
+				"Linked Servers"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.login_token",
+			"isactive": false,
+			"description": "Returns one row for every server principal that is part of the login token.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.master_files",
+			"isactive": false,
+			"description": "Contains a row per file of a database as stored in the master database.",
+			"category": [
+				"Database",
+				"Storage"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.master_key_passwords",
+			"isactive": false,
+			"description": "Returns a row for each database master key password added by using the sp_control_dbmasterkey_password stored procedure.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.message_type_xml_schema_collection_usages",
+			"isactive": false,
+			"description": "Returns a row for each message type that is validated by an XML schema collection.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.messages",
+			"isactive": false,
+			"description": "Contains a row per message_id or language_id of the system messages, for both system-defined and user-defined messages.",
+			"category": [
+				"Server Configuration",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.openkeys",
+			"isactive": false,
+			"description": "Returns information about encryption keys that are open in the current session.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.parameter_type_usages",
+			"isactive": false,
+			"description": "Returns one row for each parameter that is of a user-defined type.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.parameter_xml_schema_collection_usages",
+			"isactive": false,
+			"description": "Returns a row for each parameter that is validated by an XML schema collection.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.partition_functions",
+			"isactive": false,
+			"description": "Contains a row for each partition function in SQL Server.",
+			"category": [
+				"Index",
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.partition_parameters",
+			"isactive": false,
+			"description": "Contains a row for each parameter of a partition function.",
+			"category": [
+				"Index",
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.partition_range_values",
+			"isactive": false,
+			"description": "Contains a row for each range boundary value of a partition function of type R.",
+			"category": [
+				"Index",
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.partition_schemes",
+			"isactive": false,
+			"description": "Contains a row for each Data Space that is a partition scheme.",
+			"category": [
+				"Index",
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_context_settings",
+			"isactive": false,
+			"description": "Returns information about the semantics affecting context settings associated with a query.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_plan",
+			"isactive": true,
+			"description": "Contains information about each execution plan associated with a query.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_plan_feedback",
+			"isactive": true,
+			"description": "Contains information about plan feedback for queries in the Query Store.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_plan_forcing_locations",
+			"isactive": true,
+			"description": "System catalog view for query store plan forcing locations.",
+			"category": [
+				"Query Store",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_query",
+			"isactive": true,
+			"description": "Contains information about the query and its associated overall aggregated runtime execution statistics.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_query_hints",
+			"isactive": true,
+			"description": "System catalog view for query store query hints.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_query_text",
+			"isactive": true,
+			"description": "Contains the Transact-SQL text and the SQL handle of the query.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_query_variant",
+			"isactive": true,
+			"description": "System catalog view for query store query variant.",
+			"category": [
+				"Query Store",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_replicas",
+			"isactive": false,
+			"description": "System catalog view for query store replicas.",
+			"category": [
+				"Always On / High Availability"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_runtime_stats",
+			"isactive": true,
+			"description": "Contains information about the runtime execution statistics information for the query.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_runtime_stats_interval",
+			"isactive": true,
+			"description": "Contains information about the start and end time of each interval over which runtime execution statistics information for a query has been collected.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.query_store_wait_stats",
+			"isactive": true,
+			"description": "Contains information about the wait information for the query.",
+			"category": [
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.registered_search_properties",
+			"isactive": false,
+			"description": "Contains a row for each search property on the current database.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.registered_search_property_lists",
+			"isactive": false,
+			"description": "Contains a row for each search property list on the current database.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.remote_data_archive_databases",
+			"isactive": false,
+			"description": "Contains one row for each remote database that stores data from a Stretch-enabled local database.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.remote_data_archive_tables",
+			"isactive": false,
+			"description": "Contains one row for each remote table that stores data from a Stretch-enabled local table.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.remote_logins",
+			"isactive": false,
+			"description": "Contains a row per remote-server-login mapping.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.remote_service_bindings",
+			"isactive": false,
+			"description": "This catalog view contains a row per remote service binding.",
+			"category": [
+				"Service Broker"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.resource_governor_configuration",
+			"isactive": true,
+			"description": "Returns the stored Resource Governor configuration state.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.resource_governor_external_resource_pool_affinity",
+			"isactive": true,
+			"description": "Returns one row for each external resource pool affinity configuration.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.resource_governor_external_resource_pools",
+			"isactive": true,
+			"description": "Returns the stored external resource pool configuration in SQL Server.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.resource_governor_resource_pool_affinity",
+			"isactive": true,
+			"description": "Tracks resource pool affinity.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.resource_governor_resource_pools",
+			"isactive": true,
+			"description": "Returns the stored resource pool configuration in SQL Server.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.resource_governor_workload_groups",
+			"isactive": true,
+			"description": "Returns the stored workload group configuration in SQL Server.",
+			"category": [
+				"Resource Governor",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.routes",
+			"isactive": false,
+			"description": "This catalog view contains one row per route.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.schemas",
+			"isactive": false,
+			"description": "Contains a row for each database schema.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.securable_classes",
+			"isactive": false,
+			"description": "Returns a list of securable classes.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.security_policies",
+			"isactive": false,
+			"description": "Returns a row for each security policy in the database.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.security_predicates",
+			"isactive": false,
+			"description": "Returns a row for each security predicate in the database.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.selective_xml_index_namespaces",
+			"isactive": false,
+			"description": "System catalog view for selective xml index namespaces.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.selective_xml_index_paths",
+			"isactive": false,
+			"description": "Contains one row per promoted path for each selective XML index.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sensitivity_classifications",
+			"isactive": false,
+			"description": "Returns a row for each classified item in the database.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_audit_specification_details",
+			"isactive": false,
+			"description": "Contains information about the server audit specification details (actions) in a SQL Server audit on a server instance.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_audit_specifications",
+			"isactive": false,
+			"description": "Contains information about the server audit specifications in a SQL Server audit on a server instance.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_audits",
+			"isactive": false,
+			"description": "Contains one row for each SQL Server Audit in a server instance.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_event_session_actions",
+			"isactive": false,
+			"description": "Returns a row for each action on each event of an event session.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_event_session_events",
+			"isactive": false,
+			"description": "Returns a row for each event in an event session.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_event_session_fields",
+			"isactive": false,
+			"description": "Returns a row for each customize-able column that was explicitly set on events and targets.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_event_session_targets",
+			"isactive": false,
+			"description": "Returns a row for each event target for an event session.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_event_sessions",
+			"isactive": false,
+			"description": "Lists all the event session definitions that exist in SQL Server.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_file_audits",
+			"isactive": false,
+			"description": "Contains extended information about the file audit type in a SQL Server Audit on a server instance.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_memory_optimized_hybrid_buffer_pool_configuration",
+			"isactive": true,
+			"description": "Returns configuration information for the hybrid buffer pool feature.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_permissions",
+			"isactive": false,
+			"description": "Returns one row per server-level permission.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_principal_credentials",
+			"isactive": false,
+			"description": "Returns one row for each credential mapped to a server principal.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_principals",
+			"isactive": false,
+			"description": "Contains a row for each server-level principal.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.server_role_members",
+			"isactive": false,
+			"description": "Returns one row for each member of each server role.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.servers",
+			"isactive": false,
+			"description": "Contains a row per registered linked or remote server.",
+			"category": [
+				"Server Configuration",
+				"Linked Servers"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.service_broker_endpoints",
+			"isactive": false,
+			"description": "Contains one row for the Service Broker endpoint.",
+			"category": [
+				"Service Broker"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.service_contract_message_usages",
+			"isactive": false,
+			"description": "This catalog view contains a row for each (contract, message type) pair.",
+			"category": [
+				"Service Broker"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.service_contract_usages",
+			"isactive": false,
+			"description": "This catalog view contains a row for each (service, contract) pair.",
+			"category": [
+				"Service Broker"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.service_contracts",
+			"isactive": false,
+			"description": "This catalog view contains a row for each contract in the database.",
+			"category": [
+				"Service Broker"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.service_message_types",
+			"isactive": false,
+			"description": "This catalog view contains a row per message type registered in the service broker.",
+			"category": [
+				"Service Broker"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.service_queue_usages",
+			"isactive": false,
+			"description": "This catalog view contains a row for each service-to-service queue reference.",
+			"category": [
+				"Service Broker"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.service_queues",
+			"isactive": false,
+			"description": "Contains a row for each object in the database that is a service queue.",
+			"category": [
+				"Service Broker"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.services",
+			"isactive": false,
+			"description": "This catalog view contains a row for each service in the database.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.soap_endpoints",
+			"isactive": false,
+			"description": "Contains one row for each SOAP endpoint in the server.",
+			"category": [
+				"Server Configuration"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.spatial_index_tessellations",
+			"isactive": false,
+			"description": "Represents information about the tessellation scheme and parameters of each of the spatial indexes.",
+			"category": [
+				"Spatial"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.spatial_indexes",
+			"isactive": false,
+			"description": "Represents the main index information of the spatial indexes.",
+			"category": [
+				"Spatial"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.spatial_reference_systems",
+			"isactive": false,
+			"description": "Lists the supported spatial reference systems (SRIDs).",
+			"category": [
+				"Spatial"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sql_logins",
+			"isactive": false,
+			"description": "Returns one row for each SQL Server authentication login.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.symmetric_keys",
+			"isactive": false,
+			"description": "Returns a row for each symmetric key created with the CREATE SYMMETRIC KEY statement.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysaltfiles",
+			"isactive": false,
+			"description": "Contains a row for each file in a database. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syscacheobjects",
+			"isactive": true,
+			"description": "Contains information about how the cache is used. This is a compatibility view.",
+			"category": [
+				"Memory",
+				"Performance Tuning"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syscharsets",
+			"isactive": false,
+			"description": "Contains one row for each character set and sort order defined for use by the Database Engine. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syscolumns",
+			"isactive": false,
+			"description": "Returns one row for every column in every table and view, and a row for each parameter in a stored procedure. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syscomments",
+			"isactive": false,
+			"description": "Contains entries for each view, rule, default, trigger, CHECK constraint, DEFAULT constraint, and stored procedure. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysconfigures",
+			"isactive": false,
+			"description": "Contains one row for each configuration option set by a user. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysconstraints",
+			"isactive": false,
+			"description": "Contains mappings of constraints to the objects that own the constraints. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syscscontainers",
+			"isactive": false,
+			"description": "Contains information about columnstore containers. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syscurconfigs",
+			"isactive": false,
+			"description": "Contains one row for each current configuration option. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syscursorcolumns",
+			"isactive": false,
+			"description": "Contains information about the columns in cursors. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syscursorrefs",
+			"isactive": false,
+			"description": "Contains mappings of cursors to cursor references. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syscursors",
+			"isactive": false,
+			"description": "Contains information about cursors. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syscursortables",
+			"isactive": false,
+			"description": "Contains information about the tables used in cursors. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysdatabases",
+			"isactive": false,
+			"description": "Contains one row for each database in the instance of SQL Server. This is a compatibility view.",
+			"category": [
+				"Database"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysdepends",
+			"isactive": false,
+			"description": "Contains dependency information between objects in the database. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysdevices",
+			"isactive": false,
+			"description": "Contains one row for each disk backup file, tape backup file, and database file. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysfilegroups",
+			"isactive": false,
+			"description": "Contains one row for each filegroup in a database. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysfiles",
+			"isactive": false,
+			"description": "Contains one row for each file in a database. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysforeignkeys",
+			"isactive": false,
+			"description": "Contains information about the FOREIGN KEY constraints. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysfulltextcatalogs",
+			"isactive": false,
+			"description": "Contains information about full-text catalogs. This is a compatibility view.",
+			"category": [
+				"Full-Text Search"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysindexes",
+			"isactive": false,
+			"description": "Contains one row for each index and table in the current database. This is a compatibility view.",
+			"category": [
+				"Index",
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysindexkeys",
+			"isactive": false,
+			"description": "Contains information about the keys or columns in an index. This is a compatibility view.",
+			"category": [
+				"Index",
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syslanguages",
+			"isactive": false,
+			"description": "Contains one row for each language known to SQL Server. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syslockinfo",
+			"isactive": false,
+			"description": "Contains information about all granted, converting, and waiting lock requests. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syslogins",
+			"isactive": false,
+			"description": "Contains one row for each login account. This is a compatibility view.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysmembers",
+			"isactive": false,
+			"description": "Contains one row for each member of a database role. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysmessages",
+			"isactive": false,
+			"description": "Contains one row for each system message in SQL Server. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility",
+				"Server Configuration"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysobjects",
+			"isactive": false,
+			"description": "Contains one row for each object that is created within a database. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysoledbusers",
+			"isactive": false,
+			"description": "Contains one row for each linked login for the specified linked server. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysopentapes",
+			"isactive": false,
+			"description": "Contains one row for each currently open tape device. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysperfinfo",
+			"isactive": false,
+			"description": "Contains a SQL Server representation of internal performance counters that can be displayed through the Windows System Monitor. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.syspermissions",
+			"isactive": false,
+			"description": "Contains information about permissions. This is a compatibility view.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysprocesses",
+			"isactive": false,
+			"description": "Contains information about processes that are running on an instance of SQL Server. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysprotects",
+			"isactive": false,
+			"description": "Contains information about permissions that have been applied to security accounts with the GRANT and DENY statements. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysreferences",
+			"isactive": false,
+			"description": "Contains mappings of FOREIGN KEY constraint definitions to the referenced columns. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysremotelogins",
+			"isactive": false,
+			"description": "Contains one row for each remote user who is permitted to call remote stored procedures. This is a compatibility view.",
+			"category": [
+				"Security"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysservers",
+			"isactive": false,
+			"description": "Contains one row for each server that SQL Server can access as an OLE DB data source. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.system_components_surface_area_configuration",
+			"isactive": false,
+			"description": "Returns one row for each executable system object that can be enabled or disabled by a surface area configuration component.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.system_internals_allocation_units",
+			"isactive": false,
+			"description": "Contains a row for each allocation unit. This is a system internal table.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.system_internals_partition_columns",
+			"isactive": false,
+			"description": "Contains a row for each column of all partitions. This is a system internal table.",
+			"category": [
+				"Index",
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.system_internals_partitions",
+			"isactive": false,
+			"description": "Contains a row for each partition of all tables and most types of indexes. This is a system internal table.",
+			"category": [
+				"Index",
+				"Object"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.systypes",
+			"isactive": false,
+			"description": "Returns one row for each system-supplied and each user-defined data type. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.sysusers",
+			"isactive": false,
+			"description": "Contains one row for each Windows user, Windows group, SQL Server user, or SQL Server role in the database. This is a compatibility view.",
+			"category": [
+				"Deprecated/Compatibility"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.tcp_endpoints",
+			"isactive": false,
+			"description": "Contains one row for each TCP endpoint that is in the system.",
+			"category": [
+				"Server Configuration"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.time_zone_info",
+			"isactive": false,
+			"description": "Returns information about supported time zones.",
+			"category": [
+				"Server Configuration",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.trace_categories",
+			"isactive": false,
+			"description": "Contains the trace event categories.",
+			"category": [
+				"Trace"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.trace_columns",
+			"isactive": false,
+			"description": "Contains all trace event columns.",
+			"category": [
+				"Trace"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.trace_event_bindings",
+			"isactive": false,
+			"description": "Contains the trace event to trace column bindings.",
+			"category": [
+				"Trace"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.trace_events",
+			"isactive": false,
+			"description": "Contains all SQL Server trace events.",
+			"category": [
+				"Trace"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.trace_subclass_values",
+			"isactive": false,
+			"description": "Contains named subclass values.",
+			"category": [
+				"Trace"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.traces",
+			"isactive": false,
+			"description": "Returns the currently running traces on the system.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.transmission_queue",
+			"isactive": false,
+			"description": "Contains a row for each message in the Service Broker transmission queue.",
+			"category": [
+				"Service Broker"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.trusted_assemblies",
+			"isactive": false,
+			"description": "Returns a row for each trusted assembly for the server.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.type_assembly_usages",
+			"isactive": false,
+			"description": "Contains a row for each type-to-assembly reference.",
+			"category": [
+				"CLR"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.types",
+			"isactive": false,
+			"description": "Contains a row for each system and user-defined type.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.user_token",
+			"isactive": false,
+			"description": "Returns one row for every database principal that is part of the user token in SQL Server.",
+			"category": [
+				"Object",
+				"Metadata"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.via_endpoints",
+			"isactive": false,
+			"description": "Contains one row for each VIA endpoint in the system.",
+			"category": [
+				"Server Configuration"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_indexes",
+			"isactive": false,
+			"description": "Returns one row per XML index.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_attributes",
+			"isactive": false,
+			"description": "Returns a row per XML schema component that is an Attribute.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_collections",
+			"isactive": false,
+			"description": "Returns a row per XML schema collection.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_component_placements",
+			"isactive": false,
+			"description": "Returns a row per placement for XML schema components.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_components",
+			"isactive": false,
+			"description": "Returns a row per component of an XML schema.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_elements",
+			"isactive": false,
+			"description": "Returns a row per XML schema component that is an Element.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_facets",
+			"isactive": false,
+			"description": "Returns a row per facet (restriction) of an xml-type definition.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_model_groups",
+			"isactive": false,
+			"description": "Returns a row per XML schema component that is a Model-Group.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_namespaces",
+			"isactive": false,
+			"description": "Returns a row per XML namespace.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_types",
+			"isactive": false,
+			"description": "Returns a row per XML schema component that is a Type.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_wildcard_namespaces",
+			"isactive": false,
+			"description": "Returns a row per enumerated namespace for an XML wildcard.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		},
+		{
+			"data_management_view": "sys.xml_schema_wildcards",
+			"isactive": false,
+			"description": "Returns a row per XML schema component that is an Attribute-Wildcard or Element-Wildcard.",
+			"category": [
+				"XML"
+			],
+			"object_type": "dmv"
+		}
+	]
+}

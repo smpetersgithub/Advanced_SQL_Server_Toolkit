@@ -1,0 +1,32 @@
+{
+	"custom_queries": [
+		{
+			"query_name": "plan_sys_dm_exec_query_stats",
+			"description": "Extract query execution statistics with query text and execution plans",
+			"isactive": true,
+			"execution_scope": "database",
+			"sqlite_table_name": "plan_sys_dm_exec_query_stats",
+			"sqlite_ddl_file": "config/sql/plan_sys_dm_exec_query_stats_create.sql",
+			"sqlserver_query_file": "config/sql/plan_sys_dm_exec_query_stats_query.sql",
+			"truncate_before_insert": true,
+			"category": [
+				"Performance Tuning",
+				"Query Analysis"
+			]
+		},
+		{
+			"query_name": "plan_sys_dm_exec_cached_plans",
+			"description": "Extract cached plans with query text and execution plans",
+			"isactive": true,
+			"execution_scope": "database",
+			"sqlite_table_name": "plan_sys_dm_exec_cached_plans",
+			"sqlite_ddl_file": "config/sql/plan_sys_dm_exec_cached_plans_create.sql",
+			"sqlserver_query_file": "config/sql/plan_sys_dm_exec_cached_plans_query.sql",
+			"truncate_before_insert": true,
+			"category": [
+				"Performance Tuning",
+				"Query Analysis"
+			]
+		}
+	]
+}

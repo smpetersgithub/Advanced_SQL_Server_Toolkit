@@ -1,0 +1,204 @@
+<TabItem xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         Header="Example 1">
+    <Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>  <!-- Image + Label -->
+            <RowDefinition Height="1.1*"/>  <!-- ExecutionsGrid (Slightly Larger) -->
+            <RowDefinition Height="Auto"/>  <!-- New Row for TextBox -->
+            <RowDefinition Height="0.9*"/>  <!-- TemplatesGrid (Slightly Smaller) -->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>  <!-- Fixed width for button box -->
+            <ColumnDefinition Width="*"/>    <!-- Expanding DataGrid -->
+        </Grid.ColumnDefinitions>
+
+        <!-- IMAGE + LABEL -->
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/> <!-- Image + Label -->
+                <ColumnDefinition Width="*"/>   <!-- Spacer -->
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top">
+                <Image Source="../Assets/icons8-satellite-1600.png"
+                       Width="64" Height="64"
+                       Stretch="Uniform"
+                       RenderOptions.BitmapScalingMode="HighQuality"/>
+
+                <TextBlock Text="Example 1"
+                           FontSize="20" FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           Margin="10,0,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- BOX FOR BUTTONS -->
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.RowSpan="3" Grid.Column="0"
+                Margin="0,10,10,10" Padding="10">
+        <StackPanel>
+            <TextBlock Text="Template Management" FontWeight="Bold" Margin="5,0,5,5"/>
+        
+
+            <Button x:Name="btnOpenTemplateFolder" Width="180" Height="40" Margin="5"
+                    HorizontalContentAlignment="Stretch">
+                <Grid>
+                    <!-- Define two columns: one for the image, one for centered text -->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>  <!-- Image column (only as wide as the image) -->
+                        <ColumnDefinition Width="*"/>    <!-- Text column (takes remaining space) -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Left-Aligned Image -->
+                    <Image Source="C:\Advanced_SQL_Server_Toolkit\WPF_Powershell_Template\Assets\icons8-opened-folder-50.png"
+                           Width="24" Height="24" Margin="5"
+                           Grid.Column="0" VerticalAlignment="Center"
+                           HorizontalAlignment="Left"/>
+
+                    <!-- Centered Text with FontSize 12 -->
+                    <TextBlock Text="Open Template Folder"
+                               Grid.Column="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="12"/>
+                </Grid>
+            </Button>
+            
+            <!-- Spacer -->
+            <Separator Margin="5,10,5,10"/>
+
+                <TextBlock Text="Execution Management" FontWeight="Bold" Margin="5,0,5,5"/>
+                
+                <Button x:Name="btnCreateBatch" Width="180" Height="40" Margin="5"
+                    HorizontalContentAlignment="Stretch">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>  <!-- Icon Column -->
+                        <ColumnDefinition Width="*"/>    <!-- Text Column -->
+                    </Grid.ColumnDefinitions>
+            
+                    <!-- Left-Aligned Image -->
+                    <Image Source="C:\Advanced_SQL_Server_Toolkit\WPF_Powershell_Template\Assets\icons8-create-50.png"
+                           Width="24" Height="24" Margin="5"
+                           Grid.Column="0" VerticalAlignment="Center"/>
+            
+                    <!-- Centered Text -->
+                    <TextBlock Text="Create Execution Script"
+                               Grid.Column="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="12"/>
+                </Grid>
+            </Button>
+            
+
+            <Button x:Name="btnOpenExecutionFolder" Width="180" Height="40" Margin="5"
+                    HorizontalContentAlignment="Stretch">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>  <!-- Icon Column -->
+                        <ColumnDefinition Width="*"/>    <!-- Text Column -->
+                    </Grid.ColumnDefinitions>
+            
+                    <!-- Left-Aligned Image -->
+                    <Image Source="C:\Advanced_SQL_Server_Toolkit\WPF_Powershell_Template\Assets\icons8-opened-folder-50.png"
+                           Width="24" Height="24" Margin="5"
+                           Grid.Column="0" VerticalAlignment="Center"/>
+            
+                    <!-- Centered Text -->
+                    <TextBlock Text="Open Execution Folder"
+                               Grid.Column="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="12"/>
+                </Grid>
+            </Button>
+            
+
+            <Button x:Name="btnTaskList" Width="180" Height="40" Margin="5"
+                    HorizontalContentAlignment="Stretch">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="C:\Advanced_SQL_Server_Toolkit\WPF_Powershell_Template\Assets\icons8-task-list-50.png"
+                           Width="24" Height="24" Margin="5"
+                           Grid.Column="0" VerticalAlignment="Center"
+                           HorizontalAlignment="Left"/>
+                    <TextBlock Text="Task List"
+                               Grid.Column="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="12"/>
+                </Grid>
+            </Button>
+
+        </StackPanel>
+        
+        </Border>
+
+        <!-- EXECUTIONS DATA GRID -->
+        <DataGrid x:Name="ExecutionsGrid" Grid.Row="1" Grid.Column="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Margin="10"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow">
+        
+            <DataGrid.Columns>
+			    <DataGridTextColumn Header="Template ID" Binding="{Binding TemplateID}" Width="Auto"/>
+                <DataGridTextColumn Header="Execution Step" Binding="{Binding ExecutionStep}" Width="Auto"/>
+                <DataGridTextColumn Header="Source Location" Binding="{Binding SourceLocation}" Width="Auto"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="Auto"/>
+                <DataGridCheckBoxColumn Header="Build" Binding="{Binding Build}" Width="Auto"/>
+                <DataGridCheckBoxColumn Header="Execute" Binding="{Binding Execute}" Width="Auto"/>
+                <DataGridTextColumn Header="Notes" Binding="{Binding Notes}" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- NEW TEXTBOX BETWEEN THE DATA GRIDS -->
+        <TextBox x:Name="txtExecutionNotes"
+                 Grid.Row="2" Grid.Column="1"
+                 Grid.ColumnSpan="2"
+                 Width="500"
+                 Height="30"
+                 VerticalAlignment="Bottom"
+                 HorizontalAlignment="Left"
+                 Margin="5,5,5,0"
+                 Text="Please select a template!"
+                 IsReadOnly="True"
+                 BorderThickness="0"
+                 Background="Transparent"
+                 Foreground="Blue"
+                 FocusVisualStyle="{x:Null}"
+                 FontSize="14"
+                 FontWeight="Bold"/>
+                 
+        <!-- TEMPLATES DATA GRID -->
+
+        <DataGrid x:Name="TemplatesGrid" Grid.Row="3" Grid.Column="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Margin="5"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow">
+            <DataGrid.Columns>
+			    <DataGridTextColumn Header="Template ID" Binding="{Binding TemplateID}" Width="Auto"/>
+                <DataGridTextColumn Header="Template Name" Binding="{Binding TemplateName}" Width="Auto"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="Auto"/>
+                <DataGridTextColumn Header="File Path" Binding="{Binding FullPath}" Width="Auto" Visibility="Collapsed"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</TabItem>

@@ -1,0 +1,62 @@
+[
+  {
+	"TemplateID": "TMP-01",
+    "TemplateName": "Build Peanut Butter & Jelly Sandwich",
+    "Description": "Automates the step-by-step process of assembling a peanut butter and jelly sandwich.",
+    "FullPath": "C:\\DeploymentUtility\\Templates\\MakePBJ.ps1"
+  },
+  {
+	"TemplateID": "TMP-02",
+    "TemplateName": "Pour Glass of Milk or Juice",
+    "Description": "Automates the step-by-step process of pouring a drink into a glass without spilling.",
+    "FullPath": "C:\\DeploymentUtility\\Templates\\PourDrink.ps1"
+  },
+  {
+	"TemplateID": "TMP-03",
+    "TemplateName": "Prepare Cereal with Milk",
+    "Description": "Automates the process of pouring cereal into a bowl and adding milk to create a ready-to-eat meal.",
+    "FullPath": "C:\\DeploymentUtility\\Templates\\MakeCereal.ps1"
+  },
+  {
+	"TemplateID": "TMP-04",
+    "TemplateName": "Cook Pasta",
+    "Description": "Automates the process of boiling pasta step by step until it is ready to serve.",
+    "FullPath": "C:\\DeploymentUtility\\Templates\\BoilPasta.ps1"
+  },
+  {
+	"TemplateID": "TMP-05",
+    "TemplateName": "Bake Cookies",
+    "Description": "Automates the simplified step-by-step process of preparing and baking cookies.",
+    "FullPath": "C:\\DeploymentUtility\\Templates\\BakeCookies.ps1"
+  },
+  {
+	"TemplateID": "TMP-06",
+    "TemplateName": "Brush Teeth",
+    "Description": "Automates the process of brushing teeth from start to finish for proper hygiene.",
+    "FullPath": "C:\\DeploymentUtility\\Templates\\BrushTeeth.ps1"
+  },
+  {
+	"TemplateID": "TMP-07",
+    "TemplateName": "Wash Hands",
+    "Description": "Automates the process of washing hands thoroughly with soap and water.",
+    "FullPath": "C:\\DeploymentUtility\\Templates\\WashHands.ps1"
+  },
+  {
+	"TemplateID": "TMP-08",
+    "TemplateName": "Feed Pet",
+    "Description": "Automates the process of safely and responsibly feeding a pet.",
+    "FullPath": "C:\\DeploymentUtility\\Templates\\FeedPet.ps1"
+  },
+  {
+	"TemplateID": "TMP-09",
+    "TemplateName": "Tie Shoelaces",
+    "Description": "Automates the step-by-step process of tying shoelaces securely.",
+    "FullPath": "C:\\DeploymentUtility\\Templates\\TieShoelaces.ps1"
+  },
+  {
+	"TemplateID": "TMP-10",
+    "TemplateName": "Make Bed",
+    "Description": "Automates the process of neatly making a bed in the morning.",
+    "FullPath": "C:\\DeploymentUtility\\Templates\\MakeBed.ps1"
+  }
+]

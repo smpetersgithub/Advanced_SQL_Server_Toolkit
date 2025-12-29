@@ -1,0 +1,56 @@
+[
+  {
+	"TemplateID": "TMP-01",
+    "ExecutionStep": "Step 1",
+    "SourceLocation": "Kitchen",
+    "Description": "Get two slices of bread and place them on a clean plate",
+    "Build": true,
+    "Execute": true,
+    "Notes": "Make sure the bread is fresh"
+  },
+  {
+	"TemplateID": "TMP-01",
+    "ExecutionStep": "Step 2",
+    "SourceLocation": "Kitchen",
+    "Description": "Spread peanut butter evenly on one slice of bread",
+    "Build": true,
+    "Execute": true,
+    "Notes": "Use a butter knife and cover the whole surface"
+  },
+  {
+	"TemplateID": "TMP-01",
+    "ExecutionStep": "Step 3",
+    "SourceLocation": "Kitchen",
+    "Description": "Spread jelly evenly on the other slice of bread",
+    "Build": true,
+    "Execute": true,
+    "Notes": "Choose your favorite jelly flavor"
+  },
+  {
+	"TemplateID": "TMP-01",
+    "ExecutionStep": "Step 4",
+    "SourceLocation": "Kitchen",
+    "Description": "Put the slices together with peanut butter side against jelly side",
+    "Build": true,
+    "Execute": true,
+    "Notes": "Align the bread so it matches up"
+  },
+  {
+	"TemplateID": "TMP-01",
+    "ExecutionStep": "Step 5",
+    "SourceLocation": "Kitchen",
+    "Description": "Cut the sandwich in half",
+    "Build": true,
+    "Execute": true,
+    "Notes": "Cut into triangles or rectangles as preferred"
+  },
+  {
+	"TemplateID": "TMP-01",
+    "ExecutionStep": "Step 6",
+    "SourceLocation": "Dinning Room",
+    "Description": "Serve and enjoy",
+    "Build": true,
+    "Execute": true,
+    "Notes": "Sandwich is ready to eat"
+  }
+]

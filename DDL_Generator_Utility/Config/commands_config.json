@@ -1,0 +1,18 @@
+{
+  "commands": [
+    {
+      "command_id": 1,
+      "name": "Export Table DDL",
+      "description": "Exports the table DDL to a single file",
+      "command": "mssql-scripter -S SERVERNAME -d DATABASENAME -U USERNAME -P PASSWORD --include-types Schema UserDefinedDataType UserDefinedTableType Table --display-progress --exclude-headers --file-path C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility\\Generated_Scripts\\PARENTNAME\\SERVERNAME\\DATABASENAME\\PARENTNAME.DATABASENAME.TablesFull.sql",
+      "active": true
+    },
+    {
+      "command_id": 2,
+      "name": "Export View, Functions, and Stored Procedures DDL",
+      "description": "Exports the views, functions and stored procedures DDL to individual files",
+      "command": "mssql-scripter -S SERVERNAME -d DATABASENAME -U USERNAME -P PASSWORD --include-types UserDefinedFunction View StoredProcedure --display-progress --convert-uddts --file-per-object --exclude-headers --file-path C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility\\Generated_Scripts\\PARENTNAME\\SERVERNAME\\DATABASENAME\\",
+      "active": true
+    }
+  ]
+}

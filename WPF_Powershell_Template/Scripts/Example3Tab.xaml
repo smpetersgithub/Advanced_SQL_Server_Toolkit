@@ -1,0 +1,201 @@
+<TabItem xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         Header="Example 3">
+    <Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>  <!-- Image + Label -->
+            <RowDefinition Height="*"/>     <!-- Main content -->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>  <!-- Fixed width for button box -->
+            <ColumnDefinition Width="*"/>    <!-- Expanding DataGrid -->
+        </Grid.ColumnDefinitions>
+
+        <!-- IMAGE + LABEL -->
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Top">
+            <!-- Image -->
+            <Image Source="../Assets/icons8-satellite-1600.png"
+                   Width="64" Height="64"
+                   Stretch="Uniform"
+                   RenderOptions.BitmapScalingMode="HighQuality"/>
+
+            <!-- Label Next to Image -->
+            <TextBlock Text="Example 3"
+                       FontSize="20" FontWeight="Bold"
+                       VerticalAlignment="Center"
+                       Margin="10,0,0,0"/> <!-- Adds space between icon and label -->
+        </StackPanel>
+
+        <!-- BOX FOR BUTTONS -->
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0"
+                Margin="0,10,10,10" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Source Target Management" FontWeight="Bold" Margin="5,0,5,5"/>
+
+                <Button x:Name="btnLoadSourceTarget" Width="180" Height="40" Margin="5"
+                        HorizontalContentAlignment="Stretch">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>  <!-- Icon Column -->
+                            <ColumnDefinition Width="*"/>    <!-- Text Column -->
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Left-Aligned Image -->
+                        <Image Source="C:\Advanced_SQL_Server_Toolkit\WPF_Powershell_Template\Assets\icons8-refresh-50.png"
+                               Width="24" Height="24" Margin="5"
+                               Grid.Column="0" VerticalAlignment="Center"
+                               HorizontalAlignment="Left"/>
+
+                        <!-- Centered Text -->
+                        <TextBlock Text="Load Table"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="12"/>
+                    </Grid>
+                </Button>
+
+
+
+                <Button x:Name="btnTruncateSourceTarget" Width="180" Height="40" Margin="5"
+                        HorizontalContentAlignment="Stretch">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>  <!-- Icon Column -->
+                            <ColumnDefinition Width="*"/>    <!-- Text Column -->
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Left-Aligned Image -->
+                        <Image Source="C:\Advanced_SQL_Server_Toolkit\WPF_Powershell_Template\Assets\icons8-delete-50.png"
+                               Width="24" Height="24" Margin="5"
+                               Grid.Column="0" VerticalAlignment="Center"
+                               HorizontalAlignment="Left"/>
+
+                        <!-- Centered Text -->
+                        <TextBlock Text="Truncate Table"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="12"/>
+                    </Grid>
+                </Button>
+
+            <Separator Margin="5,10,5,10"/>
+            
+                <TextBlock Text="Batch Operations" FontWeight="Bold" Margin="10,15,5,5"/>
+                <ComboBox x:Name="cbxBatches" Width="180" Margin="5">
+                    <ComboBoxItem IsSelected="True" Foreground="Gray">Select an option</ComboBoxItem>
+                </ComboBox>
+                <Button x:Name="btnActivateBatch" Width="180" Height="40" Margin="5"
+                        HorizontalContentAlignment="Stretch">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>  <!-- Icon Column -->
+                            <ColumnDefinition Width="*"/>    <!-- Text Column -->
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Left-Aligned Image -->
+                        <Image Source="C:\Advanced_SQL_Server_Toolkit\WPF_Powershell_Template\Assets\icons8-activate-50.png"
+                               Width="24" Height="24" Margin="5"
+                               Grid.Column="0" VerticalAlignment="Center"
+                               HorizontalAlignment="Left"/>
+
+                        <!-- Centered Text -->
+                        <TextBlock Text="Activate Batch"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="12"/>
+                    </Grid>
+                </Button>
+
+                <Button x:Name="btnDeactivateAllBatches" Width="180" Height="40" Margin="5"
+                        HorizontalContentAlignment="Stretch">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>  <!-- Icon Column -->
+                            <ColumnDefinition Width="*"/>    <!-- Text Column -->
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Left-Aligned Image -->
+                        <Image Source="C:\Advanced_SQL_Server_Toolkit\WPF_Powershell_Template\Assets\icons8-down-button-50.png"
+                               Width="24" Height="24" Margin="5"
+                               Grid.Column="0" VerticalAlignment="Center"
+                               HorizontalAlignment="Left"/>
+
+                        <!-- Centered Text -->
+                        <TextBlock Text="Deactivate All Batches"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="12"/>
+                    </Grid>
+                </Button>
+
+            </StackPanel>
+        </Border>
+
+<DataGrid x:Name="SourceTargetGridView"
+          Grid.Row="1" Grid.Column="1"
+          AutoGenerateColumns="False"
+          CanUserAddRows="False"
+          IsReadOnly="True"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch"
+          Margin="10"
+          SelectionMode="Single"
+          SelectionUnit="FullRow"
+          Focusable="True">
+
+    <!-- Custom Columns -->
+    <DataGrid.Columns>
+        <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="Auto" />
+        <DataGridTextColumn Header="Source Full Domain Name" Binding="{Binding 'Source Full Domain Name'}" Width="Auto" />
+        <DataGridTextColumn Header="Target Full Domain Name" Binding="{Binding 'Target Full Domain Name'}" Width="Auto" />
+        <DataGridTextColumn Header="Batch Name" Binding="{Binding 'Batch Name'}" Width="Auto" />
+        <DataGridTextColumn Header="Parent Name" Binding="{Binding 'Parent Name'}" Width="Auto" />
+
+        <!-- CheckBox for Is Active -->
+        <DataGridCheckBoxColumn Header="Is Active"
+                                Binding="{Binding 'Is Active'}"
+                                IsThreeState="False"
+                                Width="Auto" />
+    </DataGrid.Columns>
+
+    <!-- Cell & Row Styling -->
+    <DataGrid.Resources>
+
+        <!-- Cell Styling Based on 'Is Active' -->
+        <Style TargetType="DataGridCell">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="IsHitTestVisible" Value="False"/> <!-- Prevents Mouse Clicks -->
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding [Is Active]}" Value="1">
+                    <Setter Property="Background" Value="LightYellow"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Disable Row Selection -->
+        <Style TargetType="DataGridRow">
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </DataGrid.Resources>
+
+</DataGrid>
+
+
+    </Grid>
+</TabItem>

@@ -1,0 +1,19 @@
+{
+	"cleanup_operations": [
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility\\Generated_Scripts",
+			"description": "Output folder containing JSON and Excel files",
+			"action": "delete_folder"
+		},
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility\\Logs",
+			"description": "Logs folder containing the log files",
+			"action": "delete_folder"
+		},
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility\\Config\\database_config",
+			"description": "Config folder containing the database configuration files",
+			"action": "delete_folder"
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"cleanup_operations": [
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\System_Catalog_Extractor_Utility\\Logs",
+			"description": "Log files from report generation and import",
+			"action": "delete_folder"
+		},
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\System_Catalog_Extractor_Utility\\SQLite",
+			"description": "SQLite database files",
+			"action": "delete_folder"
+		}
+	]
+}

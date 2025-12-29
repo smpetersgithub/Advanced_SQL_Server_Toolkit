@@ -1,0 +1,20 @@
+{
+  "servers": [
+    {
+      "servername": "WIN29LYC64",
+      "port": 1433,
+      "username": "username",
+      "password": "password",!",
+      "databases_include":[foo,bar],
+      "active": true
+    },
+    {
+      "servername": "WIN29LYC64\\MSSQLSERVER01",
+      "port": 1433,
+      "username": "username",
+      "password": "password",
+      "databases_include":[],
+      "active": false
+    }
+  ]
+}
