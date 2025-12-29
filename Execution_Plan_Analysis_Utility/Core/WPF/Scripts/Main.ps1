@@ -11,29 +11,11 @@ if ([Threading.Thread]::CurrentThread.ApartmentState -ne 'STA') {
 # --- Load WPF Assemblies ---
 Add-Type -AssemblyName PresentationCore, PresentationFramework, WindowsBase, System.Xaml | Out-Null
 
-# --- Resolve BaseDir (root project folder) ---
-if ($PSScriptRoot -and (Test-Path $PSScriptRoot)) {
-    $BaseDir = Split-Path -Parent $PSScriptRoot
-} elseif ($MyInvocation.MyCommand.Path -and (Test-Path $MyInvocation.MyCommand.Path)) {
-    $BaseDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-} elseif ($env:EXEPATH) {
-    $BaseDir = Split-Path -Parent $env:EXEPATH
-} else {
-    $BaseDir = (Get-Location).Path
-}
+# ============================================================================
+# HARDCODED PATHS - Update these paths for your environment
+# ============================================================================
+$ScriptDir = "C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Scripts"
 
-# --- Scripts folder path ---
-# Check if we're in the Build folder, if so go up one level to Scripts
-$currentFolder = Split-Path $BaseDir -Leaf
-if ($currentFolder -eq 'Build') {
-    $ScriptDir = Split-Path -Parent $BaseDir
-} elseif ($currentFolder -eq 'Scripts') {
-    $ScriptDir = $BaseDir
-} else {
-    $ScriptDir = Join-Path $BaseDir 'Scripts'
-}
-
-Write-Host "[INFO] BaseDir   : $BaseDir"
 Write-Host "[INFO] Scripts  : $ScriptDir"
 
 # Import Functions from the Scripts Directory

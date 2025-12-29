@@ -75,28 +75,28 @@
                 <!-- Configuration Management Section -->
                 <Border BorderBrush="#6BA3E8" BorderThickness="0,0,1,0" Padding="5,0">
                     <StackPanel Orientation="Horizontal">
-                        <Button x:Name="btnLoadSourceTarget" 
+                        <Button x:Name="btnLoadSourceTarget"
                                 ToolTip="Load Execution Plans"
                                 Style="{StaticResource ToolbarButtonStyle}">
-                            <Image Source="../Assets/icons8-folder-50.png" Width="32" Height="32"/>
+                            <Image Source="C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Assets\icons8-folder-50.png" Width="32" Height="32"/>
                         </Button>
-                        
-                        <Button x:Name="btnCheckForNewPlans" 
+
+                        <Button x:Name="btnCheckForNewPlans"
                                 ToolTip="Reload Directory"
                                 Style="{StaticResource ToolbarButtonStyle}">
-                            <Image Source="../Assets/icons8-refresh-50.png" Width="32" Height="32"/>
+                            <Image Source="C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Assets\icons8-refresh-50.png" Width="32" Height="32"/>
                         </Button>
-                        
-                        <Button x:Name="btnLoadConfiguration" 
+
+                        <Button x:Name="btnLoadConfiguration"
                                 ToolTip="Load Configuration"
                                 Style="{StaticResource ToolbarButtonStyle}">
-                            <Image Source="../Assets/icons8-task-list-50.png" Width="32" Height="32"/>
+                            <Image Source="C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Assets\icons8-task-list-50.png" Width="32" Height="32"/>
                         </Button>
-                        
+
                         <Button x:Name="btnSaveExecutionPlanConfiguration"
                                 ToolTip="Save Configuration"
                                 Style="{StaticResource ToolbarButtonStyle}">
-                            <Image Source="../Assets/icons8-save-50.png" Width="32" Height="32"/>
+                            <Image Source="C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Assets\icons8-save-50.png" Width="32" Height="32"/>
                         </Button>
                     </StackPanel>
                 </Border>
@@ -107,13 +107,13 @@
                         <Button x:Name="btnCompareExecutionPlans"
                                 ToolTip="Compare Execution Plans"
                                 Style="{StaticResource ToolbarButtonStyle}">
-                            <Image Source="../Assets/icons8-compare-50.png" Width="32" Height="32"/>
+                            <Image Source="C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Assets\icons8-compare-50.png" Width="32" Height="32"/>
                         </Button>
 
                         <Button x:Name="btnAnalyzeIndividualPlans"
                                 ToolTip="Analyze Individual Plans"
                                 Style="{StaticResource ToolbarButtonStyle}">
-                            <Image Source="../Assets/icons8-analyze-50.png" Width="32" Height="32"/>
+                            <Image Source="C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Assets\icons8-analyze-50.png" Width="32" Height="32"/>
                         </Button>
                     </StackPanel>
                 </Border>
@@ -124,19 +124,19 @@
                         <Button x:Name="btnOpenOutputFolder"
                                 ToolTip="Open Output Folder"
                                 Style="{StaticResource ToolbarButtonStyle}">
-                            <Image Source="../Assets/icons8-opened-folder-50.png" Width="32" Height="32"/>
+                            <Image Source="C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Assets\icons8-opened-folder-50.png" Width="32" Height="32"/>
                         </Button>
 
                         <Button x:Name="btnCleanup"
                                 ToolTip="Cleanup"
                                 Style="{StaticResource ToolbarButtonStyle}">
-                            <Image Source="../Assets/icons8-delete-50.png" Width="32" Height="32"/>
+                            <Image Source="C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Assets\icons8-delete-50.png" Width="32" Height="32"/>
                         </Button>
 
                         <Button x:Name="btnBackupConfigurations"
                                 ToolTip="Backup Configurations"
                                 Style="{StaticResource ToolbarButtonStyle}">
-                            <Image Source="../Assets/icons8-zip-50.png" Width="32" Height="32"/>
+                            <Image Source="C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Assets\icons8-zip-50.png" Width="32" Height="32"/>
                         </Button>
                     </StackPanel>
                 </Border>
@@ -147,7 +147,7 @@
                         <Button x:Name="btnGitHub"
                                 ToolTip="View on GitHub"
                                 Style="{StaticResource ToolbarButtonStyle}">
-                            <Image Source="../Assets/icons8-github-50.png" Width="32" Height="32"/>
+                            <Image Source="C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\WPF\Assets\icons8-github-50.png" Width="32" Height="32"/>
                         </Button>
                     </StackPanel>
                 </Border>

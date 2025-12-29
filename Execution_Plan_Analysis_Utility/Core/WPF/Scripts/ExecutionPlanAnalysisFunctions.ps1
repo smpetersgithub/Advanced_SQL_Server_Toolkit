@@ -11,38 +11,24 @@ function Initialize-ExecutionPlanAnalysis {
     Write-Host "[INFO] ExecutionPlanAnalysis init starting..."
 
     # ============================================================================
-    # CALCULATE PROJECT ROOT DIRECTORY (RELATIVE PATHS)
+    # HARDCODED PATHS - Update these paths for your environment
     # ============================================================================
 
-    # Get the directory where this script is located
-    $ScriptRoot = $PSScriptRoot
-    if (-not $ScriptRoot) {
-        $ScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-    }
-
-    # Navigate up from Scripts folder to project root
-    # Current structure: ProjectRoot\Core\WPF\Scripts\ExecutionPlanAnalysisFunctions.ps1
-    # So we need to go up 3 levels: Scripts -> WPF -> Core -> ProjectRoot
-    $ProjectRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $ScriptRoot))
-
-    Write-Host "[INFO] Script Root  : $ScriptRoot"
-    Write-Host "[INFO] Project Root : $ProjectRoot"
-
-    # Define all paths relative to project root
-    $script:ProjectRoot = $ProjectRoot
-    $script:ConfigDir = Join-Path $ProjectRoot "Config"
-    $script:OutputDir = Join-Path $ProjectRoot "Output"
-    $script:LogsDir = Join-Path $ProjectRoot "Core\Logs"
-    $script:PythonDir = Join-Path $ProjectRoot "Core\Python"
+    $script:ProjectRoot = "C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility"
+    $script:ConfigDir = "C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Config"
+    $script:OutputDir = "C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Output"
+    $script:LogsDir = "C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\Logs"
+    $script:PythonDir = "C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Core\Python"
 
     # Set default config path if not provided
     if (-not $ConfigPath) {
-        $ConfigPath = Join-Path $script:ConfigDir "execution_plan_configurations.json"
+        $ConfigPath = "C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Config\execution_plan_configurations.json"
     }
 
     # Store config path at script level for use in event handlers
     $script:ConfigPath = $ConfigPath
 
+    Write-Host "[INFO] Project Root : $script:ProjectRoot"
     Write-Host "[INFO] Config Path  : $script:ConfigPath"
     Write-Host "[INFO] Output Dir   : $script:OutputDir"
     Write-Host "[INFO] Python Dir   : $script:PythonDir"

@@ -36,11 +36,18 @@ The SQL Server Execution Plan Analysis Utility is a powerful tool designed to he
 
 ### Installation
 
-1. **Clone the repository:**
+1. **Clone or download the repository to the correct directory:**
    ```bash
-   git clone https://github.com/smpetersgithub/SQL-Server-Execution-Plan-Analysis-Utility.git
-   cd SQL-Server-Execution-Plan-Analysis-Utility
+   cd C:\Advanced_SQL_Server_Toolkit
+   git clone https://github.com/smpetersgithub/SQL-Server-Execution-Plan-Analysis-Utility.git Execution_Plan_Analysis_Utility
    ```
+
+   **⚠️ IMPORTANT:** The application uses hardcoded paths and **must** be installed to:
+   ```
+   C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility
+   ```
+
+   If you need to install to a different location, see the **Path Configuration** section below.
 
 2. **Install Python dependencies:**
    ```bash
@@ -50,6 +57,29 @@ The SQL Server Execution Plan Analysis Utility is a powerful tool designed to he
 3. **Launch the application:**
    - Double-click `Execution Plan Analysis Utility.lnk`
    - Or run: `Core\WPF\Scripts\Build\Execution Plan Analysis Utility.exe`
+
+### Path Configuration
+
+The application uses **hardcoded absolute paths** for reliability across different machines. The default installation path is:
+
+```
+C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility
+```
+
+**If you need to install to a different location:**
+
+1. Install the application to your desired location
+2. Open `HARDCODED_PATHS_CONFIGURATION.md` in the root directory
+3. Follow the step-by-step instructions to update paths in:
+   - `Core\WPF\Scripts\Main.ps1`
+   - `Core\WPF\Scripts\ExecutionPlanAnalysisFunctions.ps1`
+   - `Core\WPF\Scripts\MainWindow.xaml`
+
+**Files with hardcoded paths:**
+- **Main.ps1** - Script directory path
+- **ExecutionPlanAnalysisFunctions.ps1** - Project root, config, output, logs, and Python directories
+- **MainWindow.xaml** - All 10 icon image paths
+
 
 ## 📖 Usage Guide
 
@@ -142,8 +172,14 @@ The application toolbar is organized into three sections:
 
 ## 📁 Project Structure
 
+**Default Installation Path:**
 ```
-SQL-Server-Execution-Plan-Analysis-Utility/
+C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\
+```
+
+**Directory Structure:**
+```
+Execution_Plan_Analysis_Utility/
 ├── Core/
 │   ├── Python/                          # Python analysis scripts
 │   │   ├── 001_analyze_execution_plans.py
@@ -152,16 +188,20 @@ SQL-Server-Execution-Plan-Analysis-Utility/
 │   │   ├── 004_export_single_plan_to_excel.py
 │   │   └── config.ini
 │   ├── WPF/                             # WPF UI components
-│   │   ├── Assets/                      # Icons and images
+│   │   ├── Assets/                      # Icons and images (10 PNG files)
 │   │   └── Scripts/                     # PowerShell scripts
-│   │       ├── Main.ps1
-│   │       ├── MainWindow.xaml
+│   │       ├── Main.ps1                 # Main entry point
+│   │       ├── MainWindow.xaml          # UI definition
 │   │       ├── ExecutionPlanAnalysisFunctions.ps1
 │   │       └── Build/                   # Compiled EXE
+│   │           └── Execution Plan Analysis Utility.exe
 │   └── Logs/                            # Application logs
 ├── Config/                              # Configuration files
-├── Output/                              # Generated reports
+│   └── execution_plan_configurations.json
+├── Output/                              # Generated Excel reports
 ├── Example_Execution_Plans/             # Sample plans (optional)
+├── HARDCODED_PATHS_CONFIGURATION.md     # Path configuration guide
+├── Execution Plan Analysis Utility.lnk  # Desktop shortcut
 └── README.md
 ```
 
@@ -245,14 +285,21 @@ The utility extracts and analyzes the following metrics from execution plans:
 
 ### Common Issues
 
+**Issue: Application won't start or icons don't appear**
+- **Verify installation path:** The application must be installed to `C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility`
+- If installed to a different location, update the hardcoded paths (see `HARDCODED_PATHS_CONFIGURATION.md`)
+- Check that all icon files exist in `Core\WPF\Assets\`
+
 **Issue: Python scripts fail to run**
 - Ensure Python 3.8+ is installed and in PATH
 - Install required packages: `pip install pandas openpyxl lxml`
+- Verify the Python directory path in `ExecutionPlanAnalysisFunctions.ps1`
 
 **Issue: Excel files won't open**
 - Check that Microsoft Excel is installed
 - Verify Output folder permissions
 - Close any open Excel files with the same name
+- Ensure the Output directory exists at `C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility\Output`
 
 **Issue: No plans appear after loading**
 - Ensure the folder contains `.sqlplan` files
@@ -263,6 +310,11 @@ The utility extracts and analyzes the following metrics from execution plans:
 - Verify exactly 2 plans are marked as Active
 - Ensure both .sqlplan files are valid
 - Check logs for detailed error messages
+
+**Issue: "Path not found" errors**
+- The application uses hardcoded paths - verify installation directory
+- See `HARDCODED_PATHS_CONFIGURATION.md` for path configuration instructions
+- Ensure all required directories exist (Config, Output, Core\Logs, Core\Python)
 
 ### Log Files
 
