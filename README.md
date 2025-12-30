@@ -181,8 +181,7 @@ These utilities represent production-tested solutions for real-world database ch
 
 ## 📧 Contact
 
-**Author**: Scott Peters  
-**Email**: scottpeters1188@outlook.com  
+**Author**: Scott Peters
 **Website**: https://advancedsqlpuzzles.com
 
 ---
