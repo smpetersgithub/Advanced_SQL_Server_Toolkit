@@ -53,23 +53,7 @@ Extracts Data Definition Language (DDL) scripts from multiple SQL Server instanc
 
 ---
 
-### 3. **Database Migration Utility**
-**Purpose**: End-to-end database migration orchestration from SQL Server to target platforms
-
-Workflow-driven migration tool using Firebird as a configuration repository. Manages phased migrations with separate steps for discovery, DDL generation, transformation, and deployment.
-
-**Key Features**:
-- Workflow-driven architecture with Firebird configuration database
-- Multi-database support with blacklisting
-- Phased migration (discovery, DDL, transformation, deployment)
-- Object-level deployment (tables, elements, programmability)
-- PowerShell and Python script integration
-
-**Use Cases**: SQL Server to Babelfish for PostgreSQL migration, platform modernization, database consolidation, environment cloning
-
----
-
-### 4. **System Catalog Extractor Utility**
+### 3. **System Catalog Extractor Utility**
 **Purpose**: Extract SQL Server system catalog, DMVs, and custom queries into SQLite
 
 Consolidates metadata and performance metrics from multiple SQL Server instances into a centralized SQLite database. Provides access to 400+ Dynamic Management Views (DMVs) with category-based organization.
@@ -85,7 +69,7 @@ Consolidates metadata and performance metrics from multiple SQL Server instances
 
 ---
 
-### 5. **Execution Plan Analysis Utility**
+### 4. **Execution Plan Analysis Utility**
 **Purpose**: Analyze and compare SQL Server execution plans with Excel reporting
 
 Windows desktop application for detailed execution plan analysis. Compares plans side-by-side, identifies performance bottlenecks, and generates comprehensive Excel reports with color-coded insights.
@@ -101,7 +85,7 @@ Windows desktop application for detailed execution plan analysis. Compares plans
 
 ---
 
-### 6. **Advanced SQL Code Snippets**
+### 5. **Advanced SQL Code Snippets**
 **Purpose**: Curated collection of advanced SQL Server code snippets and utilities
 
 Production-ready SQL scripts and SSMS code snippets for complex database challenges including data profiling, dependency analysis, data transformation, and validation.
@@ -117,7 +101,7 @@ Production-ready SQL scripts and SSMS code snippets for complex database challen
 
 ---
 
-### 7. **WPF PowerShell Template**
+### 6. **WPF PowerShell Template**
 **Purpose**: Reusable template for building WPF applications with PowerShell
 
 Foundation for creating professional desktop utilities with modern graphical interfaces, tabbed navigation, and JSON-based configuration. Not a utility itself, but a template for building custom tools.
