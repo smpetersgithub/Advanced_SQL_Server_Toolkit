@@ -10,19 +10,28 @@ This repository contains seven specialized utilities and one reusable template, 
 
 ## 🛠️ Utilities
 
-### 1. **BabelfishCompass Utility**
-**Purpose**: SQL Server to PostgreSQL/Babelfish migration assessment and compatibility analysis
+#### 1. BabelfishCompass Utility
+**Purpose:** Leverage ANTLR-based SQL parsing for advanced T-SQL analysis and code assessment
 
-Automates the Babelfish Compass assessment process to evaluate SQL Server code compatibility with AWS Babelfish for PostgreSQL. Generates detailed compatibility reports, imports results into SQLite for analysis, and identifies migration blockers.
+Repurposes the Babelfish Compass tool to harness its powerful ANTLR (ANother Tool for Language Recognition) parser for analyzing SQL Server code. While Babelfish Compass was designed for PostgreSQL migration assessment, this utility exploits its grammar-based parsing engine to perform deep syntax analysis, pattern detection, and code quality assessment on T-SQL codebases.
 
 **Key Features**:
-- Automated Babelfish Compass report generation
-- DAT file import to SQLite database
-- Compatibility scoring and issue categorization
-- Batch processing of SQL files
-- Detailed migration assessment reports
+- ANTLR-Powered Parsing: Leverages grammar-based T-SQL parser to generate Abstract Syntax Trees (AST)
+- Syntax Pattern Detection: Identifies complex SQL patterns, anti-patterns, and language feature usage
+- Code Structure Analysis: Analyzes query complexity, nesting depth, and procedural logic patterns
+- Batch Processing: Parse and analyze hundreds of SQL files automatically
+- SQLite Integration: Import parsed results into SQLite for custom analysis and reporting
 
-**Use Cases**: Cloud migration planning, Babelfish compatibility assessment, migration effort estimation
+**Use Cases:**
+- SQL code quality analysis and anti-pattern detection
+- T-SQL feature inventory and complexity assessment
+- Syntax validation and code standards enforcement
+- Custom SQL parsing rules and pattern matching
+- Code refactoring opportunity identification
+- Migration assessment (not limited to Babelfish/PostgreSQL)
+
+🔗 [Babelfish Compass – SQL Server compatibility analysis tool](https://github.com/babelfish-for-postgresql/babelfish_compass)    
+🔗 [ANTLR](https://www.antlr.org/)
 
 ---
 
@@ -40,6 +49,8 @@ Extracts Data Definition Language (DDL) scripts from multiple SQL Server instanc
 
 **Use Cases**: Version control, documentation, disaster recovery, environment comparison, migration planning
 
+🔗 [mssql-scripter](https://github.com/microsoft/mssql-scripter)
+
 ---
 
 ### 3. **Database Migration Utility**
@@ -54,7 +65,7 @@ Workflow-driven migration tool using Firebird as a configuration repository. Man
 - Object-level deployment (tables, elements, programmability)
 - PowerShell and Python script integration
 
-**Use Cases**: SQL Server to PostgreSQL migration, platform modernization, database consolidation, environment cloning
+**Use Cases**: SQL Server to Babelfish for PostgreSQL migration, platform modernization, database consolidation, environment cloning
 
 ---
 
@@ -126,7 +137,7 @@ Foundation for creating professional desktop utilities with modern graphical int
 
 ```
 Advanced_SQL_Server_Toolkit/
-├── BabelfishCompass_Utility/           # Babelfish migration assessment
+├── BabelfishCompass_Utility/           # ANTLR SQL analyzer
 ├── DDL_Generator_Utility/              # DDL script generation
 ├── Database_Migration_Utility/         # Database migration orchestration
 ├── System_Catalog_Extractor_Utility/   # DMV and metadata extraction
@@ -137,30 +148,6 @@ Advanced_SQL_Server_Toolkit/
 ```
 
 Each utility contains its own detailed README with installation instructions, configuration guides, and usage examples.
-
----
-
-## 🎯 Common Use Cases
-
-### Database Migration Projects
-- **BabelfishCompass Utility**: Assess compatibility and identify blockers
-- **DDL Generator Utility**: Extract source database DDL
-- **Database Migration Utility**: Orchestrate migration workflow
-
-### Performance Analysis & Tuning
-- **System Catalog Extractor Utility**: Collect performance metrics across servers
-- **Execution Plan Analysis Utility**: Analyze and compare execution plans
-- **Advanced SQL Code Snippets**: Profile data and analyze dependencies
-
-### Database Administration
-- **DDL Generator Utility**: Generate DDL for version control
-- **System Catalog Extractor Utility**: Monitor security and permissions
-- **Advanced SQL Code Snippets**: Automate common DBA tasks
-
-### Development & DevOps
-- **WPF PowerShell Template**: Build custom automation tools
-- **Advanced SQL Code Snippets**: Accelerate development with reusable patterns
-- **DDL Generator Utility**: Automate environment synchronization
 
 ---
 
