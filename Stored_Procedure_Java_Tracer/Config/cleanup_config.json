@@ -1,0 +1,14 @@
+{
+	"cleanup_operations": [
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\Stored_Procedure_Java_Tracer\\Core\\Logs",
+			"description": "Log files from the Python scripts",
+			"action": "delete_folder"
+		},
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\Stored_Procedure_Java_Tracer\\Output",
+			"description": "Output files",
+			"action": "delete_folder"
+		}
+	]
+}
