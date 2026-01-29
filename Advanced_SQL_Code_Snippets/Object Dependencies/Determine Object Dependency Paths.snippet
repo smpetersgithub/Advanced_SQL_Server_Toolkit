@@ -62,7 +62,7 @@ BEGIN
     PRINT('Executing ##temp_sp_create_tables');
 
     -----------------------------------------------------------------
-    -- Drop existing temporary tables to ensure clean state
+    -- Drop existing temporary tables to ensure a clean state
     DROP TABLE IF EXISTS ##databases;
     DROP TABLE IF EXISTS ##sql_statements;
     DROP TABLE IF EXISTS ##sql_expression_dependencies;
@@ -87,7 +87,7 @@ BEGIN
         [database_name] VARCHAR(256)
     );
 
-    DECLARE @v_database_list_local VARCHAR(8000)
+    DECLARE @v_database_list_local VARCHAR(8000);
 
     -- Use the third part of @v_object_name as default database if @v_database_list is NULL
     SET @v_database_list_local = CASE WHEN @v_database_list IS NULL THEN PARSENAME(@v_object_name, 3) ELSE @v_database_list END;
@@ -324,7 +324,7 @@ BEGIN
         FROM   ##sql_statements
         WHERE  sql_statement_id = 1;
 
-        -- Replace placeholders with actual database name and ID
+        -- Replace placeholders with the actual database name and ID
         SET @v_sql_statement = REPLACE(@v_sql_statement, 'vdatabase_name', @v_database_name);
         SET @v_sql_statement = REPLACE(@v_sql_statement, 'vdatabase_id', CAST(@v_database_id AS NVARCHAR));
         PRINT(@v_sql_statement);
@@ -369,7 +369,7 @@ BEGIN
         FROM   ##sql_statements
         WHERE  sql_statement_id = 2;
 
-        -- Replace placeholders with actual database name and ID
+        -- Replace placeholders with the actual database name and ID
         SET @v_sql_statement = REPLACE(@v_sql_statement, 'vdatabase_name', @v_database_name);
         SET @v_sql_statement = REPLACE(@v_sql_statement, 'vdatabase_id', CAST(@v_database_id AS NVARCHAR));
         PRINT(@v_sql_statement);
@@ -582,7 +582,7 @@ BEGIN
                        AND CHARINDEX(b.referenced_object_fullname, a.object_name_path) = 0;
 
         SET @v_row_count = @@ROWCOUNT;
-        PRINT(CONCAT('Inserted into ##path_list (WHILE loop): ', @v_row_count))
+        PRINT(CONCAT('Inserted into ##path_list (WHILE loop): ', @v_row_count));
 
         SET @v_depth = @v_depth + 1;
 
