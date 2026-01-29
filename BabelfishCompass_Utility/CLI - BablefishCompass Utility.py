@@ -78,9 +78,6 @@ def print_header(step_num, title):
     print("=" * 80 + "\n")
 
 
-
-
-
 def step1_generate_report(report_name, sql_source_dir):
     """
     STEP 1: Generate the Babelfish Compass Report
@@ -121,24 +118,6 @@ def step2_generate_dat_file(report_name):
         return result.returncode == 0
     except Exception as e:
         return False
-
-
-# ============================================================================
-# NOTE: All business logic moved to separate Core scripts
-# ============================================================================
-# This CLI script now acts as a menu-driven orchestrator that calls separate
-# Python scripts in the Core folder for each step:
-#
-#   Step 1: Core/0100_Generate_BabelfishCompass_Report.py
-#   Step 2: Core/0200_Generate_DAT_File.py
-#   Step 3: Core/0300_Import_DAT_to_SQLite.py
-#
-# This modular design allows:
-#   - Each script can be run independently
-#   - Business logic is separated from UI/menu logic
-#   - Easier testing and maintenance
-#   - All scripts share the same config.ini file
-# ============================================================================
 
 
 def step3_import_to_sqlite(report_name):
