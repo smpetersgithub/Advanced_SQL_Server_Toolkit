@@ -1016,7 +1016,7 @@ if %ERRORLEVEL% EQU 0 (
         } catch {
             Write-Host "[ERROR] Failed to open GitHub URL: $($_.Exception.Message)"
             [System.Windows.MessageBox]::Show(
-                "Failed to open GitHub repository.`n`nURL: https://github.com/smpetersgithub/SQL-Server-Execution-Plan-Analysis-Utility",
+                "Failed to open GitHub repository.`n`nURL: https://github.com/smpetersgithub/Advanced_SQL_Server_Toolkit",
                 "Error",
                 [System.Windows.MessageBoxButton]::OK,
                 [System.Windows.MessageBoxImage]::Error
