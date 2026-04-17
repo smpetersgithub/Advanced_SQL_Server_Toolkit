@@ -10,6 +10,22 @@ This repository contains nine specialized utilities and one reusable template, e
 
 ## 🛠️ Utilities
 
+### 0. **Advanced SQL Code Snippets**
+**Purpose**: Curated collection of advanced SQL Server code snippets and utilities
+
+Production-ready SQL scripts and SSMS code snippets for complex database challenges including data profiling, dependency analysis, data transformation, and validation.
+
+**Key Features**:
+- Data profiling and quality analysis
+- Foreign key path analysis and dependency mapping
+- Pivot operations and Excel integration
+- Table validation and comparison
+- SSMS snippet integration
+
+**Use Cases**: Data profiling, dependency analysis, impact analysis, data validation, development automation
+
+---
+
 ### 1. **BabelfishCompass Utility (ANTLR SQL Syntax Scanner)**
 **Purpose:** Leverage ANTLR-based SQL parsing for advanced T-SQL analysis and code assessment
 
@@ -88,7 +104,23 @@ Windows desktop application for analyzing forward and reverse dependencies betwe
 
 ---
 
-### 5. **Query Store Analysis Utility**
+### 5. **Execution Plan Analysis Utility**
+**Purpose**: Analyze and compare SQL Server execution plans with Excel reporting
+
+Windows desktop application for detailed execution plan analysis. Compares plans side-by-side, identifies performance bottlenecks, and generates comprehensive Excel reports with color-coded insights.
+
+**Key Features**:
+- Side-by-side execution plan comparison
+- Individual plan analysis with detailed metrics
+- Excel export with color-coded formatting
+- Cardinality estimation warnings (10x errors)
+- Configuration management and batch processing
+
+**Use Cases**: Query performance tuning, execution plan comparison, cardinality estimation analysis, performance troubleshooting
+
+---
+
+### 6. **Query Store Analysis Utility**
 **Purpose**: Extract and analyze SQL Server Query Store data with AI-ready performance reports
 
 Python-based toolkit for analyzing SQL Server Query Store data, extracting execution plans, and generating AI-ready performance analysis reports. Automates the extraction of top resource-consuming queries, downloads XML execution plans, and converts them to structured JSON for AI analysis.
@@ -106,83 +138,17 @@ Python-based toolkit for analyzing SQL Server Query Store data, extracting execu
 
 ---
 
-### 6. **System Catalog Extractor Utility**
-**Purpose**: Extract SQL Server system catalog, DMVs, and custom queries into SQLite
-
-Consolidates metadata and performance metrics from multiple SQL Server instances into a centralized SQLite database. Provides access to 400+ Dynamic Management Views (DMVs) with category-based organization.
-
-**Key Features**:
-- 400+ pre-configured DMVs/DMFs
-- Custom query framework for analytical queries
-- Category-based organization (Performance, Security, Execution, etc.)
-- Multi-server support with batch processing
-- SQLite output for cross-server analysis
-
-**Use Cases**: Performance monitoring, capacity planning, security auditing, index optimization, compliance reporting
-
----
-
-### 7. **Execution Plan Analysis Utility**
-**Purpose**: Analyze and compare SQL Server execution plans with Excel reporting
-
-Windows desktop application for detailed execution plan analysis. Compares plans side-by-side, identifies performance bottlenecks, and generates comprehensive Excel reports with color-coded insights.
-
-**Key Features**:
-- Side-by-side execution plan comparison
-- Individual plan analysis with detailed metrics
-- Excel export with color-coded formatting
-- Cardinality estimation warnings (10x errors)
-- Configuration management and batch processing
-
-**Use Cases**: Query performance tuning, execution plan comparison, cardinality estimation analysis, performance troubleshooting
-
----
-
-### 8. **Advanced SQL Code Snippets**
-**Purpose**: Curated collection of advanced SQL Server code snippets and utilities
-
-Production-ready SQL scripts and SSMS code snippets for complex database challenges including data profiling, dependency analysis, data transformation, and validation.
-
-**Key Features**:
-- Data profiling and quality analysis
-- Foreign key path analysis and dependency mapping
-- Pivot operations and Excel integration
-- Table validation and comparison
-- SSMS snippet integration
-
-**Use Cases**: Data profiling, dependency analysis, impact analysis, data validation, development automation
-
----
-
-### 9. **WPF PowerShell Template**
-**Purpose**: Reusable template for building WPF applications with PowerShell
-
-Foundation for creating professional desktop utilities with modern graphical interfaces, tabbed navigation, and JSON-based configuration. Not a utility itself, but a template for building custom tools.
-
-**Key Features**:
-- WPF application framework with STA mode
-- Tabbed navigation and DataGrid integration
-- JSON configuration management
-- Modular XAML and PowerShell organization
-- Executable creation support
-
-**Use Cases**: Building custom database administration tools, deployment utilities, monitoring dashboards, configuration managers
-
----
-
 ## 📂 Repository Structure
 
 ```
 Advanced_SQL_Server_Toolkit/
+├── Advanced_SQL_Code_Snippets/                  # SQL code snippets and utilities
 ├── BabelfishCompass_Utility/                    # ANTLR SQL analyzer (Babelfish Compass)
 ├── DDL_Generator_Utility/                       # DDL script generation
 ├── Database_Normalization_Analysis_Utility/     # Functional dependency and normalization analysis
 ├── Database_Object_Dependency_Utility/          # Object dependency analysis and visualization
-├── Query_Store_Analysis_Utility/                # Query Store data extraction and AI analysis
-├── System_Catalog_Extractor_Utility/            # DMV and metadata extraction
 ├── Execution_Plan_Analysis_Utility/             # Execution plan analysis and comparison
-├── Advanced_SQL_Code_Snippets/                  # SQL code snippets and utilities
-├── WPF_Powershell_Template/                     # WPF application template
+├── Query_Store_Analysis_Utility/                # Query Store data extraction and AI analysis
 ├── Master_Cleanup.py                            # Master cleanup script for all utilities
 └── README.md                                    # This file
 ```
