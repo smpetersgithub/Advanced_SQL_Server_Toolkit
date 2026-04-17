@@ -1,0 +1,22 @@
+{
+  "servers": [
+    {
+      "parent_name": "parent_name",
+      "servername": "servername",
+      "port": 1433,
+      "username": "username",
+      "password": "password",
+      "databases_include":["foo","bar"],
+      "active": true
+    },
+    {
+      "parent_name": "parent_name_2",
+      "servername": "servername2",
+      "port": 1433,
+      "username": "username",
+      "password": "password",
+      "databases_include":[],
+      "active": false
+    }
+  ]
+}

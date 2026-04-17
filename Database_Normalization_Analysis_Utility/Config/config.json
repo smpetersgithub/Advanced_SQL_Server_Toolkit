@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "database_config": "Config/database-config.json",
+    "table_config": "Config/table-config.json",
+    "output_directory": "Output",
+    "functional_dependencies_output": "Output/functional_dependencies.json"
+  },
+  "analysis": {
+    "max_determinant_size": 3,
+    "progress_update_interval": 10
+  },
+  "database": {
+    "odbc_driver": "ODBC Driver 17 for SQL Server",
+    "default_schema": "dbo"
+  },
+  "excel": {
+    "header_color": "366092",
+    "header_font_color": "FFFFFF",
+    "header_font_size": 12,
+    "min_column_width": 10,
+    "max_column_width": 80,
+    "relevance_colors": {
+      "MINIMAL": "C6EFCE",
+      "REDUNDANT": "D3D3D3",
+      "PARTIAL_DEPENDENCY": "FFC7CE",
+      "PRIMARY_KEY": "BDD7EE",
+      "UNIQUE_KEY": "E2CFEA",
+      "TRIVIAL": "FFEB9C"
+    }
+  },
+  "logging": {
+    "show_progress": true,
+    "show_sql_queries": false
+  }
+}
+

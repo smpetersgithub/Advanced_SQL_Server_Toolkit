@@ -1,0 +1,41 @@
+{
+  "description": "Database Object Dependency Utility Configuration",
+  "version": "1.0",
+  
+  "paths": {
+    "java_source_dirs": [
+      "C:\\dev\\main\\java",
+      "C:\\dev\\main\\java"
+    ],
+    "project_base_dir": "C:\\Advanced_SQL_Server_Toolkit\\Database_Object_Dependency_Utility",
+    "output_dir": "Output",
+    "log_dir": "Logs"
+  },
+  
+  "files": {
+    "database_config": "Config/database-config.json",
+    "database_object_input": "Config/database-objects-input.txt",
+    "dependency_sql_script": "Core/SQL/Determine Object Dependencies.sql",
+    "dependency_sql_script_reverse": "Core/SQL/Determine Object Dependencies Reverse.sql",
+    "dependency_sql_script_forward": "Core/SQL/Determine Object Dependencies Forward.sql",
+    "complete_mapping_csv": "Complete_StoredProc_to_UI_Mapping.csv",
+    "complete_mapping_excel": "Complete_StoredProc_to_UI_Mapping.xlsx",
+    "object_dependency_list_json": "Object_Dependency_List.json",
+    "object_dependency_list_reverse_json": "Object_Dependency_List_Reverse.json",
+    "object_dependency_list_forward_json": "Object_Dependency_List_Forward.json",
+    "final_ui_mappings_csv": "UI_Mappings_Final.csv",
+    "final_excel_report": "Final_Dependency_Report.xlsx",
+    "final_excel_report_formatted": "Final_Dependency_Report_Formatted.xlsx"
+  },
+  
+  "database": {
+    "odbc_driver": "ODBC Driver 17 for SQL Server"
+  },
+  
+  "formatting": {
+    "naming_convention": 1,
+    "part_naming_convention": 1,
+    "remove_object_description": true
+  }
+}
+

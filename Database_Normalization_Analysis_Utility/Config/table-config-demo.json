@@ -1,0 +1,15 @@
+{
+    "table":  "norm.NF2_Toothbrush",
+    "uniquekey":  {
+
+                  },
+    "columns":  [
+                    "Manufacturer",
+                    "Model",
+                    "ManufacturerCountry"
+                ],
+    "primarykey":  [
+                       "Manufacturer",
+                       "Model"
+                   ]
+}

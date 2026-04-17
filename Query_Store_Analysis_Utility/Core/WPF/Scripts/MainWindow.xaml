@@ -1,0 +1,641 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SQL Server Query Store Analysis Utility"
+        Height="800" Width="1400"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5"
+        Icon="C:/Advanced_SQL_Server_Toolkit/Query_Store_Analysis_Utility/Core/WPF/Assets/icons8-monster-ico.ico">
+
+    <Window.Resources>
+        <!-- Modern Button Style -->
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Background" Value="#0078D4"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="3" 
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#005A9E"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CCCCCC"/>
+                    <Setter Property="Foreground" Value="#666666"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- DataGrid Style -->
+        <Style TargetType="DataGrid">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#0078D4"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="GridLinesVisibility" Value="All"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#DDDDDD"/>
+            <Setter Property="VerticalGridLinesBrush" Value="#DDDDDD"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="CanUserSortColumns" Value="True"/>
+            <Setter Property="CanUserReorderColumns" Value="True"/>
+            <Setter Property="CanUserResizeColumns" Value="True"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="AlternatingRowBackground" Value="#E3F2FD"/>
+            <Setter Property="RowBackground" Value="White"/>
+            <Setter Property="RowHeight" Value="30"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="ColumnHeaderHeight" Value="35"/>
+        </Style>
+
+        <!-- DataGrid Column Header Style -->
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#0078D4"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="BorderBrush" Value="#005A9E"/>
+            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
+
+        <!-- DataGrid Row Style -->
+        <Style TargetType="DataGridRow">
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#BBDEFB"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#90CAF9"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- DataGrid Cell Style -->
+        <Style TargetType="DataGridCell">
+            <Setter Property="Padding" Value="8,5"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DataGridCell">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#90CAF9"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- TextBox Style -->
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="#CCCCCC"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <!-- ComboBox Style -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="#CCCCCC"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <!-- Label Style -->
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="5,5,5,2"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="White" Padding="10" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Logo and Title -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Image Source="C:/Advanced_SQL_Server_Toolkit/Query_Store_Analysis_Utility/Core/WPF/Assets/icons8-monster-480.png"
+                           Width="64"
+                           Height="64"
+                           Margin="0,0,10,0"/>
+                    <TextBlock Text="SQL Server Query Store Analysis Utility"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Foreground="#2D2D30"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Toolbar Buttons -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="btnOpenOutputFolder" Content="📁 Open Output" Style="{StaticResource ModernButton}"/>
+                    <Button Name="btnDeleteOutput" Content="🗑️ Delete Output" Style="{StaticResource ModernButton}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content Area -->
+        <TabControl Grid.Row="1" Name="MainTabControl" Margin="10">
+
+            <!-- CONNECTION TAB -->
+            <TabItem Header="🔌 Connection" Name="ConnectionTab">
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Grid.Row="0" Padding="20">
+                        <GroupBox.Header>
+                            <TextBlock Text="Database Connection Settings" FontWeight="Bold" FontSize="14"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Server -->
+                            <Label Grid.Row="0" Grid.Column="0" Content="Server:" FontWeight="Bold"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" Name="txtServer" Text="localhost" Margin="0,0,0,10" Height="30"/>
+
+                            <!-- Database -->
+                            <Label Grid.Row="1" Grid.Column="0" Content="Database:" FontWeight="Bold"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Name="txtDatabase" Margin="0,0,0,10" Height="30"/>
+
+                            <!-- Username -->
+                            <Label Grid.Row="2" Grid.Column="0" Content="Username:" FontWeight="Bold"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Name="txtUsername" Margin="0,0,0,10" Height="30"/>
+
+                            <!-- Password -->
+                            <Label Grid.Row="3" Grid.Column="0" Content="Password:" FontWeight="Bold"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" Name="txtPassword" Margin="0,0,0,10" Height="30"/>
+
+                            <!-- Buttons -->
+                            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="0,10,0,0">
+                                <Button Name="btnTestConnection"
+                                        Content="🔍 Test Connection"
+                                        Style="{StaticResource ModernButton}"
+                                        Width="180"
+                                        Height="35"
+                                        Margin="0,0,10,0"/>
+                                <Button Name="btnSaveConfig"
+                                        Content="💾 Save Configuration"
+                                        Style="{StaticResource ModernButton}"
+                                        Width="180"
+                                        Height="35"/>
+                            </StackPanel>
+
+                            <!-- Connection Status -->
+                            <TextBlock Grid.Row="5" Grid.Column="1" Name="txtConnectionStatus"
+                                       Text="Not tested"
+                                       Foreground="Gray"
+                                       FontStyle="Italic"
+                                       Margin="0,10,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+
+            <!-- REPORTS TAB -->
+            <TabItem Header="📊 Reports" Name="ReportsTab">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="250"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Available Reports Grid -->
+                    <GroupBox Grid.Row="0" Padding="10" Margin="0,0,0,10">
+                        <GroupBox.Header>
+                            <TextBlock Text="Available Reports" FontWeight="Bold" FontSize="14"/>
+                        </GroupBox.Header>
+                        <DataGrid Name="ReportsGrid"
+                                  IsReadOnly="True"
+                                  SelectionMode="Single"
+                                  AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Report Name" Binding="{Binding name}" Width="300"/>
+                                <DataGridTextColumn Header="Description" Binding="{Binding description}" Width="*"/>
+                                <DataGridTextColumn Header="Status" Binding="{Binding status}" Width="100"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+
+                    <!-- Execute Button and Progress Bar -->
+                    <StackPanel Grid.Row="1" Margin="0,0,0,10">
+                        <Button Name="btnExecuteReport"
+                                Content="▶ Execute Selected Report"
+                                Style="{StaticResource ModernButton}"
+                                Background="#0078D4"
+                                Foreground="White"
+                                HorizontalAlignment="Center"
+                                Width="250"
+                                Height="40"
+                                FontSize="15"
+                                Margin="0,0,0,5"
+                                IsEnabled="False"/>
+
+                        <!-- Progress Bar -->
+                        <StackPanel Name="pnlProgress" Visibility="Collapsed" Margin="0,5,0,0">
+                            <ProgressBar Name="progressBar"
+                                         Height="25"
+                                         Minimum="0"
+                                         Maximum="100"
+                                         Value="0"
+                                         Foreground="#0078D4"
+                                         Margin="20,0,20,5"/>
+                            <TextBlock Name="txtProgressStatus"
+                                       Text="Initializing..."
+                                       HorizontalAlignment="Center"
+                                       FontSize="12"
+                                       Foreground="#0078D4"
+                                       Margin="0,0,0,5"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Report Configuration Panel -->
+                    <GroupBox Grid.Row="2" Padding="10">
+                        <GroupBox.Header>
+                            <TextBlock Text="Report Configuration" FontWeight="Bold" FontSize="14"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Selected Report -->
+                            <Label Grid.Row="0" Grid.Column="0" Content="Selected Report:" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                                       Name="txtSelectedReport"
+                                       Text="None"
+                                       VerticalAlignment="Center"
+                                       Foreground="#0078D4"
+                                       FontSize="14"/>
+
+                            <!-- Top N Queries -->
+                            <Label Grid.Row="1" Grid.Column="0" Content="Top N Queries:" Margin="0,10,0,0"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Name="txtTopN" Text="20" Width="100" HorizontalAlignment="Left" Margin="0,10,0,0" Height="30"/>
+
+                            <!-- Include Execution Plans -->
+                            <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                      Name="chkIncludePlans"
+                                      Content="Include Execution Plans"
+                                      IsChecked="True"
+                                      Margin="0,10,0,0"/>
+
+                            <!-- Analyze Indexes -->
+                            <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                      Name="chkAnalyzeIndexes"
+                                      Content="Analyze Indexes &amp; Statistics"
+                                      IsChecked="True"
+                                      Margin="0,5,0,0"/>
+
+                            <!-- Output Directory -->
+                            <Label Grid.Row="4" Grid.Column="0" Content="Output Directory:" Margin="0,10,0,0"/>
+                            <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+                                       VerticalAlignment="Center"
+                                       Margin="0,10,0,0"
+                                       FontFamily="Consolas"
+                                       FontSize="11">
+                                <Hyperlink Name="linkReportOutputDir"
+                                           NavigateUri=""
+                                           TextDecorations="None">
+                                    <Run Name="txtReportOutputDir" Text=""/>
+                                </Hyperlink>
+                            </TextBlock>
+
+                            <!-- Save Configuration Button -->
+                            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+                                    Name="btnSaveReportConfig"
+                                    Content="💾 Save Configuration"
+                                    Style="{StaticResource ModernButton}"
+                                    Background="#0078D4"
+                                    Foreground="White"
+                                    HorizontalAlignment="Left"
+                                    Width="200"
+                                    Height="35"
+                                    Margin="0,15,0,0"
+                                    IsEnabled="False"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+
+            <!-- RESULTS TAB -->
+            <TabItem Header="📈 Results" Name="ResultsTab">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Results Header -->
+                    <Grid Grid.Row="0" Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Orientation="Horizontal">
+                            <TextBlock Name="txtResultsReportName" Text="No results loaded" VerticalAlignment="Center" Foreground="#0078D4" FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <Button Name="btnExportToExcel" Content="📊 Export to Excel" Style="{StaticResource ModernButton}" Height="35" Margin="0,0,10,0"/>
+                            <Button Name="btnRefreshResults" Content="🔄 Refresh" Style="{StaticResource ModernButton}" Height="35"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Results DataGrid -->
+                    <DataGrid Grid.Row="1"
+                              Name="ResultsGrid"
+                              IsReadOnly="True"
+                              AutoGenerateColumns="True"
+                              VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Auto"
+                              SelectionMode="Extended"
+                              SelectionUnit="CellOrRowHeader"
+                              ClipboardCopyMode="ExcludeHeader"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              CanUserSortColumns="True"
+                              CanUserReorderColumns="True"
+                              CanUserResizeColumns="True"/>
+                </Grid>
+            </TabItem>
+
+            <!-- AI PROMPTS TAB -->
+            <TabItem Header="🤖 AI Prompts" Name="AIPromptsTab">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Prompt Selection -->
+                    <ComboBox Grid.Row="0" Name="cmbAIPrompts" Height="30" Margin="0,0,0,10"/>
+
+                    <!-- Prompt Display -->
+                    <GroupBox Grid.Row="1" Padding="10" Margin="0,0,0,10">
+                        <TextBox Name="txtPromptContent"
+                                 IsReadOnly="True"
+                                 TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto"
+                                 HorizontalScrollBarVisibility="Auto"
+                                 FontFamily="Consolas"
+                                 FontSize="12"
+                                 Background="#F5F5F5"
+                                 Padding="10"/>
+                    </GroupBox>
+
+                    <!-- Directory Path Display -->
+                    <TextBlock Grid.Row="2" Name="txtPromptsDirectoryPath" FontFamily="Consolas" FontSize="11" Foreground="#666666" Margin="0,0,0,5"/>
+
+                    <!-- Copy Path Button -->
+                    <Button Grid.Row="3" Name="btnCopyPromptsPath" Content="📋 Copy Path" Style="{StaticResource ModernButton}" Width="150" Height="35" HorizontalAlignment="Right"/>
+                </Grid>
+            </TabItem>
+
+            <!-- QUERY ID LOOKUP TAB -->
+            <TabItem Header="🔍 QueryID" Name="QueryIDTab">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Input Section -->
+                    <GroupBox Grid.Row="0" Header="Query Lookup" Padding="10" Margin="0,0,0,10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Instruction Text -->
+                            <TextBlock Grid.Row="0" Text="Please enter the Query ID:" FontStyle="Italic" Foreground="#666666" Margin="0,0,0,5"/>
+
+                            <!-- Query ID Input -->
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBox Grid.Column="0" Name="txtQueryID" Height="35" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <Button Grid.Column="1" Name="btnExecuteQueryLookup" Content="🔍 Retrieve Query" Style="{StaticResource ModernButton}" Width="150" HorizontalAlignment="Left" Height="35"/>
+                            </Grid>
+
+                            <!-- Object Name Display -->
+                            <TextBox Grid.Row="2" Name="txtStoredProcedure" IsReadOnly="True" BorderThickness="0" Background="Transparent" VerticalAlignment="Center" FontSize="13" Margin="0,10,0,0" Foreground="#0078D4" FontWeight="Bold"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <!-- Results Section -->
+                    <GroupBox Grid.Row="1" Header="Query Text" Padding="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Query Text Display -->
+                            <TextBox Grid.Row="0" Name="txtQueryText"
+                                     IsReadOnly="True"
+                                     TextWrapping="Wrap"
+                                     VerticalScrollBarVisibility="Auto"
+                                     HorizontalScrollBarVisibility="Auto"
+                                     FontFamily="Consolas"
+                                     FontSize="12"
+                                     Background="#F5F5F5"
+                                     Padding="10"
+                                     Margin="0,0,0,10"/>
+
+                            <!-- Action Buttons -->
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button Name="btnCopySQL" Content="📋 Copy SQL" Style="{StaticResource ModernButton}" Width="150" Height="35" Margin="0,0,10,0"/>
+                                <Button Name="btnOpenObject" Content="📂 Open Object" Style="{StaticResource ModernButton}" Width="150" Height="35"/>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+
+                    <!-- GitHub Repository Paths -->
+                    <StackPanel Grid.Row="2" Margin="0,15,0,0">
+                        <TextBox Name="txtGitHubProcsPath" IsReadOnly="True" BorderThickness="0" Background="Transparent" FontFamily="Consolas" FontSize="10" Foreground="Black" Margin="0,0,0,2"/>
+                        <TextBox Name="txtGitHubFunctionsPath" IsReadOnly="True" BorderThickness="0" Background="Transparent" FontFamily="Consolas" FontSize="10" Foreground="Black" Margin="0,0,0,2"/>
+                        <TextBlock Text="    Modify the following paths in the config.json file." FontStyle="Italic" Foreground="#666666" FontSize="9" Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- CONFIGURATION TAB -->
+            <TabItem Header="⚙️ Configuration" Name="ConfigTab">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Config Selector -->
+                    <ComboBox Grid.Row="0" Name="cmbConfigFiles" Height="30" Margin="0,0,0,10"/>
+
+                    <!-- Config Display -->
+                    <GroupBox Grid.Row="1" Padding="10" Margin="0,0,0,10">
+                        <TextBox Name="txtConfigContent"
+                                 IsReadOnly="False"
+                                 AcceptsReturn="True"
+                                 TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto"
+                                 HorizontalScrollBarVisibility="Auto"
+                                 FontFamily="Consolas"
+                                 FontSize="12"
+                                 Background="White"
+                                 Padding="10"/>
+                    </GroupBox>
+
+                    <!-- Config File Path Display -->
+                    <TextBlock Grid.Row="2" Name="txtConfigFilePath" FontFamily="Consolas" FontSize="11" Foreground="#666666" Margin="0,0,0,5"/>
+
+                    <!-- Action Buttons -->
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="1" Name="btnRefreshConfig" Content="🔄 Refresh" Style="{StaticResource ModernButton}" Width="150" Height="35" Margin="0,0,10,0"/>
+                        <Button Grid.Column="2" Name="btnCopyConfigPath" Content="📋 Copy Path" Style="{StaticResource ModernButton}" Width="150" Height="35" Margin="0,0,10,0"/>
+                        <Button Grid.Column="3" Name="btnSaveConfigFile" Content="💾 Save Config" Style="{StaticResource ModernButton}" Width="150" Height="35"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+            <!-- OUTPUT LOG TAB -->
+            <TabItem Header="📝 Output Log" Name="OutputLogTab">
+                <Border BorderBrush="Black" BorderThickness="1" Padding="10" Background="White">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Analysis Output"
+                                       FontWeight="Bold" FontSize="14"
+                                       VerticalAlignment="Center"/>
+                            <Button Name="btnClearLog"
+                                    Content="Clear Log"
+                                    Margin="15,0,0,0"
+                                    Padding="10,5"
+                                    Background="#E74C3C"
+                                    Foreground="White"
+                                    BorderThickness="0"
+                                    Cursor="Hand"/>
+                            <Button Name="btnOpenLogsFolder"
+                                    Content="📂 Open Logs Folder"
+                                    Margin="10,0,0,0"
+                                    Padding="10,5"
+                                    Background="#3498DB"
+                                    Foreground="White"
+                                    BorderThickness="0"
+                                    Cursor="Hand"/>
+                        </StackPanel>
+
+                        <TextBox Name="txtOutputLog"
+                                 Grid.Row="1"
+                                 TextWrapping="Wrap"
+                                 IsReadOnly="True"
+                                 VerticalScrollBarVisibility="Auto"
+                                 HorizontalScrollBarVisibility="Auto"
+                                 FontFamily="Consolas"
+                                 FontSize="11"
+                                 Background="#1E1E1E"
+                                 Foreground="#D4D4D4"
+                                 Padding="5"/>
+                    </Grid>
+                </Border>
+            </TabItem>
+
+        </TabControl>
+
+        <!-- Status Bar -->
+        <Border Grid.Row="2" Background="#007ACC" Padding="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Name="txtStatus" Text="Ready - Configure connection and select a report" Foreground="White" FontSize="13"/>
+                <TextBlock Grid.Column="1" Name="txtVersion" Text="Last Updated: 2026-04-02" Foreground="White" FontSize="11" Opacity="0.8"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
+

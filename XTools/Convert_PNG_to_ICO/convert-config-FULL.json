@@ -1,0 +1,40 @@
+{
+  "conversions": [
+    {
+      "name": "Query Store Analysis Utility - Monster 60",
+      "png_path": "C:/Advanced_SQL_Server_Toolkit/Query_Store_Analysis_Utility/Core/WPF/Assets/icons8-monster-60.png",
+      "ico_path": "C:/Advanced_SQL_Server_Toolkit/Query_Store_Analysis_Utility/Core/WPF/Assets/icons8-monster-60.ico"
+    },
+    {
+      "name": "Query Store Analysis Utility - Monster 120",
+      "png_path": "C:/Advanced_SQL_Server_Toolkit/Query_Store_Analysis_Utility/Core/WPF/Assets/icons8-monster-120.png",
+      "ico_path": "C:/Advanced_SQL_Server_Toolkit/Query_Store_Analysis_Utility/Core/WPF/Assets/icons8-monster-120.ico"
+    },
+    {
+      "name": "Query Store Analysis Utility - Store 64",
+      "png_path": "C:/Advanced_SQL_Server_Toolkit/Query_Store_Analysis_Utility/Core/WPF/Assets/icons8-store-64.png",
+      "ico_path": "C:/Advanced_SQL_Server_Toolkit/Query_Store_Analysis_Utility/Core/WPF/Assets/icons8-store-64.ico"
+    },
+    {
+      "name": "Database Normalization Analysis Utility - File Cabinet 64",
+      "png_path": "C:/Advanced_SQL_Server_Toolkit/Database_Normalization_Analysis_Utility/Core/WPF/Assets/icons8-file-cabinet-64.png",
+      "ico_path": "C:/Advanced_SQL_Server_Toolkit/Database_Normalization_Analysis_Utility/Core/WPF/Assets/icons8-file-cabinet-64.ico"
+    },
+    {
+      "name": "Database Object Dependency Utility - Connect 50",
+      "png_path": "C:/Advanced_SQL_Server_Toolkit/Database_Object_Dependency_Utility/Core/WPF/Assets/icons8-connect-50.png",
+      "ico_path": "C:/Advanced_SQL_Server_Toolkit/Database_Object_Dependency_Utility/Core/WPF/Assets/icons8-connect-50.ico"
+    },
+    {
+      "name": "Execution Plan Analysis Utility - Activate 50",
+      "png_path": "C:/Advanced_SQL_Server_Toolkit/Execution_Plan_Analysis_Utility/Core/WPF/Assets/icons8-activate-50.png",
+      "ico_path": "C:/Advanced_SQL_Server_Toolkit/Execution_Plan_Analysis_Utility/Core/WPF/Assets/icons8-activate-50.ico"
+    },
+    {
+      "name": "Execution Plan Analysis Utility - Analyze 50",
+      "png_path": "C:/Advanced_SQL_Server_Toolkit/Execution_Plan_Analysis_Utility/Core/WPF/Assets/icons8-analyze-50.png",
+      "ico_path": "C:/Advanced_SQL_Server_Toolkit/Execution_Plan_Analysis_Utility/Core/WPF/Assets/icons8-analyze-50.ico"
+    }
+  ]
+}
+

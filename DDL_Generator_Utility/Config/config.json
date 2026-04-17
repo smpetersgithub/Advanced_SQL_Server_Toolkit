@@ -1,0 +1,28 @@
+{
+  "paths": {
+    "workspace_dir": "C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility",
+    "config_dir": "Config",
+    "database_config_dir": "Config\\database_config",
+    "log_dir": "Logs",
+    "generated_scripts_dir": "Output"
+  },
+  "files": {
+    "sql_server_connections_file": "sql_server_connections.json",
+    "commands_config_file": "commands_config.json"
+  },
+  "logging": {
+    "log_format": "%(asctime)s [%(levelname)s] %(message)s",
+    "log_level": "INFO",
+    "timestamp_format": "%Y%m%d_%H%M%S",
+    "log_filemode": "w"
+  },
+  "database": {
+    "connection_timeout": 10,
+    "commit_every_n_tables": 10
+  },
+  "mssql_scripter": {
+    "default_options": "--schema-and-data",
+    "max_retry_attempts": 2
+  }
+}
+

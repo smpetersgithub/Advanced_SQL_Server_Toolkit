@@ -1,0 +1,167 @@
+{
+    "description":  "Configuration for all available Query Store analysis reports",
+    "version":  "1.0",
+    "reports":  {
+                    "top_resource_consuming_queries":  {
+                                                           "name":  "Top Resource Consuming Queries",
+                                                           "description":  "Analyzes the top resource-consuming queries from Query Store",
+                                                           "enabled":  true,
+                                                           "sql_files":  {
+                                                                             "main_query":  "Core/SQL/Query Store Top Resource Consuming Queries.sql",
+                                                                             "index_detail":  "Core/SQL/Index Detail.sql",
+                                                                             "statistics_detail":  "Core/SQL/Statistics Detail.sql"
+                                                                         },
+                                                           "output":  {
+                                                                          "base_dir":  "Output/Top_Resource_Consuming_Queries",
+                                                                          "main_results_json":  "top_resource_consuming_queries.json",
+                                                                          "xml_plans_dir":  "XML_Execution_Plans",
+                                                                          "json_plans_dir":  "json_execution_plans",
+                                                                          "table_names_json":  "table_names_from_plans.json",
+                                                                          "index_details_json":  "index_details.json",
+                                                                          "statistics_details_json":  "statistics_details.json",
+                                                                          "analysis_dir":  "Analysis"
+                                                                      },
+                                                           "processing":  {
+                                                                              "top_n_queries":  2,
+                                                                              "include_execution_plans":  true,
+                                                                              "analyze_indexes":  true,
+                                                                              "analyze_statistics":  true
+                                                                          }
+                                                       },
+                    "regressed_queries":  {
+                                              "name":  "Regressed Queries",
+                                              "description":  "Identifies queries that have regressed in performance over time",
+                                              "enabled":  true,
+                                              "sql_files":  {
+                                                                "main_query":  "Core/SQL/Query Store Regressed Queries.sql",
+                                                                "index_detail":  "Core/SQL/Index Detail.sql",
+                                                                "statistics_detail":  "Core/SQL/Statistics Detail.sql"
+                                                            },
+                                              "output":  {
+                                                             "base_dir":  "Output/Regressed_Queries",
+                                                             "main_results_json":  "regressed_queries.json",
+                                                             "xml_plans_dir":  "XML_Execution_Plans",
+                                                             "json_plans_dir":  "json_execution_plans",
+                                                             "table_names_json":  "table_names_from_plans.json",
+                                                             "index_details_json":  "index_details.json",
+                                                             "statistics_details_json":  "statistics_details.json",
+                                                             "analysis_dir":  "Analysis"
+                                                         },
+                                              "processing":  {
+                                                                 "regression_threshold_percent":  30,
+                                                                 "min_execution_count":  10,
+                                                                 "include_execution_plans":  true,
+                                                                 "analyze_indexes":  true,
+                                                                 "analyze_statistics":  true
+                                                             }
+                                          },
+                    "queries_with_high_variation":  {
+                                                        "name":  "Queries with High Variation",
+                                                        "description":  "Identifies queries with high performance variation (parameter sniffing candidates)",
+                                                        "enabled":  true,
+                                                        "sql_files":  {
+                                                                          "main_query":  "Core/SQL/Query Store Queries With High Variation.sql",
+                                                                          "index_detail":  "Core/SQL/Index Detail.sql",
+                                                                          "statistics_detail":  "Core/SQL/Statistics Detail.sql"
+                                                                      },
+                                                        "output":  {
+                                                                       "base_dir":  "Output/Queries_With_High_Variation",
+                                                                       "main_results_json":  "queries_with_high_variation.json",
+                                                                       "xml_plans_dir":  "XML_Execution_Plans",
+                                                                       "json_plans_dir":  "json_execution_plans",
+                                                                       "table_names_json":  "table_names_from_plans.json",
+                                                                       "index_details_json":  "index_details.json",
+                                                                       "statistics_details_json":  "statistics_details.json",
+                                                                       "analysis_dir":  "Analysis"
+                                                                   },
+                                                        "processing":  {
+                                                                           "top_n_queries":  1,
+                                                                           "variation_coefficient_threshold":  0.5,
+                                                                           "min_execution_count":  20,
+                                                                           "include_execution_plans":  false,
+                                                                           "analyze_indexes":  true,
+                                                                           "analyze_statistics":  true
+                                                                       }
+                                                    },
+                    "query_wait_statistics":  {
+                                                  "name":  "Query Wait Statistics",
+                                                  "description":  "Analyzes wait statistics for queries to identify bottlenecks",
+                                                  "enabled":  true,
+                                                  "sql_files":  {
+                                                                    "main_query":  "Core/SQL/Query Store Wait Statistics.sql",
+                                                                    "index_detail":  "Core/SQL/Index Detail.sql",
+                                                                    "statistics_detail":  "Core/SQL/Statistics Detail.sql"
+                                                                },
+                                                  "output":  {
+                                                                 "base_dir":  "Output/Query_Wait_Statistics",
+                                                                 "main_results_json":  "query_wait_statistics.json",
+                                                                 "xml_plans_dir":  "XML_Execution_Plans",
+                                                                 "json_plans_dir":  "json_execution_plans",
+                                                                 "table_names_json":  "table_names_from_plans.json",
+                                                                 "index_details_json":  "index_details.json",
+                                                                 "statistics_details_json":  "statistics_details.json",
+                                                                 "analysis_dir":  "Analysis"
+                                                             },
+                                                  "processing":  {
+                                                                     "top_n_queries":  20,
+                                                                     "wait_category_filter":  "all",
+                                                                     "include_execution_plans":  true,
+                                                                     "analyze_indexes":  true,
+                                                                     "analyze_statistics":  true
+                                                                 }
+                                              },
+                    "queries_with_high_plan_count":  {
+                                                         "name":  "Queries with High Plan Count",
+                                                         "description":  "Identifies queries with excessive execution plans (plan cache pollution)",
+                                                         "enabled":  true,
+                                                         "sql_files":  {
+                                                                           "main_query":  "Core/SQL/Query Store Queries With High Plan Count.sql",
+                                                                           "index_detail":  "Core/SQL/Index Detail.sql",
+                                                                           "statistics_detail":  "Core/SQL/Statistics Detail.sql"
+                                                                       },
+                                                         "output":  {
+                                                                        "base_dir":  "Output/Queries_With_High_Plan_Count",
+                                                                        "main_results_json":  "queries_with_high_plan_count.json",
+                                                                        "xml_plans_dir":  "XML_Execution_Plans",
+                                                                        "json_plans_dir":  "json_execution_plans",
+                                                                        "table_names_json":  "table_names_from_plans.json",
+                                                                        "index_details_json":  "index_details.json",
+                                                                        "statistics_details_json":  "statistics_details.json",
+                                                                        "analysis_dir":  "Analysis"
+                                                                    },
+                                                         "processing":  {
+                                                                            "top_n_queries":  20,
+                                                                            "min_plan_count":  2,
+                                                                            "include_execution_plans":  false,
+                                                                            "analyze_indexes":  true,
+                                                                            "analyze_statistics":  true
+                                                                        }
+                                                     },
+                    "overall_resource_consumption":  {
+                                                         "name":  "Overall Resource Consumption",
+                                                         "description":  "Provides overall resource consumption metrics across all queries",
+                                                         "enabled":  true,
+                                                         "sql_files":  {
+                                                                           "main_query":  "Core/SQL/Query Store Overall Resource Consumption.sql",
+                                                                           "index_detail":  "Core/SQL/Index Detail.sql",
+                                                                           "statistics_detail":  "Core/SQL/Statistics Detail.sql"
+                                                                       },
+                                                         "output":  {
+                                                                        "base_dir":  "Output/Overall_Resource_Consumption",
+                                                                        "main_results_json":  "overall_resource_consumption.json",
+                                                                        "xml_plans_dir":  "XML_Execution_Plans",
+                                                                        "json_plans_dir":  "json_execution_plans",
+                                                                        "table_names_json":  "table_names_from_plans.json",
+                                                                        "index_details_json":  "index_details.json",
+                                                                        "statistics_details_json":  "statistics_details.json",
+                                                                        "analysis_dir":  "Analysis"
+                                                                    },
+                                                         "processing":  {
+                                                                            "time_range_hours":  24,
+                                                                            "include_execution_plans":  false,
+                                                                            "analyze_indexes":  false,
+                                                                            "analyze_statistics":  false
+                                                                        }
+                                                     }
+                }
+}

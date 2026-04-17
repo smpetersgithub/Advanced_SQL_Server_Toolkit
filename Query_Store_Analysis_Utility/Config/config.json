@@ -1,0 +1,49 @@
+{
+  "description": "Global Python scripts configuration for Query Store Analysis Utility",
+  "version": "2.0",
+  "notes": "Report-specific paths are now in reports-config.json. Active report is specified in active-report-config.json",
+
+  "paths": {
+    "logs": {
+      "base_dir": "Logs"
+    },
+    "config": {
+      "database_config": "Config/database-config.json",
+      "reports_config": "Config/reports-config.json",
+      "active_report_config": "Config/active-report-config.json"
+    },
+    "github_repo": {
+      "procs": "C:\\dev\\Database\\StoredProcedures",
+      "functions": "C:\\dev\\Database\\Functions"
+    }
+  },
+
+  "processing": {
+    "xml_plan_download_batch_size": 5,
+    "sql_fetch_batch_size": 1000,
+    "xml_file_extension": ".sqlplan",
+    "json_file_extension": ".json"
+  },
+
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(levelname)s - %(message)s",
+    "timestamp_format": "%Y%m%d_%H%M%S",
+    "log_file_names": {
+      "script_01": "01_extract_queries_{timestamp}.log",
+      "script_02": "02_extract_xml_plans_{timestamp}.log",
+      "script_03": "03_extract_table_names_{timestamp}.log",
+      "script_04": "04_extract_index_stats_{timestamp}.log",
+      "script_05": "05_create_json_plans_{timestamp}.log"
+    }
+  },
+
+  "sql_modifications": {
+    "datetime_conversion": {
+      "enabled": true,
+      "format": "VARCHAR(33)",
+      "style": 127
+    }
+  }
+}
+

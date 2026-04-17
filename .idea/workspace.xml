@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ddd365b4-2a9a-47a8-9a11-4bc27eed1224" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Advanced_SQL_Server_Toolkit" value="36JL4is1hYgoxz3VX34v3BHQJap" />
+    </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedChatMode">
+    <option name="chatModeId" value="Agent" />
+  </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="chat-panel" value="GPT-4.1" />
+      <entry key="agent-panel" value="GPT-4.1" />
+    </selectedModels>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="36JL4is1hYgoxz3VX34v3BHQJap" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;augment.onboarding.workspace.first.indexed.C:/Advanced_SQL_Server_Toolkit&quot;: &quot;true&quot;,
+    &quot;augment.onboarding.workspace.summary.shown.ed7019ccd9dbe67997257e57ebd31a01135c44089cf465ffa997a2671c838b5b&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Advanced_SQL_Server_Toolkit&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ddd365b4-2a9a-47a8-9a11-4bc27eed1224" name="Changes" comment="" />
+      <created>1764719537582</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764719537582</updated>
+      <workItem from="1764719538703" duration="15259000" />
+      <workItem from="1764863119271" duration="2583000" />
+      <workItem from="1764960159907" duration="815000" />
+      <workItem from="1764978021708" duration="7195000" />
+      <workItem from="1765213197260" duration="10000" />
+      <workItem from="1765303005521" duration="46000" />
+      <workItem from="1767046695982" duration="13390000" />
+      <workItem from="1769719433526" duration="5529000" />
+      <workItem from="1772733769171" duration="3567000" />
+      <workItem from="1772781389755" duration="4178000" />
+      <workItem from="1773065867537" duration="11329000" />
+      <workItem from="1773243151728" duration="2969000" />
+      <workItem from="1773380461140" duration="103000" />
+      <workItem from="1773380636137" duration="17759000" />
+      <workItem from="1773463885940" duration="12699000" />
+      <workItem from="1774080810787" duration="12583000" />
+      <workItem from="1774449605469" duration="5077000" />
+      <workItem from="1774530128469" duration="2656000" />
+      <workItem from="1774642805715" duration="1207000" />
+      <workItem from="1774883181008" duration="164000" />
+      <workItem from="1774902511258" duration="2992000" />
+      <workItem from="1775141318399" duration="822000" />
+      <workItem from="1775142305039" duration="1851000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

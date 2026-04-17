@@ -1,0 +1,26 @@
+{
+	"cleanup_operations": [
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\Database_Normalization_Analysis_Utility\\Output",
+			"description": "Output files",
+			"action": "delete_folder"
+		},
+              {
+                      "path": "C:\\Advanced_SQL_Server_Toolkit\\Database_Normalization_Analysis_Utility\\Logs",
+                      "description": "Output files",
+                      "action": "delete_folder"
+  },
+		{
+			"source_path": "C:\\Advanced_SQL_Server_Toolkit\\Database_Normalization_Analysis_Utility\\Config\\database-config-demo.json",
+			"destination_path": "C:\\Advanced_SQL_Server_Toolkit\\Database_Normalization_Analysis_Utility\\Config\\database-config.json",
+			"description": "Copy database-config-demo.json to database-config.json (overwrite if exists)",
+			"action": "copy_file"
+		},
+		{
+			"source_path": "C:\\Advanced_SQL_Server_Toolkit\\Database_Normalization_Analysis_Utility\\Config\\table-config-demo.json",
+			"destination_path": "C:\\Advanced_SQL_Server_Toolkit\\Database_Normalization_Analysis_Utility\\Config\\table-config.json",
+			"description": "Copy table-config-demo.json to table-config.json (overwrite if exists)",
+			"action": "copy_file"
+		}
+	]
+}
