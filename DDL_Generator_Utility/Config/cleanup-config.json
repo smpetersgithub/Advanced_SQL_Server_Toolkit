@@ -1,0 +1,25 @@
+{
+	"cleanup_operations": [
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility\\Generated_Scripts",
+			"description": "Output folder containing JSON and Excel files",
+			"action": "delete_folder"
+		},
+        {
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility\\Output",
+			"description": "Output folder containing the extracted DDL",
+			"action": "delete_folder"
+		},
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility\\Logs",
+			"description": "Logs folder containing the log files",
+			"action": "delete_folder"
+		},
+        {
+			"source_path": "C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility\\Config\\database-config-demo.json",
+			"destination_path": "C:\\Advanced_SQL_Server_Toolkit\\DDL_Generator_Utility\\Config\\database-config.json",
+			"description": "Copy database-config-demo.json to database-config.json (overwrite if exists)",
+			"action": "copy_file"
+		}
+	]
+}

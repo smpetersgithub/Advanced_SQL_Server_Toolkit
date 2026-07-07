@@ -1,0 +1,24 @@
+{
+  "servers": [
+    {
+      "parent_name": "test",
+      "servername": "test",
+      "port": 1433,
+      "username": "username",
+      "password": "password",
+      "windows_auth": false,
+      "databases_include":["foo","bar"],
+      "active": true
+    },
+    {
+      "parent_name": "test2",
+      "servername": "test2",
+      "port": 1433,
+      "username": "username",
+      "password": "password",
+      "windows_auth": false,
+      "databases_include":[],
+      "active": false
+    }
+  ]
+}

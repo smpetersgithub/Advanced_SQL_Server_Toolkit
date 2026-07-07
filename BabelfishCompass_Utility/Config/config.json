@@ -1,0 +1,33 @@
+{
+  "paths": {
+    "babelfish_dir": "BabelfishCompass",
+    "sql_examples_dir": "SQL_Examples",
+    "sqlite_dir": "SQLite",
+    "core_dir": "Core",
+    "logs_dir": "Logs"
+  },
+  "defaults": {
+    "default_report_name": "MyReport"
+  },
+  "database": {
+    "table_name": "bbfcompass"
+  },
+  "postgresql": {
+    "pg_connection": "host,port,user,password,database"
+  },
+  "babelfishcompass": {
+    "dat_file_pattern": "C:\\Users\\{username}\\Documents\\BabelfishCompass\\{report_name}\\captured\\pg_import.dat",
+    "report_location_pattern": "{home}\\Documents\\BabelfishCompass\\{report_name}",
+    "step1_options": "-delete -recursive -nopopupwindow"
+  },
+  "display": {
+    "ascii_art_file": "ascii_art.txt"
+  },
+  "logging": {
+    "log_format": "%(asctime)s [%(levelname)s] %(message)s",
+    "log_level": "INFO",
+    "timestamp_format": "%Y%m%d_%H%M%S",
+    "log_filemode": "w"
+  }
+}
+

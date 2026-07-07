@@ -1,0 +1,18 @@
+﻿[
+    {
+        "ID":  1,
+        "Name":  "Plan A",
+        "File Name":  "Current_GetSuppliersUpdates.sqlplan",
+        "Active":  true,
+        "Description":  "Current version of the WideWorldImporters.Integration.GetSuppliersUpdates stored procedure without any modifications.",
+        "FullPath":  "C:\\Advanced_SQL_Server_Toolkit\\Execution_Plan_Analysis_Utility\\Example_Execution_Plans\\Current_GetSuppliersUpdates.sqlplan"
+    },
+    {
+        "ID":  2,
+        "Name":  "Plan B",
+        "File Name":  "New_GetSuppliersUpdates.sqlplan",
+        "Active":  true,
+        "Description":  "New version of the WideWorldImporters.Integration.GetSuppliersUpdates stored procedure that uses the index hint: WITH (INDEX(0))",
+        "FullPath":  "C:\\Advanced_SQL_Server_Toolkit\\Execution_Plan_Analysis_Utility\\Example_Execution_Plans\\New_GetSuppliersUpdates.sqlplan"
+    }
+]

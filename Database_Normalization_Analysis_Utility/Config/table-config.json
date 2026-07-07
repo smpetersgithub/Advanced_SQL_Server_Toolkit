@@ -1,0 +1,18 @@
+{
+  "table": "norm.Keys_Example",
+  "uniquekey": [
+    [
+      "ColumnC",
+      "ColumnD"
+    ],
+    "ColumnE"
+  ],
+  "columns": [
+    "ColumnA",
+    "ColumnB"
+  ],
+  "primarykey": [
+    "ColumnA",
+    "ColumnB"
+  ]
+}

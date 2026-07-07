@@ -1,0 +1,47 @@
+{
+  "description": "Global Python scripts configuration for Query Store Analysis Utility",
+  "version": "2.0",
+  "notes": "Report-specific paths are now in reports-config.json. Active report is specified in active-report-config.json",
+
+  "paths": {
+    "logs": {
+      "base_dir": "Logs"
+    },
+    "database_config": "Config/database-config.json",
+    "config": {
+      "reports_config": "Config/reports-config.json",
+      "active_report_config": "Config/active-report-config.json"
+    },
+    "github_repo": {
+      "procs": "C:\\dev\\zion_dev\\Database\\ZION_PROD\\Procs",
+      "functions": "C:\\dev\\zion_dev\\Database\\ZION_PROD\\Functions"
+    }
+  },
+
+  "database": {
+    "odbc_driver": "auto",
+    "connection_timeout": 10
+  },
+
+  "processing": {
+    "xml_plan_download_batch_size": 5,
+    "sql_fetch_batch_size": 1000,
+    "xml_file_extension": ".sqlplan",
+    "json_file_extension": ".json"
+  },
+
+  "logging": {
+    "log_level": "INFO",
+    "log_format": "%(asctime)s - %(levelname)s - %(message)s",
+    "timestamp_format": "%Y%m%d_%H%M%S"
+  },
+
+  "sql_modifications": {
+    "datetime_conversion": {
+      "enabled": true,
+      "format": "VARCHAR(33)",
+      "style": 127
+    }
+  }
+}
+

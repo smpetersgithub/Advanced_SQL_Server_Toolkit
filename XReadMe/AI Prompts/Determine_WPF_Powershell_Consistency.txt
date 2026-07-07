@@ -1,0 +1,67 @@
+Please analyze the following utilities and determine whether they are consistent in their implementation and usage of WPF and PowerShell.
+
+Utilities:
+
+* C:\Advanced_SQL_Server_Toolkit\Database_Normalization_Analysis_Utility
+* C:\Advanced_SQL_Server_Toolkit\Database_Object_Dependency_Utility
+* C:\Advanced_SQL_Server_Toolkit\Query_Store_Analysis_Utility
+* C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility
+
+Objectives:
+
+1. Compare the overall WPF architecture and implementation used by each utility.
+
+2. Identify any differences in:
+
+   * Window and control design
+   * XAML structure and organization
+   * Event handling patterns
+   * Data binding implementation
+   * Control naming conventions
+   * Layout standards
+   * Styling and theming
+   * Resource dictionaries
+   * UI responsiveness and threading patterns
+   * Error handling and user messaging
+   * Logging and diagnostic output
+   * PowerShell script organization
+   * Function naming conventions
+   * Module structure
+   * Variable naming standards
+   * Code formatting and documentation
+
+3. Determine whether the utilities follow a common architectural pattern and coding standard.
+
+4. Document any inconsistencies, deviations, or implementation differences that could impact maintainability, readability, or standardization.
+
+5.  All paths should be hardcoded and no relative paths should exists.
+
+Deliverables:
+
+* A detailed comparison report for all four utilities.
+* A summary of similarities and differences.
+* A list of WPF-related inconsistencies.
+* A list of PowerShell-related inconsistencies.
+* Identification of any utility that appears to be the outlier relative to the others.
+* Recommendations for standardization priorities, without modifying any code.
+
+Important:
+
+* Perform a read-only analysis.
+* Do not modify, refactor, or generate replacement code.
+* Focus on identifying differences, inconsistencies, and adherence to common standards and best practices.
+* Include specific file names and code examples where relevant to support your findings.
+
+Create a markdown file of your analysis in the following location:
+"C:\Advanced_SQL_Server_Toolkit\XReadMe\AI Prompts\AI_Output_WPF_Powershell_Analysis.md"
+
+
+Create a markdown file of your analysis with a datestamp in the following location:
+"C:\Advanced_SQL_Server_Toolkit\XReadMe\AI Prompts\AI_Output_WPF_Powershell_Conformance_Analysis_<datetime>.md"
+
+If you are prompted to apply the changes, save a log of the file changes with a datestamp to the following location:
+C:\Advanced_SQL_Server_Toolkit\XReadMe\AI Prompts\AI_Output_Changes_Applied_WF_Powershell_Conformance_Analysis_<datetime>.md
+
+
+Please read any historical files saved to understand what has been previously applied.
+Currently it has the following files:

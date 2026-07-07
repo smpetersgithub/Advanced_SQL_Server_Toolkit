@@ -1,0 +1,49 @@
+Please analyze the following utilities and determine whether they access SQL Server databases using a consistent approach.
+
+Utilities:
+
+* C:\Advanced_SQL_Server_Toolkit\Database_Normalization_Analysis_Utility
+* C:\Advanced_SQL_Server_Toolkit\Database_Object_Dependency_Utility
+* C:\Advanced_SQL_Server_Toolkit\Query_Store_Analysis_Utility
+* C:\Advanced_SQL_Server_Toolkit\DDL_Generator_Utility
+
+All utilities use PowerShell and/or Python to connect to SQL Server.
+
+Additional note:
+
+* The DDL_Generator_Utility accesses multiple servers and databases using a nested server/database configuration structure.
+
+Objectives:
+
+1. Compare how each utility connects to and interacts with SQL Server.
+2. Identify any differences in:
+
+   * Connection methods
+   * Authentication handling
+   * Connection string construction
+   * Configuration management
+   * Error handling
+   * Logging
+   * Naming conventions
+   * Code organization
+   * General coding patterns and best practices
+3. Determine whether the utilities follow a consistent implementation standard.
+4. Document any inconsistencies, deviations, or opportunities for standardization.
+
+Important:
+
+* Do not modify any code.
+* Do not provide refactored code or implementation changes.
+* Perform a read-only analysis and provide a detailed report of all differences and observations.
+* Highlight any areas where the utilities are not following the same conventions or patterns.
+
+
+Create a markdown file of your analysis with a datestamp in the following location:
+"C:\Advanced_SQL_Server_Toolkit\XReadMe\AI Prompts\AI_Output_Database_Access_Conformance_Analysis_<datetime>.md"
+
+If you are prompted to apply the changes, save a log of the file changes with a datestamp to the following location:
+C:\Advanced_SQL_Server_Toolkit\XReadMe\AI Prompts\AI_Output_Changes_Applied_Database_Access_Conformance_Analysis_<datetime>.md
+
+
+Please read any historical files saved to understand what has been previously applied.
+Currently it has the following file.  These are files that begin with "AI_Output*" and have a timestamp at the end.

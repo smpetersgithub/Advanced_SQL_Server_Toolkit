@@ -1,0 +1,4 @@
+{
+    "description":  "Specifies which report is currently active for analysis",
+    "active_report":  "top_resource_consuming_queries"
+}

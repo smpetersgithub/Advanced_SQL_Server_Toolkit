@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Install First Responder Kit (via sqlcmd)</Title>
+      <Shortcut>InstallFRK</Shortcut>
+      <Description>Runs the First Responder Kit install script using the sqlcmd :r directive. Requires SSMS to be in SQLCMD Mode (Query menu > SQLCMD Mode).</Description>
+      <Author>MatrixCare</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Code Language="SQL">
+        <![CDATA[-- Requires SQLCMD Mode: Query menu > SQLCMD Mode (Ctrl+Shift+Q to toggle)
+:r "C:\Advanced_SQL_Server_Toolkit\Advanced_SQL_Code_Snippets\First Responder Toolkit\Install-All-Scripts-TempProcs.sql"]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

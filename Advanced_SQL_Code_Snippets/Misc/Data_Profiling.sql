@@ -1,0 +1,174 @@
+/*********************************************************************
+
+This script performs column-level data profiling on a specified table (Application.Cities by default) 
+by generating and executing dynamic SQL to count things like non-null values, empty strings, nulls, spaces, 
+and specific keywords. 
+
+It excludes specified data types from profiling (like xml, geography, etc.) to avoid errors. 
+
+Results are stored in a temporary table and displayed at the end with one row per column profiled.
+
+**********************************************************************/
+
+USE WideWorldImporters;
+GO
+
+
+SET ANSI_NULLS ON;
+SET NOCOUNT ON;
+GO
+
+DROP TABLE IF EXISTS #DataProfiling;
+DROP TABLE IF EXISTS #DataTypesToIgnore;
+DROP TABLE IF EXISTS #DataProfilingSQL;
+GO
+
+CREATE TABLE #DataProfilingSQL
+(
+DataProfilingType INTEGER NOT NULL,
+OrderID           INTEGER NOT NULL,
+SQLLine           VARCHAR(100) NOT NULL,
+PRIMARY KEY (DataProfilingType, OrderID)
+);
+GO
+
+/*--------------------------------------------------------------------------------
+Update the following !
+Update the following !
+Update the following !
+--------------------------------------------------------------------------------*/
+
+--Update this list with data types you DO NOT want profile
+--Certain data types will error depending on profile type (i.e. an INT column cannot have an empty string)
+SELECT *
+INTO   #DataTypesToIgnore
+FROM (VALUES ('XML'), ('uniqueidentifier'), ('geography')) AS v(DataType);
+GO
+
+-- Set the following variables
+DECLARE @vSchemaName VARCHAR(128) = 'Application';---------------Schema Name
+DECLARE @vTableName VARCHAR(128) = 'Cities';      ---------------Table Name
+DECLARE @vDataProfilingType INT = 1;              ---------------Profile Type (see list below). Default is 1
+
+/*--------------------------------------------------------------------------------
+Profile Types
+
+Please add any profile types as needed
+
+ 1: Count of NON-NULL values
+ 2: Count of empty strings
+ 3: Count of NULL markers
+ 4: Count of records that have two spaces
+ 5: Count where column contains a specific string ("%demo%", "%test%", etc.).  Modify below as needed.
+--------------------------------------------------------------------------------*/
+
+--This SQL statement determines the record count of the column
+--This will NOT count NULL markers.  Please ensure ANSI_NULLS is set to ON.
+INSERT INTO #DataProfilingSQL (DataProfilingType, OrderID, SQLLine) VALUES
+(1,1,'UPDATE #DataProfiling SET RecordCount ='),
+(1,2,'('),
+(1,3,'SELECT  COUNT([ColumnName])'),
+(1,4,'FROM    SchemaName.TableName'),
+(1,5,')'),
+(1,6,'WHERE RowNumber = vRowNumber');
+
+----------------------------------------------------------------------------------------
+--This SQL statement determines the count of empty strings in a column
+INSERT INTO #DataProfilingSQL (DataProfilingType, OrderID, SQLLine) VALUES
+(2,1,'UPDATE #DataProfiling SET RecordCount ='),
+(2,2,'('),
+(2,3,'SELECT  COUNT([ColumnName])'),
+(2,4,'FROM    SchemaName.TableName'),
+(2,5,'WHERE   [ColumnName] = '''''),
+(2,6,')'),
+(2,7,'WHERE RowNumber = vRowNumber');
+
+----------------------------------------------------------------------------------------
+--This SQL statement determines the count of NULL markers
+INSERT INTO #DataProfilingSQL (DataProfilingType, OrderID, SQLLine) VALUES
+(3,1,'UPDATE #DataProfiling SET RecordCount ='),
+(3,2,'('),
+(3,3,'SELECT  COUNT(*)'),
+(3,4,'FROM    SchemaName.TableName'),
+(3,5,'WHERE   [ColumnName] IS NULL'),
+(3,6,')'),
+(3,7,'WHERE RowNumber = vRowNumber');
+
+----------------------------------------------------------------------------------------
+--This SQL statement determines the count of records that have two spaces
+INSERT INTO #DataProfilingSQL (DataProfilingType, OrderID, SQLLine) VALUES
+(4,1,'UPDATE #DataProfiling SET RecordCount ='),
+(4,2,'('),
+(4,3,'SELECT  COUNT([ColumnName])'),
+(4,4,'FROM    SchemaName.TableName'),
+(4,5,'WHERE   [ColumnName] LIKE ''%  %'''),
+(4,6,')'),
+(4,7,'WHERE RowNumber = vRowNumber');
+
+----------------------------------------------------------------------------------------
+--This SQL statement determines the count of records that have two "demo" or "test" in the string
+INSERT INTO #DataProfilingSQL (DataProfilingType, OrderID, SQLLine) VALUES
+(5,1,'UPDATE #DataProfiling SET RecordCount ='),
+(5,2,'('),
+(5,3,'SELECT  COUNT([ColumnName])'),
+(5,4,'FROM    SchemaName.TableName'),
+(5,5,'WHERE   [ColumnName] LIKE ''%demo%'''),
+(5,6,'        OR [ColumnName] LIKE ''%test%'''),
+(5,7,')'),
+(5,8,'WHERE RowNumber = vRowNumber');
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+--Run the profile
+DECLARE @vSQLStatement NVARCHAR(1000) = (SELECT STRING_AGG(SQLLine,' ') 
+                                         FROM   #DataProfilingSQL 
+                                         WHERE  DataProfilingType = @vDataProfilingType); 
+
+
+SET @vSQLStatement = REPLACE(@vSQLStatement,'SchemaName',@vSchemaName);
+SET @vSQLStatement = REPLACE(@vSQLStatement,'TableName',@vTableName);
+
+SELECT  ROW_NUMBER() OVER (ORDER BY t.[Name], c.[Name]) AS RowNumber,
+        @@SERVERNAME AS ServerName,
+        s.[Name] AS SchemaName, 
+        t.[Name] AS TableName, 
+        c.[Name] AS ColumnName, 
+        ty.[Name] AS DataType,
+        REPLACE(@vSQLStatement,'ColumnName',c.[Name]) AS SQLStatement,
+        CAST(NULL AS BIGINT) AS RecordCount
+INTO    #DataProfiling
+FROM    sys.Schemas s LEFT OUTER JOIN
+        sys.Tables t ON s.Schema_id = t.Schema_id INNER JOIN
+        sys.Columns c ON t.Object_id = c.Object_id INNER JOIN
+        sys.Types ty ON ty.User_Type_ID = c.User_Type_ID
+WHERE   1=1 AND 
+        s.[Name] = @vSchemaName AND 
+        t.[Name] = @vTableName
+        AND ty.Name NOT IN (SELECT DataType FROM #DataTypesToIgnore)
+ORDER BY 1,2,3,4,5;
+GO
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+DECLARE @vRowNumber INTEGER;
+DECLARE @vSQLStatement VARCHAR(8000);
+
+DECLARE mycursor CURSOR FOR (SELECT RowNumber, SQLStatement FROM #DataProfiling);
+OPEN mycursor;
+
+FETCH NEXT FROM mycursor INTO @vRowNumber, @vSQLStatement;
+    WHILE @@FETCH_STATUS = 0
+        BEGIN
+        SET @vSQLStatement = REPLACE(@vSQLStatement,'vRowNumber',@vRowNumber)
+        EXEC (@vSQLStatement);
+        FETCH NEXT FROM mycursor INTO @vRowNumber, @vSQLStatement;
+        END;
+CLOSE mycursor;
+DEALLOCATE mycursor;
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+--Final Output
+
+SELECT * FROM #DataProfiling ORDER BY 1;

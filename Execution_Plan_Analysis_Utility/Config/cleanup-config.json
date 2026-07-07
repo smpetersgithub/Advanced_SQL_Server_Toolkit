@@ -1,0 +1,25 @@
+{
+	"cleanup_operations": [
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\Execution_Plan_Analysis_Utility\\Logs",
+			"description": "Log files",
+			"action": "delete_folder"
+		},
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\Execution_Plan_Analysis_Utility\\Output",
+			"description": "Output files",
+			"action": "delete_folder"
+		},
+		{
+			"path": "C:\\Advanced_SQL_Server_Toolkit\\Execution_Plan_Analysis_Utility\\Config\\Backup",
+			"description": "Config backup files",
+			"action": "delete_folder"
+		},
+        {
+			"source_path": "C:\\Advanced_SQL_Server_Toolkit\\Execution_Plan_Analysis_Utility\\Config\\execution-plan-config-demo.json",
+			"destination_path": "C:\\Advanced_SQL_Server_Toolkit\\Execution_Plan_Analysis_Utility\\Config\\execution-plan-config.json",
+			"description": "Copy execution-plan-config-demo.json to execution-plan-config.json (overwrite if exists)",
+			"action": "copy_file"
+		}
+	]
+}

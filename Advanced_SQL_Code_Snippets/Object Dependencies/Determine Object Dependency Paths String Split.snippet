@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Dependency Analysis String Split</Title>
+      <Shortcut>depanalysis</Shortcut>
+      <Description>Creates a table to analyze object dependency paths and splits the output to identify all distinct objects. Use after running Determine Object Dependency Paths script.</Description>
+      <Author>Scott Peters</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>ObjectName</ID>
+          <ToolTip>The fully qualified object name for forward dependencies (e.g., 'WideWorldImporters.Website.SearchForPeople')</ToolTip>
+          <Default>DatabaseName.SchemaName.ObjectName</Default>
+        </Literal>
+        <Literal>
+          <ID>ReverseObjectName</ID>
+          <ToolTip>The fully qualified object name for reverse dependencies (e.g., 'WideWorldImporters.Sales.Customers')</ToolTip>
+          <Default>DatabaseName.SchemaName.ObjectName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="SQL"><![CDATA[/*----------------------------------------------------------------------------------------------------------
+
+Determine Object Dependency Paths Addendum String Split
+
+After running the Determine Object Dependency Paths script to create the stored procedures, 
+use the following script to split the output paths and identify all distinct objects.
+
+----------------------------------------------------------------------------------------------------------*/
+
+DROP TABLE IF EXISTS ##dependency_analysis;
+GO
+
+CREATE TABLE ##dependency_analysis (
+    server_name VARCHAR(256),
+    object_name VARCHAR(256),
+    object_name_path NVARCHAR(MAX),
+    referencing_object_fullname NVARCHAR(500),
+    depth INT,
+    object_id_path NVARCHAR(MAX),
+    object_type_desc_path NVARCHAR(MAX)
+);
+GO
+
+-----------------------------
+-----------------------------
+
+-- Modify the following.
+
+/*
+-- Forward dependencies
+INSERT INTO ##dependency_analysis 
+EXECUTE ##temp_sp_master_execution_paths 'database_name.schema_name.object_name';
+GO
+
+-- Reverse dependencies
+INSERT INTO ##dependency_analysis
+EXECUTE ##temp_sp_master_execution_reverse_paths 'database_name.schema_name.object_name';
+GO
+*/
+
+-----------------------------
+-----------------------------
+
+-- String Split
+SELECT DISTINCT
+       [object_name], 
+       [value] AS referenced_object_name
+FROM ##dependency_analysis da
+CROSS APPLY STRING_SPLIT(REPLACE(da.object_name_path, N' ⬅️ ', N'|'), N'|') AS split_values
+ORDER BY 1 DESC;
+GO
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
+

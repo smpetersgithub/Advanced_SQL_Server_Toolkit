@@ -1,0 +1,26 @@
+{
+    "cleanup_operations":  [
+                               {
+                                   "path":  "C:\\Advanced_SQL_Server_Toolkit\\Database_Object_Dependency_Utility\\Logs",
+                                   "description":  "Log files from the Python scripts",
+                                   "action":  "delete_folder"
+                               },
+                               {
+                                   "path":  "C:\\Advanced_SQL_Server_Toolkit\\Database_Object_Dependency_Utility\\Output",
+                                   "description":  "Output files",
+                                   "action":  "delete_folder"
+                               },
+                               {
+                                   "source_path":  "C:\\Advanced_SQL_Server_Toolkit\\Database_Object_Dependency_Utility\\Config\\database-objects-input-demo.txt",
+                                   "destination_path":  "C:\\Advanced_SQL_Server_Toolkit\\Database_Object_Dependency_Utility\\Config\\database-objects-input.txt",
+                                   "description":  "Copy database-objects-input-demo.txt to database-objects-input.txt (overwrite if exists)",
+                                   "action":  "copy_file"
+                               },
+                               {
+                                   "source_path":  "C:\\Advanced_SQL_Server_Toolkit\\Database_Object_Dependency_Utility\\Config\\database-config-demo.json",
+                                   "destination_path":  "C:\\Advanced_SQL_Server_Toolkit\\Database_Object_Dependency_Utility\\Config\\database-config.json",
+                                   "description":  "Copy database-config-demo.json to database-config.json (overwrite if exists)",
+                                   "action":  "copy_file"
+                               }
+                           ]
+}

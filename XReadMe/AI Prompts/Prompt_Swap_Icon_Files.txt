@@ -1,0 +1,18 @@
+I want to swap the icon image files used in a WPF utility. The utility is located at:
+<UTILITY_PATH>
+
+Current icons (to be replaced) are in:
+<UTILITY_PATH>\Core\WPF\Assets
+They currently use files that begin with <CURRENT_ICON_PREFIX> (both PNG and ICO).
+
+New icons I want to use are located here:
+<NEW_ICON_SOURCE_FOLDER>
+There is one PNG at 50x50 and one PNG at 100x100 in that folder.
+
+Please do the following:
+1. Copy both new PNG files into <UTILITY_PATH>\Core\WPF\Assets
+2. Generate a new multi-resolution ICO file from those PNGs using the converter script at:
+   C:\Advanced_SQL_Server_Toolkit\XTools\Convert_PNG_to_ICO\Create-MultiResolutionICO.ps1
+   Save the ICO to <UTILITY_PATH>\Core\WPF\Assets
+3. Find all references to the old icon files in the utility's source files (XAML, BAT, PS1, etc.) and update them to point to the new icon files
+4. The build script is located at: <UTILITY_PATH>\Core\WPF\Scripts\Build

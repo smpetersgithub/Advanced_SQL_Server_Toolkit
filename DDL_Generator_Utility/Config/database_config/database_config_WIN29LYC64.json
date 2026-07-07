@@ -1,0 +1,91 @@
+{
+  "server": {
+    "parent_name": "WIN29LYC64",
+    "servername": "WIN29LYC64",
+    "port": 1433,
+    "databases_include": [
+      "foo",
+      "bar"
+    ]
+  },
+  "databases": [
+    {
+      "name": "bar",
+      "database_id": 6,
+      "create_date": "2025-10-03T11:05:49.800000",
+      "state": "ONLINE",
+      "recovery_model": "FULL",
+      "compatibility_level": 160,
+      "is_active": true
+    },
+    {
+      "name": "Compass",
+      "database_id": 8,
+      "create_date": "2025-10-16T12:17:07.367000",
+      "state": "ONLINE",
+      "recovery_model": "FULL",
+      "compatibility_level": 160,
+      "is_active": false
+    },
+    {
+      "name": "foo",
+      "database_id": 5,
+      "create_date": "2025-11-06T08:44:23.870000",
+      "state": "ONLINE",
+      "recovery_model": "FULL",
+      "compatibility_level": 160,
+      "is_active": true
+    },
+    {
+      "name": "master",
+      "database_id": 1,
+      "create_date": "2003-04-08T09:13:36.390000",
+      "state": "ONLINE",
+      "recovery_model": "SIMPLE",
+      "compatibility_level": 160,
+      "is_active": false
+    },
+    {
+      "name": "model",
+      "database_id": 3,
+      "create_date": "2003-04-08T09:13:36.390000",
+      "state": "ONLINE",
+      "recovery_model": "FULL",
+      "compatibility_level": 160,
+      "is_active": false
+    },
+    {
+      "name": "msdb",
+      "database_id": 4,
+      "create_date": "2022-10-08T06:31:57.550000",
+      "state": "ONLINE",
+      "recovery_model": "SIMPLE",
+      "compatibility_level": 160,
+      "is_active": false
+    },
+    {
+      "name": "tempdb",
+      "database_id": 2,
+      "create_date": "2026-03-19T22:36:00.567000",
+      "state": "ONLINE",
+      "recovery_model": "SIMPLE",
+      "compatibility_level": 160,
+      "is_active": false
+    },
+    {
+      "name": "WideWorldImporters",
+      "database_id": 7,
+      "create_date": "2025-10-15T15:52:06.160000",
+      "state": "ONLINE",
+      "recovery_model": "SIMPLE",
+      "compatibility_level": 130,
+      "is_active": false
+    }
+  ],
+  "metadata": {
+    "config_generated_date": "2026-03-21T09:32:22.471886",
+    "config_generator_script": "01_generate_database_configs.py",
+    "total_databases": 8,
+    "active_databases": 2
+  }
+}

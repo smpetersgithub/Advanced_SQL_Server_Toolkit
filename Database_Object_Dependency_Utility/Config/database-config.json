@@ -1,0 +1,7 @@
+{
+  "username": "",
+  "windows_auth": true,
+  "servername": "WIN29LYC64\\MSSQLSERVER01",
+  "password": "",
+  "database": "foo"
+}

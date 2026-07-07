@@ -1,0 +1,81 @@
+Please analyze the Python scripts contained within the specified utility and determine whether they follow a consistent architecture, coding standard, and implementation approach.
+
+C:\Advanced_SQL_Server_Toolkit\BabelfishCompass_Utility
+C:\Advanced_SQL_Server_Toolkit\Database_Normalization_Analysis_Utility
+C:\Advanced_SQL_Server_Toolkit\Database_Object_Dependency_Utility
+C:\Advanced_SQL_Server_Toolkit\DDL_Generator_Utility
+C:\Advanced_SQL_Server_Toolkit\Execution_Plan_Analysis_Utility
+C:\Advanced_SQL_Server_Toolkit\Query_Store_Analysis_Utility
+
+Objectives:
+
+1. Review all Python files and identify their purpose and relationships within the utility.
+
+2. Evaluate consistency across the codebase in the following areas:
+
+   * File and module organization
+   * Function naming conventions
+   * Class naming conventions
+   * Variable naming conventions
+   * Constant definitions
+   * Import organization
+   * Code formatting and style
+   * Documentation and comments
+   * Type hint usage
+   * Error handling patterns
+   * Logging implementation
+   * Configuration management
+   * Database connectivity patterns
+   * File handling practices
+   * Data processing patterns
+   * Exception management
+   * Resource cleanup and disposal
+   * Performance considerations
+   * Security-related practices
+
+3. Identify any inconsistencies, including but not limited to:
+
+   * Multiple approaches used to accomplish the same task
+   * Inconsistent naming standards
+   * Duplicate or redundant functionality
+   * Mixed coding styles
+   * Different logging or error-handling approaches
+   * Variations in configuration or connection management
+   * Deviations from established Python best practices
+
+4. Assess adherence to common Python standards and best practices, including:
+
+   * PEP 8 compliance
+   * Separation of concerns
+   * Code modularity
+   * Maintainability
+   * Readability
+   * Reusability
+
+5.  For simplicity, all paths should be hardcoded and no relative paths should exists.
+
+Deliverables:
+
+* Executive summary of findings.
+* Detailed analysis of each Python file.
+* List of observed standards and patterns.
+* List of inconsistencies and deviations.
+* Identification of any files that do not conform to the predominant design pattern.
+* Prioritized recommendations for standardization.
+
+Important:
+
+* Perform a read-only analysis.
+* Do not modify, refactor, rewrite, or generate replacement code.
+* Do not make assumptions about intended behavior; evaluate only what is implemented.
+* Support findings with specific file names, function names, classes, and code examples where applicable.
+* Focus on consistency, maintainability, and adherence to established Python development practices.
+
+Create a markdown file of your analysis with a datestamp in the following location:
+"C:\Advanced_SQL_Server_Toolkit\XReadMe\AI Prompts\AI_Output_Python_Conformance_Analysis_<datetime>.md"
+
+If you are prompted to apply the changes, save a log of the file changes with a datestamp to the following location:
+C:\Advanced_SQL_Server_Toolkit\XReadMe\AI Prompts\AI_Output_Changes_Applied_Python_Conformance_Analysis_<datetime>.md
+
+Please read any historical files saved to understand what has been previously applied.
+Currently it has the following files:

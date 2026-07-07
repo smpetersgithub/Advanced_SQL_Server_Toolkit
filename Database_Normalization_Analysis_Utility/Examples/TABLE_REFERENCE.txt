@@ -1,0 +1,126 @@
+================================================================================
+TABLE REFERENCE - Quick Copy/Paste Guide
+================================================================================
+
+This file contains all table names created by the example SQL scripts.
+Copy and paste table names directly from this file for quick testing.
+
+Most examples are from Wikipedia articles on database normalization.
+Note: Not all normal forms focus on functional, partial, or transitive
+dependencies. Higher normal forms (4NF, 5NF, 6NF) address multivalued
+dependencies, join dependencies, and temporal dependencies.
+
+================================================================================
+QUICK COPY LIST - All Table Names (with norm schema)
+================================================================================
+
+norm.Keys_Example                    (Example1_Determine_Keys.sql)
+norm.Keys_Example2                   (Example1_Determine_Keys.sql)
+norm.Keys_Example3                   (Example1_Determine_Keys.sql)
+norm.NF2_Toothbrush                  (Example2_2NF.sql)
+norm.NF3_Tournament                  (Example3_3NF.sql)
+norm.BCNF_CourtBookings_WithPK       (Example4_BoyceCodd.sql)
+norm.BCNF_CourtBookings_NoPK         (Example4_BoyceCodd.sql)
+norm.MVD_UniversityCourses           (Example5_Multivalued.sql)
+norm.NF4_PizzaDelivery               (Example6_4NF.sql)
+norm.NF5_TravelingSalesman           (Example7_5NF.sql)
+norm.NF6_Medic                       (Example8_6NF.sql)
+
+================================================================================
+EXAMPLE 1: Determine Keys (Example1_Determine_Keys.sql)
+================================================================================
+
+norm.Keys_Example
+  - Demonstrates composite primary key and multiple unique keys
+  - Primary Key: {ColumnA, ColumnB}
+  - Unique Keys: {ColumnC, ColumnD}, ColumnE
+
+norm.Keys_Example2
+  - Demonstrates single primary key with multiple unique keys
+  - Primary Key: ID
+  - Unique Keys: Email, SSN, EmployeeNumber
+
+norm.Keys_Example3
+  - Demonstrates three-column composite primary key
+  - Primary Key: {Year, Month, Day}
+
+================================================================================
+EXAMPLE 2: Second Normal Form Violation (Example2_2NF.sql)
+================================================================================
+
+norm.NF2_Toothbrush
+  - Wikipedia example that VIOLATES 2NF
+  - Demonstrates partial dependency: Manufacturer → ManufacturerCountry
+  - Primary Key: {Manufacturer, Model}
+
+================================================================================
+EXAMPLE 3: Third Normal Form Violation (Example3_3NF.sql)
+================================================================================
+
+norm.NF3_Tournament
+  - Wikipedia example that VIOLATES 3NF
+  - Demonstrates transitive dependencies through WinnerID
+  - Primary Key: {Name, Year}
+
+================================================================================
+EXAMPLE 4: Boyce-Codd Normal Form Violation (Example4_BoyceCodd.sql)
+================================================================================
+
+norm.BCNF_CourtBookings_WithPK
+  - Wikipedia example that VIOLATES BCNF (WITH Primary Key)
+  - Demonstrates non-superkey determinant: StartTime → {EndTime, RateType}
+  - Primary Key: {Court, StartTime}
+  - Shows BCNF violation even with proper key definition
+
+norm.BCNF_CourtBookings_NoPK
+  - Wikipedia example that VIOLATES BCNF (WITHOUT Primary Key)
+  - Demonstrates non-superkey determinant: StartTime → {EndTime, RateType}
+  - No Primary Key defined
+  - Shows how analysis works without explicit key constraints
+
+================================================================================
+EXAMPLE 5: Multivalued Dependencies (Example5_Multivalued.sql)
+================================================================================
+
+norm.MVD_UniversityCourses
+  - Wikipedia example demonstrating multivalued dependencies
+  - Pattern: Course →→ Book, Course →→ Lecturer
+  - Primary Key: {Course, Book, Lecturer}
+  - Book and Lecturer are independent of each other
+
+================================================================================
+EXAMPLE 6: Fourth Normal Form (Example6_4NF.sql)
+================================================================================
+
+norm.NF4_PizzaDelivery
+  - Wikipedia example demonstrating 4NF violation
+  - Pattern: Restaurant →→ PizzaVariety, Restaurant →→ DeliveryArea
+  - Primary Key: {Restaurant, PizzaVariety, DeliveryArea}
+  - PizzaVariety and DeliveryArea are independent of each other
+
+================================================================================
+EXAMPLE 7: Fifth Normal Form (Example7_5NF.sql)
+================================================================================
+
+norm.NF5_TravelingSalesman
+  - Wikipedia example demonstrating 5NF violation
+  - Pattern: Join dependency on {TravelingSalesman, Brand, ProductType}
+  - Primary Key: {TravelingSalesman, Brand, ProductType}
+  - Demonstrates product availability by salesman and brand
+
+================================================================================
+EXAMPLE 8: Sixth Normal Form (Example8_6NF.sql)
+================================================================================
+
+norm.NF6_Medic
+  - Wikipedia example demonstrating 6NF violation
+  - Pattern: Temporal dependencies on medic attributes
+  - Primary Key: {MedicID}
+  - Demonstrates attributes that can change independently over time
+
+
+
+================================================================================
+TOTAL: 11 Tables
+================================================================================
+

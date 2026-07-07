@@ -1,0 +1,4 @@
+SELECT TOP 1
+FROM <Schema.TableName>
+GROUP BY <ColumnA>
+HAVING COUNT(DISTINCT <ColumnB>) > 1;
